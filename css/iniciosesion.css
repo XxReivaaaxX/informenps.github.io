@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: rgb(0,0,0);
+    text-align: center;
+    font-family: 'Stick No Bills', sans-serif;
+}
+.contenedor{
+    width:90%;
+    margin:auto;
+}
+header{
+    padding: 30px 0;
+}
+header .contenedor{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+header .logo{
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: white;
+    font-size:40px;
+}
+header nav a{
+    color: rgb(0,0,0);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 40px;
+}
+header nav a:hover{
+    color:white;
+}
+.titulo{
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 40px;
+    margin-right: 350px;
+
+}
+form{
+	width:300px;
+	padding:16px;
+    height: max-content;
+	border-radius:10px;
+	margin:auto;
+	background-color: #409dc4;
+    font-family: 'open sans';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+}
+form label{
+	width:95px;
+	font-weight:bold;
+	display:inline-block;
+    font-family: 'open sans';
+    color: #fff;
+}
+form input[type="text"],
+form input[type="password"]{
+	width:250px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+    font-family: 'open sans';
+    color:#000
+}
+form input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#409dc4;
+    font-family: 'open sans';
+} 
+form input[type="submit"]:hover{
+	cursor:pointer;
+    font-family: 'open sans';
+    background-color:rgb(0,0,0);
+}
+.registro{
+    margin-bottom: 5px;
+    background: #409dc4;
+    text-decoration: none;
+    border-radius: 40px;
+    padding:10px;
+    color: #fff;
+}
+.registro:hover{
+    cursor:pointer;
+    background-color:rgb(0,0,0);
+}

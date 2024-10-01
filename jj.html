@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <form>
+        Ingrese una clave:
+        <input type="password" id="clave">
+        <br>
+        <input type="button" value="Confirmar" onClick="verificar()">
+    </form>
+
+    <script>
+        function verificar() {
+            let clave = document.getElementById('clave').value;
+            if (clave.length < 5) {
+                alert('La clave no puede tener menos de 5 caracteres!!!');
+            } else {
+                alert('Largo de clave correcta');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
