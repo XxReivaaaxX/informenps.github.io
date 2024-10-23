@@ -47,7 +47,7 @@ body::-webkit-scrollbar-track{
 .collapsible label:after {
   content: "";
   position: absolute;
-  right: 160px;
+  right: 130px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0;
