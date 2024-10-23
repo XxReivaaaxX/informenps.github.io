@@ -247,6 +247,7 @@ body::-webkit-scrollbar-track{
 
 .sidebar h3 {
   text-align: center;
+  color: white;
 }
 
 /* Menu vertical*/
@@ -322,8 +323,4 @@ body::-webkit-scrollbar-track{
   .contenedor .widget-2 img {
     width: 65%;
   }
-}
-
-.h7 {
-  font-family: 'Roboto', sans-serif;
 }
