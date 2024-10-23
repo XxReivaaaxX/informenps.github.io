@@ -245,9 +245,8 @@ body::-webkit-scrollbar-track{
   grid-area: footer;
 }
 
-.sidebar h4 {
+.sidebar h3 {
   text-align: center;
-  color: white;
 }
 
 /* Menu vertical*/
