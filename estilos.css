@@ -6,7 +6,7 @@
 body {
   background: #E9ECF4;
   color: #000;
-  font-family:sans-serif
+  font-family:monospace
 }
 body::-webkit-scrollbar-track{
   background:#008f39
