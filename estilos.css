@@ -245,7 +245,7 @@ body::-webkit-scrollbar-track{
   grid-area: footer;
 }
 
-.sidebar h3 {
+.sidebar h4 {
   text-align: center;
   color: white;
 }
