@@ -6,11 +6,7 @@
 body {
   background: #E9ECF4;
   color: #000;
-  .ubuntu-light {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
+  font-family: "Ubuntu", sans-serif;
 }
 body::-webkit-scrollbar-track{
   background:#008f39
