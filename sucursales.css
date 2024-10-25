@@ -1,37 +1,401 @@
 * {
     margin: 0;
     padding: 0;
-  }
-  
-  body {
-    background: #E9ECF4;
-    color: #000;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-  }
-  .imagen-principal{
+    box-sizing: border-box;
+    color: #ffff;
+}
+
+body {
+    background: rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    padding: 30px 0;
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    color: white;
+    font-size: 40px;
+}
+
+header nav a {
+    color: #AAA;
+    text-decoration: none;
+    margin-right: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    justify-content: space-between;
+    align-items: center;
+    padding: auto;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+.buscar {
+    position: relative;
+    padding: 10px;
+    display: inline-block;
+}
+
+.buscar input {
+    width: 0px;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #409dc4;
+    outline: none;
+    border: 1px solid #409dc4;
+    border-radius: 30px;
+    transition: all 0.6s ease;
+}
+
+.btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: 55px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.buscar:hover input {
+    width: 240px;
+}
+
+.buscar input:focus {
+    width: 240px;
+}
+
+
+
+
+/* Juego central*/
+.juego-principal {
     font-size: 16px;
     min-height: 40.62em;
     color: white;
-    background: url(img/fondopo.png);
+    background: url(img/fondo1.jpeg);
     background-position: center center;
     background-size: cover;
     margin-bottom: 3.12em;
     display: flex;
     align-items: end;
-  }
-  .imagen-principal .contenedor-1{
-    margin: o auto;
+}
+
+.juego-principal .contenedor {
+    margin: 0 auto;
     margin-bottom: 6.25em;
-  }
-  .imagen-principal .titulo{
+}
+
+.juego-principal .titulo {
     font-weight: 600;
     font-size: 3.12em;
     margin-bottom: 0.4em;
-  }
-  .imagen-principal .descripcion{
+}
+
+.juego-principal .descripcion {
     font-weight: normal;
     font-size: 20px;
     line-height: 1.75em;
     max-width: 50%;
     margin-bottom: 1.25em;
-  }
+}
+
+
+
+/* Contenedor del titulo y mov */
+.contenedor-titulo-mov {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.contenedor-titulo-mov h3 {
+    color: white;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/* Conteneder prin y mov flechas*/
+.juegos-recomendados {
+    margin-bottom: 70px;
+}
+
+.juegos-recomendados .contenedor-principal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.juegos-recomendados .contenedor-principal .flecha-izq,
+.juegos-recomendados .contenedor-principal .flecha-der {
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: white;
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+.juegos-recomendados .contenedor-principal .flecha-izq:hover,
+.juegos-recomendados .contenedor-principal .flecha-der:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.juegos-recomendados .contenedor-principal .flecha-izq {
+    left: 0;
+}
+
+.juegos-recomendados .contenedor-principal .flecha-der {
+    right: 0;
+}
+
+/* Carrusel juegos */
+.juegos-recomendados .contenedor-carrusel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.juegos-recomendados .contenedor-carrusel .carrusel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.juegos-recomendados .contenedor-carrusel .carrusel .juego {
+    width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.juegos-recomendados .contenedor-carrusel .carrusel .juego img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/* Catalgo juegos */
+.catalogo-juegos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.titulo-juegos {
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    margin: 30px;
+    font-size: 30px;
+    text-indent: 2em;
+    font-family: 'Oswald', sans-serif;
+}
+
+.cat img {
+    width: 250px;
+    height: 300px;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cat {
+    margin: 15px;
+    text-decoration: none;
+}
+
+.cat p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cat-juego1 .boton {
+    background: #409dc4;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: copy;
+    font-size: 15px;
+    position: relative;
+    left: 30px;
+    margin-left: 15px;
+}
+
+.cat-juego2 .boton {
+    background: #409dc4;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: copy;
+    font-size: 15px;
+    position: relative;
+    left: 50px;
+    margin-left: 40px;
+}
+
+.cat-juego3 .boton {
+    background: #409dc4;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: copy;
+    font-size: 15px;
+    position: relative;
+    left: 50px;
+    margin-left: 40px;
+}
+
+.cat-juego4 .boton {
+    background: #409dc4;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: copy;
+    font-size: 15px;
+    position: relative;
+    left: 30px;
+    margin-left: 15px;
+}
+
+.cat-juego5 .boton {
+    background: #409dc4;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: copy;
+    font-size: 15px;
+    position: relative;
+    left: 50px;
+    margin-left: 40px;
+}
+
+.cat-juego6 .boton {
+    background: #409dc4;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: copy;
+    font-size: 15px;
+    position: relative;
+    left: 50px;
+    margin-left: 40px;
+}
+
+.cat-juego7 .boton {
+    background: #409dc4;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: copy;
+    font-size: 15px;
+    position: relative;
+    left: 30px;
+    margin-left: 15px;
+}
+
+.cat-juego8 .boton {
+    background: #409dc4;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: copy;
+    font-size: 15px;
+    position: relative;
+    left: 30px;
+    margin-left: 15px;
+}
+
+
+/* Video */
+.center {
+    margin: 0 auto;
+    width: 700px;
+    height: 300px;
+}
+
+footer {
+    background: black;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+.titulo-info{
+    margin-left: 68px;
+}
+.contenedor-footer {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #409dc4;
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4 {
+    color: #fff;
+    border-bottom: 3px solid #409dc4;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.content-foo p {
+    color: #ccc;
+    font-size: 25px;
+}
+
+.titulo-final {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: white;
+}
+
+.redes {
+    text-align: center;
+    margin: 20px 0 0 0;
+}

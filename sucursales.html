@@ -5,149 +5,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sucursales.css">
+    <link rel="stylesheet" href="inicio.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" type="img" href="img/bfalab.png">
-    <script src="https://kit.fontawesome.com/f5e459ab73.js" crossorigin="anonymous"></script>
-    <title>Sucursales</title>
+    <link rel="icon" type="img" href="img/logoin.ico" />
+    <title>Dermo Games</title>
 </head>
-<main>
-    <div class="imagen-principal">
-        <div class="contenedor-1">
-            <h3 class="titulo">Sucursales</h3>
-            <p class="descripcion">En esta sección podrán ver el NPS de cada Sucursal</p>
-        </div>
-    </div>
-</main>
+
 <body>
     <header>
         <div class="contenedor">
             <a href="inicio.html" class="logo"><img src="img/logoo.png" width="400"></a>
             <nav>
-                <a href="iniciosesion.html"><img src="img/user.ico" height="35"><b></b>Iniciar Sesión</a>
+                <a href="iniciosesion.html"><img src="img/user.ico" height="35"><b></b>Iniciar Sesión</a><br>
+                <a class="buscar">
+                    <input type="text" placeholder="Buscar" required>
+                    <div class="btn">
+                        <img src="img/buscar.ico" alt="buscarr">
+                    </div>
+                </a>
             </nav>
         </div>
     </header>
-    <hr color="#409dc4">
     <main>
-        <div class="contenedorr">
-            <div class="contenedorr">
-                <h1>Halo Infinite</h1><br>
-                <h2>Xbox One - Xbox Series X/S - PC</h2>
-                <input type="radio" id="1" name="imagen-slide" hidden>
-                <input type="radio" id="2" name="imagen-slide" hidden>
-                <input type="radio" id="3" name="imagen-slide" hidden>
-                <div class="slider">
-                    <div class="item-slider">
-                        <img src="img/halo1.jpg" height="550">
-                    </div>
-                    <div class="item-slider">
-                        <img src="img/halo2.jpg" height="550">
-                    </div>
-                    <div class="item-slider">
-                        <img src="img/halo3.jpg" height="550">
-                    </div>
-                </div>
-                <div class="paginacion-hover">
-                    <label class="item-paginacion" for="1">
-                        <img src="img/halo1.jpg">
-                    </label>
-                    <label class="item-paginacion" for="2">
-                        <img src="img/halo2.jpg">
-                    </label>
-                    <label class="item-paginacion" for="3">
-                        <img src="img/halo3.jpg">
-                    </label>
-                </div>
+        <div class="juego-principal">
+            <div class="contenedor">
+                <h3 class="titulo">The Last of Us</h3>
+                <p class="descripcion">The Last of Us™, ganador de más de 200 premios de Game of the Year, ha sido
+                    reconstruido para la consola PlayStation®4. Ahora trae modelos de personajes de alta resolución,
+                    full 1080p, sombras e iluminación mejoradas, además de varias otras mejoras en el juego.</p>
             </div>
+        </div>
+        <div class="juegos-recomendados contenedor">
+            <div class="contenedor-titulo-mov">
+                <h3>Recomendaciones a nivel general</h3>
+            </div>
+            <div class="contenedor-principal">
+                <button role="button" id=flecha-izq class="flecha-izq"><img src="img/flechizqq.ico"></button>
+                <div class="contenedor-carrusel">
+                    <div class="carrusel">
+                        <div class="juego">
+                            <a href="uncharted.html"><img src="img/juego1.jpg" alt="juego-1" height="345"></a>
+                        </div>
+                        <div class="juego">
+                            <a href="gearsofwar3.html"><img src="img/juego2.jpg" alt="juego-2" height="345"></a>
+                        </div>
+                        <div class="juego">
+                            <a href="spiderman.html"><img src="img/juego3.jpg" alt="juego-3" height="345"></a>
+                        </div>
+                        <div class="juego">
+                            <a href="gtasa.html"><img src="img/juego4.jpg" alt="juego-4" height="345"></a>
+                        </div>
+                        <div class="juego">
+                            <a href="farcry3.html"><img src="img/juego5.jpg" alt="juego-5" height="345"></a>
+                        </div>
+                    </div>
+                </div>
+                <button role="button" id=flecha-der class="flecha-der"><img src="img/flechderr.ico"></button>
+            </div>
+        </div>
     </main>
-    <br><br>
-    <h1 class="titulo-des">Información general</h1>
-    <div class="contenedor-des">
-        <img src="img/publihalo.jpg">
-        <p class="descripcion">Halo Infinite es un videojuego de disparos en primera persona siendo la secuela de Halo
-            5: Guardians y Halo Wars 2. Así como un reinicio espiritual de la saga. Fue revelado en la E3 de 2018 y
-            originalmente sería lanzado al mercado junto con la Xbox Series X a finales de 2020 estando disponible
-            también para Xbox One y Windows 10.<br>
-            <button role="button" class="boton"><img src="img/carrito.ico"> Agregar al carrito</button>
-        </p>
+    <div class="catalogo-juegos">
+        <div class="titulo-juegos">Algunos de los juegos</div>
+        <a href="godofwar.html" class="cat cat-juego1"><img src="img/catjueg1.jpg">
+            <p>God of War Ragnarok</p>
+            <p>$320.000</p><br>
+            <button role="button" class="boton">Acción</button><button role="button" class="boton">Aventura</button>
+        </a>
+        <a href="fifa23.html" class="cat cat-juego2"><img src="img/catjueg2.jpg">
+            <p>Fifa 23</p>
+            <p>$219.000</p><br>
+            <button role="button" class="boton">Deportes</button>
+        </a>
+        <a href="CODMW2.html" class=" cat cat-juego3"><img src="img/catjueg3.jpg">
+            <p>Call of Duty MW 2</p>
+            <p>$385.000</p><br>
+            <button role="button" class="boton">Acción</button>
+        </a>
+        <a href="haloinfinite.html" class="cat cat-juego4"><img src="img/catjueg4.jpg">
+            <p>Halo Infinite</p>
+            <p>$215.000</p><br>
+            <button role="button" class="boton">Acción</button><button role="button" class="boton">Shooter</button>
+        </a>
+        <a href="bully.html" class="cat cat-juego5"><img src="img/catjueg5.jpg">
+            <p>Bully</p>
+            <p>$50.000</p><br>
+            <button role="button" class="boton">Acción</button>
+        </a>
+        <a href="CODWarzone.html" class="cat cat-juego6"><img src="img/catjueg6.jpg">
+            <p>Call of Duty Warzone</p>
+            <p>Gratis</p><br>
+            <button role="button" class="boton">Acción</button>
+        </a>
+        <a href="tombraider.html" class="cat cat-juego7"><img src="img/catjueg7.jpg">
+            <p>Tomb Raider</p>
+            <p>$99.900</p><br>
+            <button role="button" class="boton">Acción</button><button role="button" class="boton">Aventura</button>
+        </a>
+        <a href="borderlands.html" class="cat cat-juego8"><img src="img/catjueg8.jpg">
+            <p>Borderlands 3</p>
+            <p>$75.000</p><br>
+            <button role="button" class="boton">Acción</button><button role="button" class="boton">Shooter</button>
+        </a>
     </div>
     <br><br>
-    <h1 class="titulo-des">Comentarios de algunos clientes</h1><br><br>
-    <div class="cajaResena">
-        <div class="contenidoResena">
-            <div class="calificacionResena">
-                <div class="star">
-                    <h4>@David Gonzales</h4>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <h4>10/11/2022</h4>
-            </div>
-            <hr color="#409dc4">
-            <div class="contenidoTexto">
-                <img src="img/icon1.ico" alt="Avatar" style="width:60px">
-                <p>Es un excelente videojuego, su saga completa es increible.<br>
-                    +10 puntos.</p><br>
-            </div>
+    <div class="contenedor-video-proy">
+        <div class="titulo-juegos">Conoce mas de nuestro proyecto</div><br><br><br>
+        <div class="center">
+            <video class="center" controls>
+                <source src="video/video proyecto.mp4" type="video/mp4">
+            </video><br><br><br><br>
         </div>
     </div>
-    <div class="cajaResena">
-        <div class="contenidoResena">
-            <div class="calificacionResena">
-                <div class="star">
-                    <h4>@Ezequiel Torres</h4>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
-                </div>
-                <h4>10/11/2022</h4>
-            </div>
-            <hr color="#409dc4">
-            <div class="contenidoTexto">
-                <img src="img/icon2.ico" alt="Avatar" style="width:60px">
-                <p>Es un excelente videojuego, su saga completa es increible.<br>
-                    +10 puntos.</p><br>
-            </div>
-        </div>
-    </div>
-    <div class="cajaResena">
-        <div class="contenidoResena">
-            <div class="calificacionResena">
-                <div class="star">
-                    <h4>@Daniela Torres</h4>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star-half-stroke"></i>
-                </div>
-                <h4>10/11/2022</h4>
-            </div>
-            <hr color="#409dc4">
-            <div class="contenidoTexto">
-                <img src="img/icon3.ico" alt="Avatar" style="width:60px">
-                <p>Es un excelente videojuego, su saga completa es increible.<br>
-                    +10 puntos.</p><br>
-            </div>
-        </div>
-    </div>
-    <br><br><br>
-    <h1 class="titulo-des">¡Escribe tu comentario!</h1><br><br>
-    <form id="formularioReseña" action="principal.php" method="POST">
-        <label id="Nombre">Nombre</label>
-        <input type="text" name="nombreC" id="nombreC" placeholder="Nombre" required />
-        <label id="Mensaje">Comentario</label>
-        <textarea name="mensaje" id="mensaje" placeholder="Escribe tu comentario" maxlength="500"></textarea>
-        <input type="submit" name="enviar" value="Enviar" />
-    </form>
+    <br><br>
     <footer>
-        <h1 class="titulo-des">Acerca de nosotros</h1><br><br><br>
+        <h1 class="titulo-info">Acerca de nosotros</h1><br><br><br><br>
         <div class="contenedor-footer">
             <div class="content-foo">
                 <h4><img src="img/telefono.ico">Teléfono</h4>
