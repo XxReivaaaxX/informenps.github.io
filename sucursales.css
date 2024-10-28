@@ -161,7 +161,7 @@ main{
 }
 .contenedorr h2{
     text-align:center;
-    background: #008f39;
+    background: #000;
     margin-bottom:10px;
     border-radius: 3px;
     border-bottom: 4px;
@@ -203,7 +203,7 @@ main{
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
-    background: #008f39;
+    background: white;
     margin: 0 10px;
     text-align: center;
     transition: all 300ms;
