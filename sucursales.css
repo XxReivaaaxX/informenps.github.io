@@ -32,66 +32,6 @@ header .logo {
     font-size: 40px;
 }
 
-header nav a {
-    color: #AAA;
-    text-decoration: none;
-    margin-right: 50px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 26px;
-    justify-content: space-between;
-    align-items: center;
-    padding: auto;
-}
-
-header nav a:hover {
-    color: white;
-}
-
-.buscar {
-    position: relative;
-    padding: 10px;
-    display: inline-block;
-}
-
-.buscar input {
-    width: 0px;
-    height: 40px;
-    padding: 0 20px;
-    font-size: 18px;
-    color: #409dc4;
-    outline: none;
-    border: 1px solid #409dc4;
-    border-radius: 30px;
-    transition: all 0.6s ease;
-}
-
-.btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 55px;
-    height: 55px;
-    line-height: 55px;
-    text-align: 55px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-
-}
-
-.buscar:hover input {
-    width: 240px;
-}
-
-.buscar input:focus {
-    width: 240px;
-}
-
-
-
-
 /* Juego central*/
 .juego-principal {
     font-size: 16px;
