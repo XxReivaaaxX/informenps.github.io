@@ -261,6 +261,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 .titulo-des{
     margin-left: 90px;
     font-size: 50px;
+    color: #BDECB6;
 }
 
 /* DESCRIPCION JUEGO */
