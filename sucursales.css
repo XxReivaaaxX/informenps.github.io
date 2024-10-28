@@ -159,10 +159,11 @@ main{
 .contenedorr h1{
     font-size: 40px;
     text-align: center;
+    color: #000;
 }
 .contenedorr h2{
     text-align:center;
-    background: #409dc4;
+    background: #008f39;
     margin-bottom:10px;
     border-radius: 3px;
     border-bottom: 4px;
