@@ -266,35 +266,12 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 .contenedor-des {
     display: flex;
     margin-top: 10px;
-    padding: 25px;
-}
-.contenedor-des img{
-    width: 600px;
-    height: 300px;
-    margin-left: 60px;
+    padding: 0px;
 }
 .descripcion{
     padding-left: 15px;
-    font-size: 30px; 
-}
-.descripcion .boton{
-    background: #409dc4;
-    border: none;
-    border-radius: 0.31em;
-    margin-top: 10px;
-    padding: 10px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 23px;
-    position: relative;
-    left: 390px;
-    margin-left: 40px;
-}
-.descripcion .boton img{
-    width: 40px;
-    height: 40px;
-    margin: 0%;
-    margin-left: 0;
+    font-size: 30px;
+    text-align: center center; 
 }
 
 
