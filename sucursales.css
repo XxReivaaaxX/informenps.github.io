@@ -162,11 +162,11 @@ main{
 }
 .contenedorr h2{
     text-align:center;
-    background: #008f39;
+    background: #BDECB6;
     margin-bottom:10px;
     border-radius: 3px;
     border-bottom: 4px;
-    font-size: 15px;
+    font-size: 20px;
 }
 .slider{
     display: flex;
