@@ -142,7 +142,7 @@ main{
     align-items: center;
     justify-content: center;
     padding: 30px;
-    background-color: #BDECB6;
+    /*background-color: #BDECB6;*/
 }
 .contenedorr img{
     max-width: 300%;
