@@ -265,12 +265,13 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 /* DESCRIPCION JUEGO */
 .contenedor-des {
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 0px;
 }
 .descripcion{
+    padding-top: 0%;
     padding-left: 15px;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center center; 
 }
 
