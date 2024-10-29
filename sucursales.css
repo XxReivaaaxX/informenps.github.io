@@ -272,7 +272,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     padding-top: 0%;
     padding-left: 15px;
     font-size: 20px;
-    text-align: center center; 
+    justify-content: center; 
 }
 
 
