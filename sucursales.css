@@ -258,7 +258,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 
 .titulo-des{
     margin-left: 90px;
-    font-size: 50px;
+    font-size: 30px;
     color: #000;
 }
 
@@ -267,6 +267,9 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     display: flex;
     margin-top: 15px;
     padding: 0px;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: row;
 }
 .descripcion{
     padding-top: 0%;
