@@ -127,10 +127,10 @@ header nav a {
 }
 .imagen-principal {
     font-size: 16px;
-    min-height:30.10em;
+    min-height: 35.10em;
     color: white;
     background: url(img/of122p.png);
-    border-radius: 60px;
+    border-radius: 80px;
     background-position: center center;
     background-size: cover;
     display: flex;
@@ -282,6 +282,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     align-items: center;
     flex-direction: row;
     color: #000;
+    -webkit-text-stroke: 3em #BDECB6;
 }
 
 /* RESEÑAS */
