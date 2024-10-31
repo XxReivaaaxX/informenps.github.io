@@ -127,7 +127,7 @@ header nav a {
 }
 .imagen-principal {
     font-size: 16px;
-    min-height: 35.10em;
+    min-height: 15.10em;
     color: white;
     background: url(img/fondo1fal.jpeg);
     border-radius: 80px;
@@ -282,7 +282,6 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     align-items: center;
     flex-direction: row;
     color: #000;
-    -webkit-text-stroke: 3em #BDECB6;
 }
 
 /* RESEÑAS */
