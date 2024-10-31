@@ -280,6 +280,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     justify-content: center; 
     align-items: center;
     flex-direction: row;
+    color: #000;
 }
 
 
