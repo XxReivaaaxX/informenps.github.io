@@ -285,6 +285,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 }
 .contenedor-descripcion{
     background-color: #008f39;
+    padding-left: 5em;
 }
 
 /* RESEÑAS */
