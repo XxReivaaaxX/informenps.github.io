@@ -282,7 +282,9 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     flex-direction: row;
     color: #000;
 }
-
+.contenedor-descripcion{
+    background-color: #008f39;
+}
 
 /* RESEÑAS */
 .cajaResena {
