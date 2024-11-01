@@ -76,6 +76,7 @@ header {
     top: -100%;
     opacity: 0.5;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .collapsible input:checked ~ .collapsible-text{
