@@ -50,13 +50,13 @@ header {
     border-radius: 4px;
     z-index: 1;
     font-size: 18px;
-    padding-left: 130px;
+    padding-left: 140px;
 }
 
 .collapsible label:after{
     content: "";
     position: absolute;
-    right: 60px;
+    right: 50px;
     width: 29px;
     height: 25px;
     background: url(img/icon12.png) no-repeat 0 0; 
