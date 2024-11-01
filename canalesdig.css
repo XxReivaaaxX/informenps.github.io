@@ -1,43 +1,34 @@
 * {
     margin: 0;
     padding: 0;
-    /*box-sizing: border-box;*/
-    color: white;
-}
-
-body {
+  }
+  
+  body {
     background: #E9ECF4;
     color: #000;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   }
-
-.contenedor {
-    width: 97%;
-    margin: auto;
-}
-
-header {
-    padding: 12px 0;
-}
-
-.wrapper{
+  body::-webkit-scrollbar-track{
+    background:#008f39
+  }
+  .wrapper {
     display: flex;
     padding-top: 0px;
     justify-content: center;
     background-color: #008f39;
-}
-
-.collapsible{
+  }
+  
+  .collapsible {
     max-width: 450px;
     overflow: hidden;
     font-weight: 500;
-}
-
-.collapsible input{
+  }
+  
+  .collapsible input {
     display: none;
-}
-
-.collapsible label {
+  }
+  
+  .collapsible label {
     position: relative;
     font-weight: 600;
     /*background: white ; */
@@ -50,25 +41,24 @@ header {
     border-radius: 4px;
     z-index: 1;
     font-size: 18px;
-    padding-left: 10px;
-}
-
-.collapsible label:after{
+    padding-left: 130px;
+  }
+  
+  .collapsible label:after {
     content: "";
     position: absolute;
     right: 165px;
     width: 29px;
     height: 25px;
-    background: url(img/icon12.png) no-repeat 0 0; 
+    background: url(img/icon12.png) no-repeat 0 0;
     transition: all 0.3s ease;
-    text-align: center;
-}
-
-.collapsible input:checked + label::after{
+  }
+  
+  .collapsible input:checked+label::after {
     transform: rotate(90deg);
-}
-
-.collapsible-text{
+  }
+  
+  .collapsible-text {
     max-height: 1px;
     overflow: hidden;
     border-radius: 4px;
@@ -77,24 +67,25 @@ header {
     top: -100%;
     opacity: 0.5;
     transition: all 0.3s ease;
-}
-
-.collapsible input:checked ~ .collapsible-text{
+    color: white;
+  }
+  
+  .collapsible input:checked~.collapsible-text {
     max-height: 300px;
     padding-bottom: 25px;
     /*background: green; */
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.895) 0 4px 11px 0 rgba(0, 0, 0, 0.8);
     opacity: 1;
     top: 0;
-}
-
-
-.collapsible-text p{
+  }
+  
+  
+  .collapsible-text p {
     padding-left: 15px;
     padding-right: 15px;
     font-size: 15px;
-
-}
+  
+  }
 
 header .contenedor {
     display: flex;
