@@ -39,8 +39,9 @@
     <br>
     <style type="text/css">
         .contenedor {
-			display: grid;
-		}
+            display: grid;
+        }
+
         table.tableizer-table {
             font-size: 12px;
             border: 1px solid #CCC;
@@ -52,54 +53,70 @@
             margin: 3px;
             border: 1px solid #CCC;
             align-items: center;
-			text-align: center;
+            text-align: center;
         }
 
         .tableizer-table th {
             background-color: #008f39;
-			color: #BDECB6;
+            color: #BDECB6;
             font-weight: bold;
         }
     </style>
-    <div class="contenedor"><table class="tableizer-table">
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>Mes (día de experiencia)</th>
-                <th>Respuestas</th>
-                <th>&nbsp;</th>
-                <th>Mes (día de experiencia)</th>
-                <th>Respuestas</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>App</td>
-                <td>3097</td>
-                <td>&nbsp;</td>
-                <td>Web</td>
-                <td>282</td>
-            </tr>
-            <tr>
-                <td>sep</td>
-                <td>170</td>
-                <td>&nbsp;</td>
-                <td>sep</td>
-                <td>13</td>
-            </tr>
-            <tr>
-                <td>oct</td>
-                <td>2927</td>
-                <td>&nbsp;</td>
-                <td>oct</td>
-                <td>269</td>
-            </tr>
-            <tr>
-                <td>Total general</td>
-                <td>3097</td>
-                <td>&nbsp;</td>
-                <td>Total general</td>
-                <td>282</td>
-            </tr>
-        </tbody>
-    </table></div>
+    <div class="contenedor">
+        <table class="tableizer-table">
+            <thead>
+                <tr class="tableizer-firstrow">
+                    <th>Mes (día de experiencia)</th>
+                    <th>Respuestas</th>
+                    <th>&nbsp;</th>
+                    <th>Mes (día de experiencia)</th>
+                    <th>Respuestas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>App</td>
+                    <td>3097</td>
+                    <td>&nbsp;</td>
+                    <td>Web</td>
+                    <td>282</td>
+                </tr>
+                <tr>
+                    <td>sep</td>
+                    <td>170</td>
+                    <td>&nbsp;</td>
+                    <td>sep</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>oct</td>
+                    <td>2927</td>
+                    <td>&nbsp;</td>
+                    <td>oct</td>
+                    <td>269</td>
+                </tr>
+                <tr>
+                    <td>Total general</td>
+                    <td>3097</td>
+                    <td>&nbsp;</td>
+                    <td>Total general</td>
+                    <td>282</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="p5.min.js"></script>
+    <script src="vanta.topology.min.js"></script>
+    <script>
+        VANTA.TOPOLOGY({
+            el: "#your-element-selector",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00
+        })
+    </script>
 </body>
