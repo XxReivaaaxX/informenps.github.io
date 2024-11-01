@@ -50,13 +50,13 @@ header {
     border-radius: 4px;
     z-index: 1;
     font-size: 18px;
-    padding-left: 140px;
+    padding-left: 10px;
 }
 
 .collapsible label:after{
     content: "";
     position: absolute;
-    right: 40px;
+    right: 50px;
     width: 29px;
     height: 25px;
     background: url(img/icon12.png) no-repeat 0 0; 
@@ -76,7 +76,6 @@ header {
     top: -100%;
     opacity: 0.5;
     transition: all 0.3s ease;
-    text-align: center;
 }
 
 .collapsible input:checked ~ .collapsible-text{
