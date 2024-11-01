@@ -13,51 +13,65 @@
 </head>
 
 <body>
-	<div class="wave"></div>
+	<div class="ocean">
+		<div class="wave"></div>
+		<div class="wave"></div>
+	</div>
 	<style>
+		html,
 		body {
-			height: 100vh;
-			background-color: #000;
+			height: 100%;
+		}
+
+		body {
+			background: radial-gradient(ellipse at center, rgba(255, 254, 234, 1) 0%, rgba(255, 254, 234, 1) 35%, #B7E8EB 100%);
 			overflow: hidden;
 		}
-		.wave,
-		.wave::before,
-		.wave::after {
-			content: '';
+
+		.ocean {
+			height: 5%;
+			width: 100%;
 			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 250vw;
-			height: 250vw;
-			margin-left: -125vw;
-			transform-origin: 50% 50%;
-			background-color: transparent;
-			border-radius: 38% 42%;
-			box-shadow: inset 0 0 10vw rgba(255, 0, 255, 0.8);
-			animation: spin 16s infinite linear;
-			mix-blend-mode: multiply;
+			bottom: 0;
+			left: 0;
+			background: #015871;
 		}
-		.wave::before {
-			width: 105%;
-			height: 95%;
-			margin-top: -125vw;
-			transform-origin: 49% 51%;
-			border-radius: 40% 38%;
-			box-shadow: inset 0 0 10vw rgba(255, 255, 0, 0.8);
-			animation: spin 13s infinite linear;
+
+		.wave {
+			background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+			position: absolute;
+			top: -198px;
+			width: 6400px;
+			height: 198px;
+			animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+			transform: translate3d(0, 0, 0);
 		}
-		.wave::after {
-			width: 102%;
-			height: 98%;
-			margin-top: -125vw;
-			transform-origin: 51% 49%;
-			border-radius: 48% 42%;
-			box-shadow: inset 0 0 10vw rgba(0, 255, 255, 0.8);
-			animation: spin 10s infinite linear;
+
+		.wave:nth-of-type(2) {
+			top: -175px;
+			animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+			opacity: 1;
 		}
-		@keyframes spin {
+
+		@keyframes wave {
+			0% {
+				margin-left: 0;
+			}
+
 			100% {
-				transform: rotate(360deg);
+				margin-left: -1600px;
+			}
+		}
+
+		@keyframes swell {
+
+			0%,
+			100% {
+				transform: translate3d(0, -25px, 0);
+			}
+
+			50% {
+				transform: translate3d(0, 5px, 0);
 			}
 		}
 	</style>
