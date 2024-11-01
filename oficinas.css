@@ -47,7 +47,7 @@
   .collapsible label:after {
     content: "";
     position: absolute;
-    right: 179px;
+    right: 120px;
     width: 29px;
     height: 25px;
     background: url(img/icon12.png) no-repeat 0 0;
