@@ -345,7 +345,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     cursor: copy;
     font-size: 15px;
     position: relative;
-    left: 30px;
+    left: 60px;
     margin-left: 15px;
 }
  
