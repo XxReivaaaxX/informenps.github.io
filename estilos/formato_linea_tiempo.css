@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:  repeat(5,auto);
+    grid-template-areas: "header header header header"
+                         "nav nav nav nav"
+                         "section section section section"
+                         "section section section section"
+                         "footer footer footer footer";
+}
+.encabezado{
+    background-color: #FFFFFF;
+    grid-area: header;
+}
+.menu{
+    background-color: #FFFFFF;
+    grid-area: nav;
+   
+ 
+}
+.contenidoLinea{
+   
+    grid-area: section;
+   
+ 
+}
+.final{
+    background-color: #FFFFFF;
+    grid-area: footer;
+   
+ 
+}
