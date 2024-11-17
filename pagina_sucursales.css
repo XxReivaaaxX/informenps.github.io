@@ -297,10 +297,11 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     text-align: center;
 }
 .servicio-individual img{
-    width: 90%;
+    width: 100%;
 }
 .servicio-individual h3{
     margin: 10px 0;
+    color: #000;
 }
 
 /* RESEÑAS-COMENTARIOS  */
