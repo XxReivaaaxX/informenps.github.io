@@ -343,8 +343,8 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     cursor: pointer;
     font-size: 15px;
     position: relative;
-    left: 30px;
-    margin-left: 15px;
+    left: 50px;
+    margin-left: 40px;
 }
 
 /* RESEÑAS - COMENTARIOS */
