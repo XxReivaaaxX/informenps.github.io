@@ -337,11 +337,11 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 }
  
 .cat-juego1 .boton {
-    background: #409dc4;
+    background:#008f39;
     border: none;
     border-radius: 0.31em;
     padding: 0.93em;
-    color: #fff;
+    color: #000;
     cursor: copy;
     font-size: 15px;
     position: relative;
