@@ -302,10 +302,6 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 .servicio-individual h3{
     margin: 10px 0;
 }
-.servicio-individual p{
-    font-weight: 300;
-    text-align: justify;
-}
 
 /* RESEÑAS-COMENTARIOS  */
 .cajaResena {
