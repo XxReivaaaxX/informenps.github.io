@@ -265,7 +265,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     color: #000;
 }
 
-/* DESCRIPCION JUEGO */
+/* DESCRIPCION */
 .contenedor-des {
     display: flex;
     margin-top: 15px;
@@ -284,7 +284,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     color: #000;
 }
 
-/* RESEÑAS */
+/* RESEÑAS-COMENTARIOS  */
 .cajaResena {
     background-color: rgb(0, 0, 0);
     color: black;
@@ -299,8 +299,55 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     margin-left: 320px;
 }
 
-/* RESEÑAS */
+/* CONTENEDOR DE SUCURSALES */
+.div-sucursales{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cat img{
+    width: 250px;
+    height: 300px;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.cat{
+    margin: 15px;
+    text-decoration: none;
+}
+.cat p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.cat-s.atencion .boton{
+    background: #008f39;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+    left: 30px;
+    margin-left: 15px;
+}
+.cat-s.venta .boton{
+    background: #008f39;
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+    left: 30px;
+    margin-left: 15px;
+}
 
+/* RESEÑAS - COMENTARIOS */
 .cajaResena {
     background-color: #409dc4;
     color: black;
