@@ -297,7 +297,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     text-align: center;
 }
 .servicio-individual img{
-    width: 100%;
+    width: 90%;
 }
 .servicio-individual h3{
     margin: 10px 0;
