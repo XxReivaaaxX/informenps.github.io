@@ -290,6 +290,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 .servicio-cont{
     display:flex;
     align-items: center;
+    justify-content: center;
 }
 .servicio-individual{
     width: 28%;
