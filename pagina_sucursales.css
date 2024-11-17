@@ -319,69 +319,6 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     margin-left: 320px;
 }
 
-/* CONTENEDOR DE SUCURSALES */
-.catalogo-juegos {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
- 
-.titulo-juegos {
-    width: 100%;
-    text-align: left;
-    font-weight: bold;
-    margin: 30px;
-    font-size: 30px;
-    text-indent: 2em;
-    font-family: 'Oswald', sans-serif;
-}
- 
-.cat img {
-    width: 250px;
-    height: 300px;
-    border-radius: 30px;
-    cursor: pointer;
-    text-decoration: none;
-}
- 
-.cat {
-    margin: 15px;
-    text-decoration: none;
-}
- 
-.cat p {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-}
- 
-.cat-juego1 .boton {
-    background:#008f39;
-    border: none;
-    border-radius: 0.31em;
-    padding: 0.93em;
-    color: #000;
-    cursor: copy;
-    font-size: 15px;
-    position: relative;
-    left: 60px;
-    margin-left: 15px;
-}
- 
-.cat-juego2 .boton {
-    background: #409dc4;
-    border: none;
-    border-radius: 0.31em;
-    padding: 0.93em;
-    color: #fff;
-    cursor: copy;
-    font-size: 15px;
-    position: relative;
-    left: 30px;
-    margin-left: 15px;
-}
-
 /* RESEÑAS - COMENTARIOS */
 .cajaResena {
     background-color: #409dc4;
