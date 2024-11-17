@@ -289,12 +289,13 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 }
 .servicio-cont{
     display:flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .servicio-individual{
     width: 28%;
     text-align: center;
+    justify-content: center;
 }
 .servicio-individual img{
     width: 90%;
