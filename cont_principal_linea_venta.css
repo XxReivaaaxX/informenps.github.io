@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   /*box-sizing: border-box;*/
-  color: #000;
+  color: #FFFFFF;
 }
 
 body {
@@ -56,7 +56,7 @@ header {
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 180px;
+  right: 200px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
