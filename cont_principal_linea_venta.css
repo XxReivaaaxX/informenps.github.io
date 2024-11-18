@@ -1,6 +1,6 @@
- *{
+*{
   color: black;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .contenidoLinea{
   background-color: #365599;
@@ -44,14 +44,14 @@
 .contenidoMenu li a {
   display: block;
   text-align: center;
-  padding: 14px 16px;
   border-radius: 10px 10px 0 0;
+  padding: 14px 16px;
   text-decoration: none;
 }
  
 li a:hover:not(.indicador) {
   background-color: rgb(236, 236, 236);
- 
+  transform: scale(0.9);
 }
 .indicador{
   background-color: #176FB4;
@@ -70,204 +70,150 @@ li a:hover:not(.indicador) {
  
  
  
-.contenidoSeccion{
-  text-align: center;
-  font-size: 190%;
+.linea {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+ 
+  .linea::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #FFFFFF;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+ 
+  }
+ 
+  .caja {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+ 
+  .caja::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #FFFFFF;
+    border: 2px solid #1F2447;
+    top: 15px;
+    border-radius: 90% 10% 90% 10%;
+    z-index: 1;
+  }
+ 
+  .Izq {
+    left: -8%;
+  }
+ 
+  .Der {
+    left: 50%;
+  }
+ 
+  .Izq::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #FFFFFF;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #FFFFFF;
+  }
+ 
+  .Der::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #FFFFFF;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #FFFFFF transparent transparent;
+  }
+ 
+  .Der::after {
+    left: -16px;
+  }
+ 
+ 
+  .contenidoCaja {
+    padding: 20px 30px;
+    background-color: #FFFFFF;
+    position: relative;
+    border-radius: 6px;
+  }
+ 
+  @media screen and (max-width: 600px) {
+ 
+    .linea::after {
+    left: 31px;
+    }
+   
+ 
+    .caja {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+   
+ 
+    .caja::before {
+    left: 60px;
+    border: medium solid #1F2447;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+ 
+ 
+    .Izq::after, .Der::after {
+    left: 15px;
+    }
+   
+ 
+    .Der {
+    left: 0%;
+    }
 }
-.titulo{
-  background-color: #FFFFFF;
-  padding: 3% 0 3% 0;
-  border-radius: 30px 0px 30px 0px;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
  
  
  
- 
- 
-.imagenesSeccionUno {
+.contenidoFooter{
   display: flex;
-  overflow-x: scroll;
-}
- 
-.imagenesSeccionUno img {
-  flex: 0 0 100%;
-  max-width: 100%;
-  object-fit: cover;
-}
-.imagenesSeccionUno {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-}
- 
-.imagenesSeccionUno img {
-  flex: 0 0 100%;
-  max-width: 100%;
-  max-height: 600px;
-  object-fit: cover;
-  scroll-snap-align: center;
-}
- 
-.contenidoSeccionDos{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
   margin-left: 5%;
   margin-right: 5%;
- 
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.imagenSecIzq img{
-  border-radius: 40% 10% 10% 40% ;
-  box-shadow: 0 10px 6px -6px rgb(6, 4, 12, 0.801);
-  border-style: solid;
-  border-color: #1F2447;
-  max-width: 80%;
-  margin-left: 10%;
- 
+.contenidoFooter img{
+  max-width: 300px;
+  max-height: 160px;
 }
-.imagenSecDer img{
-  border-radius: 10% 40% 40% 10%;
-  box-shadow: 0 10px 6px -6px rgb(6, 4, 12, 0.801);
-  border-style: solid;
-  border-color: #1F2447;
-  max-width: 80%;
-  margin-left: 20%;
- 
- 
-}
-.textoSeccionDos{
-  display: flex;
-  width: 500%;
-  height: 80%;
-  margin: 5%;
-  background-color: #176FB4;
-  box-shadow: 10px 15px #1F2447;
-  justify-content: center;
-  align-items: center;
-  padding: 5%;
-  line-height: 130%;
-  border-radius: 20%;
- 
-}
-.textoSeccionDos p{
-  color: #FFFFFF;
-  text-align: center;
-}
- 
- 
- 
- 
-.contenidoSeccionTres{
+.logoFooter {
   display: flex;
   flex-wrap: wrap;
-  padding: 5%;
+  margin-top: 20px;
   justify-content: space-between;
+}
+.datosFooter{
+  margin-right: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
  
 }
-.contenidoSeccionTres video{
-  width: 45%;
-  height: 100%;
-  border-radius: 20px;
-}
-.videoUno{
-  padding-right: 5px;
-}
-.videoDos{
-  padding-left: 5px;
-}
+.final{
+  border-style: solid;
+  border-width: 20px 0px 0px 0px;
+  border-color: #1F2447;
  
- 
- 
- 
-.cajaArchivos{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
- 
-}
- 
-.boletinesBtn {
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  padding: 15%;
-  font-size: 200%;
-  border: none;
-}
- 
-.boletines {
-  position: relative;
-  margin: 5%;
-  display: inline-block;
-}
- 
-.contenidoBoletines {
-  display: none;
-  position: absolute;
-  background-color: #176FB4;
-  border-radius: 10px;
-  padding: 15%;
-  min-width: 100%;
-  z-index: 1;
-}
- 
-.contenidoBoletines a {
-  color: #FFFFFF;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
- 
-.boletines:hover .contenidoBoletines {
-  display: block;
-}
- 
- 
- 
- 
- 
- 
- 
- 
- 
-.comunicadosBtn {
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  padding: 10%;
-  font-size: 200%;
-  border: none;
-}
- 
-.comunicados {
-  position: relative;
-  margin: 5%;
-  display: inline-block;
-}
- 
-.contenidoComunicados {
-  display: none;
-  position: absolute;
-  background-color: #176FB4;
-  border-radius: 10px;
-  padding: 10%;
-  min-width: 100%;
-  z-index: 1;
-}
- 
-.contenidoComunicados a {
-  color: #FFFFFF;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
- 
- 
-.comunicados:hover .contenidoComunicados {
-  display: block;
 }
  
