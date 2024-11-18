@@ -55,7 +55,7 @@ header {
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 90px;
+  right: 80px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
@@ -75,6 +75,9 @@ header {
   top: -100%;
   opacity: 0.5;
   transition: all 0.3s ease;
+}
+.collapsible-text p{
+  color: #FFFFFF;
 }
 
 .collapsible input:checked ~ .collapsible-text{
@@ -139,7 +142,7 @@ header nav a {
   background-color: #008f39;
   border-radius: 25px;
 }
-.contenidoCaja h2,p2{
+.contenidoCaja h2,p{
   color: #000;
 }
 .contenidoHeader{
