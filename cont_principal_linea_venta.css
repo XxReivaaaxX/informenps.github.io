@@ -138,6 +138,7 @@ header nav a {
 }
 .contenidoLinea{
   background-color: #008f39;
+  border-radius: 25px;
  
  
 }
@@ -318,36 +319,5 @@ li a:hover:not(.indicador) {
     left: 0%;
     }
 }
- 
- 
- 
-.contenidoFooter{
-  display: flex;
-  margin-left: 5%;
-  margin-right: 5%;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.contenidoFooter img{
-  max-width: 300px;
-  max-height: 160px;
-}
-.logoFooter {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  justify-content: space-between;
-}
-.datosFooter{
-  margin-right: 5%;
-  margin-top: 20px;
-  margin-bottom: 20px;
- 
-}
-.final{
-  border-style: solid;
-  border-width: 20px 0px 0px 0px;
-  border-color: #1F2447;
- 
-}
+
  
