@@ -56,7 +56,7 @@ header {
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 110px;
+  right: 60px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
@@ -139,8 +139,9 @@ header nav a {
 .contenidoLinea{
   background-color: #008f39;
   border-radius: 25px;
+}
+.contenidoCaja h2,p{
   color: #000;
- 
 }
 .contenidoHeader{
   display: flex;
