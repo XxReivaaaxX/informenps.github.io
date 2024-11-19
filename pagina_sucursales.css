@@ -276,11 +276,11 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 }
 .descripcion{
     padding-top: 0%;
-    padding-left: 35px;
+    padding-left: 15px;
     font-size: 20px;
     justify-content: center; 
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     color: #000;
 }
 .servicios{
