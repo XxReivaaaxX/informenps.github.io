@@ -302,7 +302,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
         scale: 100%;
     }
 }
-.contenedor .servicio-individual{
+.contenedor .servicio-cont{
 view-timeline-name: --image;
 view-timeline-axis: block;
 animation-timeline: --image;
