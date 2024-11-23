@@ -325,11 +325,14 @@ animation-name: show;
 main .sobre-nosotros{
     padding: 30px 0 60px 0;
 }
+.contenedor sobre-nosotros{
+    background: #BDECB6;
+}
 .contenedor-sobre-nosotros{
     display: flex;
     justify-content: space-evenly;
-    background: #BDECB6;
 }
+
 .imagen{
     width: 38%;
 }
