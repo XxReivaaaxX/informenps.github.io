@@ -272,7 +272,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     justify-content: center; 
     align-items: center;
     flex-direction: row;
-    background-color: gray;
+    background: #BDECB6;
 }
 .descripcion{
     padding-top: 0%;
@@ -284,7 +284,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     color: #000;
 }
 .servicios{
-    background: #f2f2f2;
+    background: #BDECB6;
     padding-bottom: 30px;
 }
 .servicio-cont{
@@ -328,7 +328,7 @@ main .sobre-nosotros{
 .contenedor-sobre-nosotros{
     display: flex;
     justify-content: space-evenly;
-    background-color: gray;
+    background: #BDECB6;
 }
 .imagen{
     width: 38%;
