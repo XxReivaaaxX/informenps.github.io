@@ -339,7 +339,7 @@ animation-name: show;
     margin-bottom: 15px;
 }
 .contenido-textos h3 span{
-    background: gray;
+    background: #008f39;
     color: #fff;
     border-radius: 50%;
     display: inline-block;
