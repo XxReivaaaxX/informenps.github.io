@@ -339,6 +339,9 @@ main .sobre-nosotros{
 .sobre-nosotros .contenido-textos{
     width: 48%;
 }
+.contenido-textos {
+    background: #BDECB6;
+}
 .contenido-textos h3{
     margin-bottom: 15px;
     color: #000;
