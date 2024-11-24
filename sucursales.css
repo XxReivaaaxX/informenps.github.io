@@ -338,6 +338,7 @@ main .sobre-nosotros{
 }
 .contenido-textos {
     background: #BDECB6;
+    padding: 2px;
 }
 .contenido-textos h3{
     margin-bottom: 15px;
