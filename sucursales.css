@@ -272,7 +272,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     justify-content: center; 
     align-items: center;
     flex-direction: row;
-    background: #cdcdcd;
+    /*background: #cdcdcd;*/
 }
 .descripcion{
     padding-top: 0%;
@@ -336,7 +336,7 @@ main .sobre-nosotros{
     width: 48%;
 }
 .contenido-textos {
-    background: #cdcdcd;
+    /*background: #cdcdcd;*/
     padding-bottom: 10px;
     border-radius: 10px;
 }
