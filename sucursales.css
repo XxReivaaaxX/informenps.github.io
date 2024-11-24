@@ -272,7 +272,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     justify-content: center; 
     align-items: center;
     flex-direction: row;
-    background: #BDECB6;
+    background: #cdcdcd;
 }
 .descripcion{
     padding-top: 0%;
@@ -284,7 +284,6 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     color: #000;
 }
 .servicios{
-    background: #cdcdcd;
     padding-bottom: 30px;
 }
 .servicio-cont{
