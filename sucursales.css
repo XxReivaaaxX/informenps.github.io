@@ -363,6 +363,7 @@ main .sobre-nosotros{
 }
 /* RESEÑAS-COMENTARIOS  */
 .containers{
+    padding-left: 25px;
     display: flex;
     width: 1040px;
     flex-wrap: wrap;
