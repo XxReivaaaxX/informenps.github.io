@@ -389,8 +389,8 @@ main .sobre-nosotros{
     justify-content: space-evenly;
 }
 .imagen{
-    height: 587px;
-    width: 420px;
+    height: 500px;
+    width: 480px;
 }
 .sobre-nosotros .contenido-textos{
     width: 48%;
@@ -407,7 +407,7 @@ main .sobre-nosotros{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .contenido-textos h3 span{
-    background: #77d777;
+    background: #008000;
     color: #fff;
     border-radius: 50%;
     display: inline-block;
