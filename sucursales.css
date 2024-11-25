@@ -413,6 +413,7 @@ main .sobre-nosotros{
   .card-body p {
     font-size: 13px;
     margin: 0 0 40px;
+    color: #000;
   }
   .user {
     display: flex;
