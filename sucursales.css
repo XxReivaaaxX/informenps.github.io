@@ -389,8 +389,8 @@ main .sobre-nosotros{
     justify-content: space-evenly;
 }
 .imagen{
-    height: 180px;
-    width: 150px;
+    height: 500px;
+    width: 480px;
 }
 .sobre-nosotros .contenido-textos{
     width: 48%;
