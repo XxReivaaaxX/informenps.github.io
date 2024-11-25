@@ -363,10 +363,8 @@ main .sobre-nosotros{
 }
 /* RESEÑAS-COMENTARIOS  */
 .containers{
-    padding-left: 30px;
     display: flex;
     width: 1040px;
-    justify-content: space-evenly;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
