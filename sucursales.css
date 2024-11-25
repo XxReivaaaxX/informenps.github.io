@@ -281,7 +281,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     align-items: center;
     flex-direction: column;
     color: #008f39;
-    text-shadow: 0 0.1em 20px black, 0.05em -0.03em 0 black, 0.05em 0.005em 0 black, 0em 0.08em 0 black, 0.05em 0.08em 0 black, 0px -0.03em 0 black, -0.03em -0.03em 0 black, -0.03em 0.08em 0 black, -0.03em 0 0 black;
+    text-shadow: 0 0.1em 20px #BDECB6, 0.05em -0.03em 0 #BDECB6, 0.05em 0.005em 0 #BDECB6, 0em 0.08em 0 #BDECB6, 0.05em 0.08em 0 #BDECB6, 0px -0.03em 0 #BDECB6 -0.03em -0.03em 0 #BDECB6, -0.03em 0.08em 0 #BDECB6, -0.03em 0 0 #BDECB6;
 }
 p span {
     -webkit-transform: scale(0.9);
