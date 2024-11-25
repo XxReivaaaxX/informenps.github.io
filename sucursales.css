@@ -369,6 +369,8 @@ main .sobre-nosotros{
     width: 1040px;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .card {
     margin: 10px;
