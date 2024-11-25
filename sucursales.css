@@ -285,16 +285,16 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
     flex-direction: column;
     color: #000;
 }
-.descripcion p span {
+p span {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
     display: inline-block;
   }
-  .descripcion p span:first-child {
+p span:first-child {
     -webkit-animation: bop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate;
             animation: bop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate;
   }
-  .descripcion p span:last-child {
+p span:last-child {
     -webkit-animation: bopB 1s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate;
             animation: bopB 1s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards infinite alternate;
   }
