@@ -276,7 +276,7 @@ input[id="3"]:checked ~ .paginacion-hover .item-paginacion[for="3"]{
 }
 .descripcion{
     padding-top: 0%;
-    padding-left: 15px;
+    padding-left: 30px;
     font-size: 40px;
     justify-content: center; 
     align-items: center;
