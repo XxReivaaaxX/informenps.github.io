@@ -364,6 +364,7 @@ main .sobre-nosotros{
 }
 /* RESEÑAS-COMENTARIOS  */
 .containers{
+    padding-left: 50px;
     display: flex;
     width: 1040px;
     justify-content: space-evenly;
