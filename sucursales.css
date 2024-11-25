@@ -477,7 +477,7 @@ main .sobre-nosotros{
     margin: 0 0 40px;
     color: #000;
   }
-  .h5 {
+  .p {
     color: #000;
   }
   .user {
@@ -490,7 +490,7 @@ main .sobre-nosotros{
     height: 40px;
     margin-right: 10px;
   }
-  .user-info h5 {
+  .user-info p {
     margin: 0;
   }
   .user-info small {
