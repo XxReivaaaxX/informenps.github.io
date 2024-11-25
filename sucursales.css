@@ -435,7 +435,7 @@ main .sobre-nosotros{
     color: #545d7a;
   }
 /* Otra tarjeta */
-.card_i {
+.cardi {
     width: 230px;
     border-radius: 20px;
     background: #1b233d;
@@ -445,11 +445,11 @@ main .sobre-nosotros{
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   
-  .card_i:hover {
+  .cardi:hover {
     transform: scale(1.05);
   }
   
-  .card_i .top-section {
+  .cardi .top-section {
     height: 150px;
     border-radius: 15px;
     display: flex;
@@ -458,7 +458,7 @@ main .sobre-nosotros{
     position: relative;
   }
   
-  .card_i .top-section .border {
+  .cardi .top-section .border {
     border-bottom-right-radius: 10px;
     height: 30px;
     width: 130px;
@@ -469,7 +469,7 @@ main .sobre-nosotros{
     box-shadow: -10px -10px 0 0 #1b233d;
   }
   
-  .card_i .top-section .border::before {
+  .cardi .top-section .border::before {
     content: "";
     position: absolute;
     width: 15px;
@@ -481,7 +481,7 @@ main .sobre-nosotros{
     box-shadow: -5px -5px 0 2px #1b233d;
   }
   
-  .card_i .top-section::before {
+  .cardi .top-section::before {
     content: "";
     position: absolute;
     top: 30px;
@@ -493,7 +493,7 @@ main .sobre-nosotros{
     box-shadow: -5px -5px 0 2px #1b233d;
   }
   
-  .card_i .top-section .icons {
+  .cardi .top-section .icons {
     position: absolute;
     top: 0;
     width: 100%;
@@ -502,38 +502,38 @@ main .sobre-nosotros{
     justify-content: space-between;
   }
   
-  .card_i .top-section .icons .logo {
+  .cardi .top-section .icons .logo {
     height: 100%;
     aspect-ratio: 1;
     padding: 7px 0 7px 15px;
   }
   
-  .card_i .top-section .icons .logo .top-section {
+  .cardi .top-section .icons .logo .top-section {
     height: 100%;
   }
   
-  .card_i .top-section .icons .social-media {
+  .cardi .top-section .icons .social-media {
     height: 100%;
     padding: 8px 15px;
     display: flex;
     gap: 7px;
   }
   
-  .card_i .top-section .icons .social-media .svg {
+  .cardi .top-section .icons .social-media .svg {
     height: 100%;
     fill: #1b233d;
   }
   
-  .card_i .top-section .icons .social-media .svg:hover {
+  .cardi .top-section .icons .social-media .svg:hover {
     fill: white;
   }
   
-  .card_i .bottom-section {
+  .cardi .bottom-section {
     margin-top: 15px;
     padding: 10px 5px;
   }
   
-  .card_i .bottom-section .title {
+  .cardi .bottom-section .title {
     display: block;
     font-size: 17px;
     font-weight: bolder;
@@ -542,29 +542,29 @@ main .sobre-nosotros{
     letter-spacing: 2px;
   }
   
-  .card_i .bottom-section .row {
+  .cardi .bottom-section .row {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
   }
   
-  .card_i .bottom-section .row .item {
+  .cardi .bottom-section .row .item {
     flex: 30%;
     text-align: center;
     padding: 5px;
     color: rgba(170, 222, 243, 0.721);
   }
   
-  .card_i .bottom-section .row .item .big-text {
+  .cardi .bottom-section .row .item .big-text {
     font-size: 12px;
     display: block;
   }
   
-  .card_i .bottom-section .row .item .regular-text {
+  .cardi .bottom-section .row .item .regular-text {
     font-size: 9px;
   }
   
-  .card_i .bottom-section .row .item:nth-child(2) {
+  .cardi .bottom-section .row .item:nth-child(2) {
     border-left: 1px solid rgba(255, 255, 255, 0.126);
     border-right: 1px solid rgba(255, 255, 255, 0.126);
   }
