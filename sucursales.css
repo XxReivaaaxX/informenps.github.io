@@ -328,9 +328,6 @@ main .sobre-nosotros{
     display: flex;
     justify-content: space-evenly;
 }
-.contenedor_-sobre-nosotros.titulo-suc{
-    font-size: 30px;
-}
 .imagen{
     width: 38%;
 }
