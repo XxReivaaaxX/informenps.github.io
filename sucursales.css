@@ -401,14 +401,14 @@ main .sobre-nosotros{
     text-transform: uppercase;
     cursor: pointer;
   }
-  .tag-teal {
+  .tag-green {
     background-color: #47bcd4;
   }
-  .tag-purple {
-    background-color: #5e76bf;
+  .tag-red {
+    background-color: red;
   }
-  .tag-pink {
-    background-color: #cd5b9f;
+  .tag-yellow {
+    background-color: yellow;
   }
   .card-body p {
     font-size: 13px;
