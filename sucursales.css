@@ -570,32 +570,3 @@ main .sobre-nosotros{
     background: #ffc303;
   }
   
-  .palette--two .palette__base {
-    display: grid;
-    grid-gap: 12px;
-    justify-self: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-  .palette--two .palette__cover {
-    background: #ee4266;
-  }
-  .palette--two .palette__cover__top {
-    background: #e23a5d;
-  }
-  .palette--two .palette__cover span {
-    max-width: 62%;
-    background: #ee4266;
-  }
-  .palette--two .palette__shade:nth-child(1) {
-    background: #ee898d;
-  }
-  .palette--two .palette__shade:nth-child(2) {
-    background: #ec6b73;
-  }
-  .palette--two .palette__shade:nth-child(3) {
-    background: #d25980;
-  }
-  .palette--two .palette__shade:nth-child(4) {
-    background: #c24d88;
-  }
