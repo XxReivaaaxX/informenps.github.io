@@ -403,6 +403,7 @@ main .sobre-nosotros{
 .contenido-textos h3{
     margin-bottom: 15px;
     color: #000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .contenido-textos h3 span{
     background: #008f39;
