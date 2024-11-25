@@ -328,7 +328,7 @@ main .sobre-nosotros{
     display: flex;
     justify-content: space-evenly;
 }
-.titulo-suc{
+.contenedor_-sobre-nosotros.titulo-suc{
     font-size: 30px;
 }
 .imagen{
@@ -379,8 +379,6 @@ main .sobre-nosotros{
     margin-top: 1px;
     margin-left: 320px;
 }
-
-/* RESEÑAS - COMENTARIOS */
 .cajaResena {
     background-color: #409dc4;
     color: black;
