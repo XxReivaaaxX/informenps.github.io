@@ -391,6 +391,8 @@ main .sobre-nosotros{
 .imagen{
     width: 36%;
     height: 15%;
+    justify-content: center;
+    align-items: center;
 }
 .sobre-nosotros .contenido-textos{
     width: 48%;
