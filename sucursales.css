@@ -497,11 +497,11 @@ main .sobre-nosotros{
     color: #545d7a;
   }
 /*Tarjeta Of */
-.cards_{
+.cards{
     display: flex;
     justify-content: space-evenly;
 }
-.cards_ .card_{
+.cards .card{
     background: gray;
     display: flex;
     width: 46%;
@@ -511,7 +511,7 @@ main .sobre-nosotros{
     border-radius: 5px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
 }
-.cards_ .card_ img{
+.cards .card img{
     width: 200px;
     height: 180px;
     object-fit: cover;
@@ -519,7 +519,7 @@ main .sobre-nosotros{
     border-radius: 50%;
     display: block;
 }
-.cards_ .card_ > .contenido-texto-card{
+.cards .card > .contenido-texto-card{
     width: 60%;
     color: #fff;
     text-align: center;
