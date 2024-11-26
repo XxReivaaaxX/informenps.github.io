@@ -5,8 +5,8 @@
 }
 
 body {
-  background: faf5f6;
-  font-family: "Quicksand", sans-serif;
+  background: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #333;
 }
 
@@ -60,7 +60,6 @@ header nav a {
 }
 h1 {
   width: 100%;
-  margin: 3em auto 1.5em;
   font-size: 40px;
   text-align: center;
 }
