@@ -520,7 +520,7 @@ main .sobre-nosotros{
     display: block;
     cursor: pointer;
 }
-.cards .card > .contenido-texto-card{
+.cards .card > .contenido-texto-card .h8{
     width: 60%;
     color: #000;
     text-align: center;
