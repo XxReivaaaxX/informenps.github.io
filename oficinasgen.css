@@ -92,7 +92,7 @@
   .palette__cover__border {
     width: 80%;
     height: 80%;
-    border: 7px solid #fff;
+    border: 3px solid #fff;
     margin: 10%;
   }
   .palette__cover span {
