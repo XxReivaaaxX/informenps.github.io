@@ -5,52 +5,24 @@
   }
   
   body {
-    background: faf5f6;
-    font-family: "Quicksand", sans-serif;
+    background: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #333;
   }
   
-  aside.context {
+ 
+.footer {
+    background: #008f39;
     text-align: center;
-    color: #333;
-    line-height: 1.7;
-  }
-  aside.context a {
-    text-decoration: none;
-    color: #333;
-    padding: 3px 0;
-    border-bottom: 1px dashed;
-  }
-  aside.context .explanation {
-    max-width: 700px;
-    margin: 4em auto 0;
-  }
-  
-  footer {
-    text-align: center;
-    margin: 3em auto;
-    width: 100%;
-  }
-  footer a {
-    text-decoration: none;
-    display: inline-block;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px dashed #333;
-    color: #333;
-    margin: 5px;
-  }
-  footer a:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
-  footer a .icons {
-    margin-top: 12px;
-    display: inline-block;
-    font-size: 20px;
-  }
-  
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.footer h3 {
+    color: #BDECB6;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
   h1 {
     width: 100%;
     margin: 3em auto 1.5em;
