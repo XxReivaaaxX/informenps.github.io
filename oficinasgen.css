@@ -2,7 +2,6 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0px;
   }
   
   body {
@@ -94,7 +93,7 @@
     width: 80%;
     height: 80%;
     border: 7px solid #fff;
-    margin: 5%;
+    margin: 10%;
   }
   .palette__cover span {
     display: inline-block;
