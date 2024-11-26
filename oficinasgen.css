@@ -204,6 +204,7 @@ h4 small {
   height: 80%;
   border: 7px solid #fff;
   margin: 10%;
+  cursor: pointer;
 }
 .palette__cover span {
   display: inline-block;
