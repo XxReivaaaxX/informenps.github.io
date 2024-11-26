@@ -390,10 +390,6 @@ main .sobre-nosotros{
 }
 .imagen{
     width: 36%;
-    height: 15%;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 70px;
 }
 .sobre-nosotros .contenido-textos{
     width: 48%;
