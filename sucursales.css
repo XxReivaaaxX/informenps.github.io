@@ -496,3 +496,32 @@ main .sobre-nosotros{
   .user-info small {
     color: #545d7a;
   }
+/*Tarjeta Of */
+.cards_{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cards_ .card_{
+    background: gray;
+    display: flex;
+    width: 46%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+.cards_ .card_ img{
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+.cards_ .card_ > .contenido-texto-card{
+    width: 60%;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+}
