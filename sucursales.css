@@ -520,9 +520,9 @@ main .sobre-nosotros{
     display: block;
     cursor: pointer;
 }
-.cards .card > .contenido-texto-card .h8{
+.cards .card > .contenido-texto-card{
     width: 60%;
-    color: #000;
+    color: #BDECB6;
     text-align: center;
     font-size: 25px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
