@@ -522,8 +522,9 @@ main .sobre-nosotros{
 }
 .cards .card > .contenido-texto-card{
     width: 60%;
-    color: #BDECB6;
+    color: #000;
     text-align: center;
     font-size: 25px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
 }
