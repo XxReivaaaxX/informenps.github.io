@@ -299,7 +299,7 @@ h4 small {
 }
 .palette--one .palette__cover span {
   max-width: 50%;
-  background: #BDECB6;
+  background: #50cf01;
 }
 
 .palette--two .palette__base {
@@ -320,23 +320,23 @@ h4 small {
   background: #1e5d01;
 }
 .palette--two .palette__shade:nth-child(1) {
-  background: #ee898d;
+  background: #1e9201;
 }
 .palette--two .palette__shade:nth-child(2) {
-  background: #ec6b73;
+  background: #50cf01;
 }
 .palette--two .palette__shade:nth-child(3) {
-  background: #d25980;
+  background: #1e9201;
 }
 .palette--two .palette__shade:nth-child(4) {
-  background: #c24d88;
+  background: #50cf01;
 }
 
 .palette--three .palette__cover {
   background: #BDECB6;
 }
 .palette--three .palette__cover__top {
-  background: #016cb4;
+  background: #0f8801;
 }
 .palette--three .palette__cover span {
   max-width: 48%;
@@ -378,37 +378,4 @@ h4 small {
 }
 .palette--three .palette__shade:nth-child(7) {
   background: #149ecb;
-}
-
-.palette--four .palette__base {
-  display: grid;
-  grid-template-columns: 50% auto;
-  grid-template-rows: auto 20% 20%;
-}
-.palette--four .palette__shade:nth-child(1) {
-  grid-row: 1/ span 2;
-  background: #bfbfbf;
-}
-.palette--four .palette__shade:nth-child(2) {
-  grid-row: 3 / span 1;
-  background: #a1a1a1;
-}
-.palette--four .palette__shade:nth-child(3) {
-  background: #717171;
-}
-.palette--four .palette__shade:nth-child(4) {
-  background: #585858;
-}
-.palette--four .palette__shade:nth-child(5) {
-  background: #4b4b4b;
-}
-.palette--four .palette__cover {
-  background: #2a2e45;
-}
-.palette--four .palette__cover__top {
-  background: #171926;
-}
-.palette--four .palette__cover span {
-  max-width: 59%;
-  background: #2a2e45;
 }
