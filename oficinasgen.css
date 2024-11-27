@@ -96,7 +96,7 @@ header nav a {
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 220px;
+  right: 225px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
@@ -310,10 +310,10 @@ h4 small {
   grid-template-rows: repeat(2, 1fr);
 }
 .palette--two .palette__cover {
-  background: #ee4266;
+  background: #008f39;
 }
 .palette--two .palette__cover__top {
-  background: #e23a5d;
+  background: #50cf01;
 }
 .palette--two .palette__cover span {
   max-width: 62%;
