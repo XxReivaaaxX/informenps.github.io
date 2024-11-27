@@ -1,3 +1,7 @@
+<?php
+    $conexion=mysql_connect('CO1P84S\REP04','DWHUSER','dwhuser','Canales');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,31 +11,22 @@
 </head>
 <body>
     <table>
+        <tr>
         <td>ID_CLIENTE</td>
-    </table>
-
-
-
-    <?php
-    include_once 'conexion.php';
-    $objeto = new Conexion();
-    $conexion = $objeto->Conectar();
-    
-    
-    $consulta = "SELECT * FROM CART_ID"
-    $resultado->execute();
-    $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-?>
-
+        </tr>
+  
 <?php
-foreach ($data as $dat) {
-    ?>
+$sql="SELECT * FROM CART_ID";
+$result=mysqli_query($conexion,$sql);
 
+while($mostrar=mysqli_fetch_array($result)){
+    ?>
     <tr>
-        <td><?php echo $dat['ID_CLIENTE']?></td>
+        <td><?php echo $mostrar['ID_CLIENTE']?></td>
     </tr>
-    <?php
-}  
+<?php
+}
 ?>
+</table>
 </body>
 </html>
