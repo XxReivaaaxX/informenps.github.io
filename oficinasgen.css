@@ -96,7 +96,7 @@ header nav a {
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 200px;
+  right: 210px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
@@ -129,7 +129,7 @@ header nav a {
 
 
 .collapsible-text p{
-  padding-left: 30px;
+  padding-left: 40px;
   padding-right: 15px;
   font-size: 15px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
