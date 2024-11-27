@@ -277,29 +277,29 @@ h4 small {
   grid-row: 1 / span 2;
   grid-column: 2 / span 1;
   margin: 20px 0;
-  background: #fadc89;
+  background: #008f39;
 }
 .palette--one .palette__shade:nth-child(2) {
-  background: #fce95b;
+  background: #50cf01;
 }
 .palette--one .palette__shade:nth-child(3) {
-  background: #ffd03a;
+  background: #0f8801;
 }
 .palette--one .palette__shade:nth-child(4) {
-  background: #fde008;
+  background: #1e5d01;
 }
 .palette--one .palette__shade:nth-child(5) {
-  background: #fec309;
+  background: #1e9201;
 }
 .palette--one .palette__cover {
-  background: #ffc303;
+  background: #50cf01;
 }
 .palette--one .palette__cover__top {
-  background: #ecb404;
+  background: #0f8801;
 }
 .palette--one .palette__cover span {
   max-width: 50%;
-  background: #ffc303;
+  background: #1e5d01;
 }
 
 .palette--two .palette__base {
