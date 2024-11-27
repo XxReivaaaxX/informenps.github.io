@@ -4,12 +4,12 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; 
+  color: white;
 }
 
 body {
-  background: white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: #333;
+  color: #000;
 }
 
 .contenedor {
@@ -96,7 +96,7 @@ header nav a {
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 80px;
+  right: 0px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
@@ -132,6 +132,8 @@ header nav a {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
 
 }
 h1 {
