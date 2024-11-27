@@ -299,7 +299,7 @@ h4 small {
 }
 .palette--one .palette__cover span {
   max-width: 50%;
-  background: #1e5d01;
+  background: #BDECB6;
 }
 
 .palette--two .palette__base {
@@ -333,14 +333,14 @@ h4 small {
 }
 
 .palette--three .palette__cover {
-  background: #0075c4;
+  background: #BDECB6;
 }
 .palette--three .palette__cover__top {
   background: #016cb4;
 }
 .palette--three .palette__cover span {
   max-width: 48%;
-  background: #0075c4;
+  background: #50cf01;
 }
 .palette--three .palette__base {
   display: grid;
