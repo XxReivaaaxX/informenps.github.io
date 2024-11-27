@@ -96,7 +96,7 @@ header nav a {
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 229px;
+  right: 220px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
