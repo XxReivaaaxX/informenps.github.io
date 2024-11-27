@@ -90,13 +90,13 @@ header nav a {
   border-radius: 4px;
   z-index: 1;
   font-size: 18px;
-  padding-left: 130px;
+  padding-left: 160px;
 }
 
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 210px;
+  right: 229px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
@@ -129,7 +129,7 @@ header nav a {
 
 
 .collapsible-text p{
-  padding-left: 40px;
+  padding-left: 15px;
   padding-right: 15px;
   font-size: 15px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
