@@ -96,7 +96,7 @@ header nav a {
 .collapsible label:after{
   content: "";
   position: absolute;
-  right: 0px;
+  right: 200px;
   width: 29px;
   height: 25px;
   background: url(img/icon12.png) no-repeat 0 0; 
@@ -129,8 +129,8 @@ header nav a {
 
 
 .collapsible-text p{
-  padding-left: 15px;
-  padding-right: 30px;
+  padding-left: 30px;
+  padding-right: 15px;
   font-size: 15px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: white;
@@ -140,12 +140,13 @@ h1 {
   width: 100%;
   font-size: 40px;
   text-align: center;
+  color: #000;
 }
 h1 small {
   text-transform: none;
   display: block;
   margin: 20px 0;
-  font: 300 20px "QuickSand", sans-serif;
+  font: 300 20px 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #999;
 }
 
@@ -154,12 +155,13 @@ h4 {
   margin: 2em auto 0;
   font-size: 20px;
   text-align: center;
+  color: #000;
 }
 h4 small {
   text-transform: uppercase;
   display: block;
   margin: 10px 0;
-  font: 300 15px "QuickSand", sans-serif;
+  font: 300 15px 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #999;
 }
 
@@ -233,6 +235,7 @@ h4 small {
   border-radius: 8px;
   padding: 15px;
   grid-gap: 8px;
+  cursor: pointer;
 }
 .palette:hover .palette__cover {
   transform: rotateX(78deg);
