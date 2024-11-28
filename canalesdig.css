@@ -54,7 +54,7 @@ header {
 .collapsible label:after{
     content: "";
     position: absolute;
-    right: 200px;
+    right: 140px;
     width: 29px;
     height: 25px;
     background: url(img/icon12.png) no-repeat 0 0; 
