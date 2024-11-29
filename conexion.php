@@ -1,20 +1,15 @@
 <?php
-class Conexion{
-    public static function Conectar(){
-        define ('servidor', 'CO1P84S\REP04');
-        define ('nombre_bd', 'Canales');
-        define ('usuario', 'DWHUSER');
-        define ('password', 'dwhuser');
+$serverName = "CO1P84S\REP04"; //serverName\instanceName
 
+// Puesto que no se han especificado UID ni PWD en el array  $connectionInfo,
+// La conexión se intentará utilizando la autenticación Windows.
+$connectionInfo = array( "Database"=>"Canales");
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-
-        $opciones = array (PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
-        try{
-            $conexion = new PDO("mysql_host=".servidor."; dbname" .nombre_bd, usuario,password, $opciones);
-            return $conexion;
-        }catch (Exception $e){
-            die("El error de Conexión es: ". $e->getMessage());
-        }
-        }
-    }
+if( $conn ) {
+     echo "Conexión establecida.<br />";
+}else{
+     echo "Conexión no se pudo establecer.<br />";
+     die( print_r( sqlsrv_errors(), true));
+}
 ?>
