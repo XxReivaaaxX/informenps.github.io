@@ -424,7 +424,7 @@ animation-name: show;
     background-color: #04AA6D;
   }
   
-  img {
+  /*img {
     display: block;
     height: auto;
     max-width: 100%;
