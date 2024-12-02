@@ -343,3 +343,41 @@ p span {
               transform: scale(1) rotateZ(-3deg);
     }
   }
+  .servicios{
+    padding-bottom: 30px;
+}
+.servicio-cont{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    } 
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+.contenedor .servicio-cont{
+view-timeline-name: --image;
+view-timeline-axis: block;
+animation-timeline: --image;
+animation-name: show;
+/*animation-range: entry 25% cover 40%; */
+}
+.servicio-individual{
+    width: 28%;
+    text-align: center;
+    justify-content: center;
+}
+.servicio-individual img{
+    width: 90%;
+    cursor: pointer;
+}
+.servicio-individual h3{
+    margin: 10px 0;
+    color: #000;
+}
