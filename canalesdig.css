@@ -424,7 +424,7 @@ animation-name: show;
     background-color: #04AA6D;
   }
   
-  .column-33 img {
+  .img1 {
     display: block;
     height: auto;
     max-width: 100%;
@@ -436,7 +436,7 @@ animation-name: show;
       width: 100%;
       text-align: center;
     }
-    img {
+    .img1 {
       margin: auto;
     }
   }
