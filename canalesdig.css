@@ -439,6 +439,7 @@ animation-name: show;
     .column-33 {
       width: 100%;
       text-align: center;
+      align-items: center;
     }
     .img1 {
       margin: auto;
