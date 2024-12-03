@@ -493,10 +493,10 @@ main .sobre-nosotros{
   }
 @keyframes mover{
     0%{
-        transform: translateX(0);
+        transform: rotateY(0);
     }
     100%{
-        transform: translateX(100px);
+        transform: rotateY(100px);
     }
 
 }
