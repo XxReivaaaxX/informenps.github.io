@@ -387,8 +387,8 @@ animation-name: show;
 /*Zig Zag */
 .container {
     padding: 64px;
-    background-color: #BDECB6;
-    border-radius: 12em;
+    /*background-color: #BDECB6;
+    border-radius: 12em; */
   }
   
   .row:after {
