@@ -399,6 +399,8 @@ animation-name: show;
     float: left;
     width: 66.66666%;
     padding: 20px;
+    background-color: #BDECB6;
+    border-radius: 12em;
   }
   
   .column-33 {
