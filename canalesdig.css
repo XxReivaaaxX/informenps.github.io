@@ -401,7 +401,7 @@ animation-name: show;
     padding: 20px;
   }
   
-.container .column-66{
+.container.column-66{
     background-color: #BDECB6;
     border-radius: 12em;
 }
