@@ -400,13 +400,13 @@ animation-name: show;
   .column-66 {
     float: left;
     width: 66.66666%;
-    padding: 40px;
+    padding: 20px;
   }
   
   .column-33 {
     float: left;
     width: 33.33333%;
-    padding: 40px;
+    padding: 20px;
   }
   
   .large-font {
