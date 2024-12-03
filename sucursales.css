@@ -489,7 +489,17 @@ main .sobre-nosotros{
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    animation: mover 5s infinite ease-in-out;
   }
+@keyframes mover{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(100px);
+    }
+
+}
   .user-info h5 {
     margin: 0;
   }
