@@ -440,8 +440,8 @@ animation-name: show;
     display: block;
     height: auto;
     max-width: 100%;
-    align-items: center;
-    text-align: center;
+    align-items: self-end;
+    text-align: left;
   }
   
   @media screen and (max-width: 1000px) {
