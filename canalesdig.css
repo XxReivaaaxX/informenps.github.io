@@ -413,6 +413,7 @@ animation-name: show;
     height: 300px;
     width: 5px;
     background-color: #BDECB6;
+    align-items: end;
   }
 
   .large-font {
