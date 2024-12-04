@@ -409,12 +409,12 @@ animation-name: show;
     padding: 20px;
   }
 
-  .linea-vertical{
+  /*.linea-vertical{
     height: 300px;
     width: 5px;
     background-color: #BDECB6;
     align-items: end;
-  }
+}*/
 
   .large-font {
     font-size: 28px;
