@@ -408,7 +408,13 @@ animation-name: show;
     width: 33.33333%;
     padding: 20px;
   }
-  
+
+  .linea-vertical{
+    height: 300px;
+    width: 5px;
+    background-color: #BDECB6;
+  }
+
   .large-font {
     font-size: 28px;
     color: #BDECB6;
