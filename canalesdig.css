@@ -399,23 +399,16 @@ animation-name: show;
   
   .column-66 {
     float: left;
-    width: 33.33333%;
+    width: 66.66666%;
     padding: 20px;
   }
   
   .column-33 {
     float: left;
-    width: 66.66666%;
+    width: 33.33333%;
     padding: 20px;
   }
-
-  /*.linea-vertical{
-    height: 300px;
-    width: 5px;
-    background-color: #BDECB6;
-    align-items: end;
-}*/
-
+  
   .large-font {
     font-size: 28px;
     color: #BDECB6;
@@ -440,8 +433,8 @@ animation-name: show;
     display: block;
     height: auto;
     max-width: 100%;
-    align-items: self-end;
-    text-align: left;
+    align-items: center;
+    text-align: center;
   }
   
   @media screen and (max-width: 1000px) {
