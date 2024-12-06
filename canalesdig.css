@@ -409,15 +409,11 @@ animation-name: show;
     padding: 20px;
   }
   
-  .large-font {
-    font-size: 28px;
-    color: #BDECB6;
-  }
-  
   .xlarge-font {
     font-size: 35px;
     padding-bottom: 20px;
     color: #BDECB6;
+    padding-left: 100px;
   }
   
   .button {
