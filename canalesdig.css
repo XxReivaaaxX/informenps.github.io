@@ -398,7 +398,7 @@ animation-name: show;
   }
   
   .column-66 {
-    float: left;
+    float: right;
     width: 66.66666%;
     padding: 20px;
   }
