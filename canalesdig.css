@@ -398,14 +398,14 @@ animation-name: show;
   }
   
   .column-66 {
-    float: right;
-    width: 66.66666%;
+    float: left;
+    width: 66.66%;
     padding: 20px;
   }
   
   .column-33 {
     float: left;
-    width: 33.33333%;
+    width: 33.33%;
     padding: 20px;
   }
   
