@@ -130,7 +130,7 @@ header nav a {
     min-height: 18.10em;
     color: white;
     background: url(img/banapp.png);
-    border-radius: 60px;
+    border-radius: 40px;
     background-position: center center;
     background-size: cover;
     display: flex;
