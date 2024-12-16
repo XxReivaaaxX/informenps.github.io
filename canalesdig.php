@@ -204,7 +204,7 @@ include_once('pp.php')
                     echo 'Error';
                 }
                 while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                    echo $obj[Venta = 'COMENTARIO_CLIENTE'] .'</br>';
+                    echo $obj['COMENTARIO_CLIENTE'] .'</br>';
                  }
                  ?> 
                 </p>
