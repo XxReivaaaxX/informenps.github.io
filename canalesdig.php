@@ -195,8 +195,6 @@ include_once('pp.php')
                 <span class="tag tag-red">Detractor</span><br>
                 <p>
                     <?php 
-                    if (!$conn)
-                    (print_r(sqlsrv_errors(), true));
                 $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                 FROM REPORTING_NPS_DETALLE WHERE COMENTARIO_CLIENTE IS NOT NULL";
                 $stmt = sqlsrv_query($conn, $tsql);
