@@ -1,3 +1,7 @@
+<?php
+include_once('pp.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -190,7 +194,19 @@
             <div class="card-body">
                 <span class="tag tag-red">Detractor</span><br>
                 <p>
-                    Venta: Verbatim vacío
+                    <?php 
+                    if (!$conn)
+                    (print_r(sqlsrv_errors(), true));
+                $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                FROM REPORTING_NPS_DETALLE WHERE COMENTARIO_CLIENTE IS NOT NULL";
+                $stmt = sqlsrv_query($conn, $tsql);
+                if ($stmt == false) {
+                    echo 'Error';
+                }
+                while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                    echo $obj[Venta = 'COMENTARIO_CLIENTE'] .'</br>';
+                 }
+                 ?> 
                 </p>
                 <p>
                     Atención: Buena atención
@@ -234,6 +250,7 @@
             <div class="card-body">
                 <span class="tag tag-green">Promotor</span><br>
                 <p>
+
                     Venta: Verbatim vacío
                 </p>
                 <p>
@@ -250,83 +267,6 @@
             </div>
         </div>
     </div>
-    <section class="contenido">
-        <div class="mostrador" id="mostrador">
-            <div class="fila">
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="img/app_android.png" alt="">
-                    </div>
-                    <p class="descripcion">APP ANDROID</p>
-                    <span class="precio">5</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="img/app_ios.png" alt="">
-                    </div>
-                    <p class="descripcion" id>APP IOS</p>
-                    <span class="precio">5</span>
-                </div>
-            </div>
-            <!-- <div class="fila">
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="img/5.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE BLAZER 97</p>
-                    <span class="precio">$ 130</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="img/6.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE LEGEND ESENTIAL</p>
-                    <span class="precio">$ 2.000</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="img/7.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE AIR ZOOM</p>
-                    <span class="precio">$ 2.500</span>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="img/8.png" alt="">
-                    </div>
-                    <p class="descripcion">NIKE TERRA KING</p>
-                    <span class="precio">$ 1.800</span>
-                </div>
-            </div> -->
-        </div>
-        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
-        <div class="seleccion" id="seleccion">
-            <div class="cerrar" onclick="cerrar()">
-                &#x2715
-            </div>
-            <div class="info">
-                <img src="img/1.png" alt="" id="img">
-                <h2 id="modelo">NIKE MODEL 1</h2>
-                <p id="descripcion">Descripción Modelo 1</p>
-
-                <span class="precio" id="precio">$ 130</span>
-
-                <div class="fila">
-                    <div class="size">
-                        <label for="">SIZE</label>
-                        <select name="" id="">
-                            <option value="">40</option>
-                            <option value="">42</option>
-                            <option value="">44</option>
-                            <option value="">46</option>
-                        </select>
-                    </div>
-                    <button>AGREGAR AL CARRITO</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <script src="script.js"></script>
     <footer class="footer">
         <h3>Experiencia del Cliente Banco Falabella Colombia</h3>
     </footer>
