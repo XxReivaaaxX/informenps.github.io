@@ -194,7 +194,7 @@ include_once('pp.php')
             <div class="card-body">
                 <span class="tag tag-red">Detractor</span><br>
                 <p>
-                    <?php 
+                    <?php header('Content-type:  text/plain; charset=utf-8');
                 $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                 FROM REPORTING_NPS_DETALLE WHERE COMENTARIO_CLIENTE IS NOT NULL";
                 $stmt = sqlsrv_query($conn, $tsql);
