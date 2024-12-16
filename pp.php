@@ -32,7 +32,7 @@
         echo 'Error';
     }
     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-        echo $obj[$nombre='Nombre_Ejecutivo'] . '</br>';
+        echo $obj['Nombre_Ejecutivo'] . '</br>';
     }
     ?>
 
