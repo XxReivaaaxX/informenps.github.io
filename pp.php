@@ -25,14 +25,14 @@
     if (!$conn)
         die(print_r(sqlsrv_errors(), true));
 
-    $tsql = "SELECT top 1 * REPORTING_NPS_DETALLE";
+    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE FROM REPORTING_NPS_DETALLE WHERE COMENTARIO_CLIENTE IS NOT NULL";
     $stmt = sqlsrv_query($conn, $tsql);
 
     if ($stmt == false) {
         echo 'Error';
     }
     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-        echo $obj['Nombre_Ejecutivo'] . '</br>';
+        echo $obj['Comentario_Cliente'] . '</br>';
     }
     ?>
 
