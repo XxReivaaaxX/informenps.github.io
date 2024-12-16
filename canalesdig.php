@@ -1,5 +1,7 @@
 <?php
 include_once('pp.php');
+?>
+<?php
 header('Content-type:  text/plain; charset=utf-8');
 ?>
 
