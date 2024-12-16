@@ -1,5 +1,6 @@
 <?php
-include_once('pp.php')
+include_once('pp.php');
+header('Content-type:  text/plain; charset=utf-8');
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@ include_once('pp.php')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
-    <link rel="icon" type="img" href="img/banco-falabella.svg" />
+    <link rel="icon" type="img" href="img/banco-falabella.svg"/>
     <title>Canales Digitales</title>
 </head>
 
@@ -194,7 +195,7 @@ include_once('pp.php')
             <div class="card-body">
                 <span class="tag tag-red">Detractor</span><br>
                 <p>
-                    <?php header('Content-type:  text/plain; charset=utf-8');
+                    <?php 
                 $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                 FROM REPORTING_NPS_DETALLE WHERE COMENTARIO_CLIENTE IS NOT NULL";
                 $stmt = sqlsrv_query($conn, $tsql);

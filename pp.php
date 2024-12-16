@@ -3,6 +3,7 @@
     $database = "Canales";
     $uid = "";
     $pass = "";
+    $header = ('Content-type:  text/plain; charset=utf-8');
 
     $connection =  [
         "Database" => $database,
