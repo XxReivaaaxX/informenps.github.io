@@ -25,7 +25,8 @@
     if (!$conn)
         die(print_r(sqlsrv_errors(), true));
 
-    $tsql = "SELECT TOP 1 FROM REPORTING_NPS_DETALLE WHERE COMENTARIO_CLIENTE IS NOT NULL";
+    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+    FROM REPORTING_NPS_DETALLE WHERE COMENTARIO_CLIENTE IS NOT NULL";
     $stmt = sqlsrv_query($conn, $tsql);
 
     if ($stmt == false) {
