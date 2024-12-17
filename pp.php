@@ -3,13 +3,13 @@
     $database = "Canales";
     $uid = "";
     $pass = "";
+    $utf8_s = "UTF-8";
 
     $connection =  [
         "Database" => $database,
         "Uid" => $uid,
-        "PWD" => $pass
+        "PWD" => $pass,
     ];
-
     $conn = sqlsrv_connect($serverName, $connection);
     if( $conn ) {
         echo "";

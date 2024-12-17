@@ -1,13 +1,8 @@
 <?php
 include_once('pp.php');
 ?>
-<?php
-header('Content-type:  text/plain; charset=utf-8');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -196,28 +191,59 @@ header('Content-type:  text/plain; charset=utf-8');
             </div>
             <div class="card-body">
                 <span class="tag tag-red">Detractor</span><br>
-                <p>
+                <p> 
                     <?php 
-                $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                FROM REPORTING_NPS_DETALLE WHERE COMENTARIO_CLIENTE IS NOT NULL";
-                $stmt = sqlsrv_query($conn, $tsql);
-                if ($stmt == false) {
-                    echo 'Error';
-                }
-                while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                    echo $obj['COMENTARIO_CLIENTE'] .'</br>';
-                 }
-                 ?> 
-                </p>
-                <p>
-                    Atención: Buena atención
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
+					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
+                     AND Tipo_Respuesta = 'DETRACTOR'  OR NIVEL_1 = 'ATENCION'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?> 
+                    </p>
+                <p> 
+                    <?php 
+                    $def_2 = "Venta: ";
+                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
+					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
+                     AND Tipo_Respuesta = 'DETRACTOR'  OR NIVEL_1 = 'VENTA'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_2, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?> 
                 </p>
                 <div class="user">
                     <img src="img/users.png" alt="user" />
                     <div class="user-info">
                         <p>Clientes<br>
                             BFCO</p>
-                        <small>23/11/2024</small>
+                        <small>
+                        <?php 
+                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+					 where PERIODO_EXPERIENCIA = '202412'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
+                    }
+                    ?> 
+                        </small>
                     </div>
                 </div>
             </div>
@@ -228,18 +254,58 @@ header('Content-type:  text/plain; charset=utf-8');
             </div>
             <div class="card-body">
                 <span class="tag tag-yellow">Neutro</span><br>
-                <p>
-                    Venta: Verbatim vacío
-                </p>
-                <p>
-                    Atención: Buena atención
-                </p>
+                <p> 
+                    <?php 
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
+					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
+                     AND Tipo_Respuesta = 'NEUTRO'  OR NIVEL_1 = 'ATENCION'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?> 
+                    </p>
+                <p> 
+                    <?php 
+                    $def_2 = "Venta: ";
+                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
+					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
+                     AND Tipo_Respuesta = 'NEUTRO'  OR NIVEL_1 = 'VENTA'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_2, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?> 
                 <div class="user">
                     <img src="img/users.png" alt="user" />
                     <div class="user-info">
                         <p>Clientes <br>
                             BFCO</p>
-                        <small>23/11/2024</small>
+                        <small>
+                        <?php 
+                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+					 where PERIODO_EXPERIENCIA = '202412'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
+                    }
+                    ?> 
+                        </small>
                     </div>
                 </div>
             </div>
@@ -251,18 +317,57 @@ header('Content-type:  text/plain; charset=utf-8');
             <div class="card-body">
                 <span class="tag tag-green">Promotor</span><br>
                 <p>
-
-                    Venta: Verbatim vacío
-                </p>
-                <p>
-                    Atención: Buena atención
-                </p>
+                <?php 
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
+					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
+                     AND Tipo_Respuesta = 'PROMOTOR'  OR NIVEL_1 = 'ATENCION'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?> 
+                    </p>
+                <p> 
+                    <?php 
+                    $def_2 = "Venta: ";
+                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
+					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
+                     AND Tipo_Respuesta = 'PROMOTOR'  OR NIVEL_1 = 'VENTA'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {cc
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_2, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?> 
                 <div class="user">
                     <img src="img/users.png" alt="user" />
                     <div class="user-info">
                         <p>Clientes <br>
                             BFCO</p>
-                        <small>23/11/2024</small>
+                        <small>   
+                        <?php 
+                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA 
+                     FROM REPORTING_NPS_DETALLE tablesample ('1')
+					 where PERIODO_EXPERIENCIA = '202412'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
+                    }
+                    ?> 
+                    </small>
                     </div>
                 </div>
             </div>
