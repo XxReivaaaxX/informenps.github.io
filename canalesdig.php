@@ -342,7 +342,7 @@ include_once('pp.php');
 					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
                      AND Tipo_Respuesta = 'PROMOTOR'  OR NIVEL_1 = 'VENTA'";
                      $stmt = sqlsrv_query($conn, $tsql);
-                     if ($stmt == false) {cc
+                     if ($stmt == false) {
                         echo 'Error';
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
