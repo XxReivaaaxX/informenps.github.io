@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona Bogotá</title>
+    <title>Zona Sur</title>
     <link rel="icon" type="img" href="img/banco-falabella.svg" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
 }
-body {
+    body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #000;
 }
@@ -144,8 +144,7 @@ header nav a {
 }
 table th{
 background-color: #008f39;
-color: white;
-padding-bottom: 15px;
+color: white;   
 }
 </style>
 </head>
@@ -181,14 +180,12 @@ padding-bottom: 15px;
  <table id="example" class="display" style="width:100%">
                 <thead>
                     <tr>
-                    <th>ID</th>
-                        <th>ID_CLIENTE</th>
-                        <th>NOMBRE_CLIENTE</th>
-                        <th>FECHA_EXPERIENCIA</th>
-                        <th>AÑO_EXPERIENCIA</th>
-                        <th>SEMANA_LIQUIDACION</th>
-                        <th>NOTA</th>
-                        <th>COMENTARIO_CLIENTE</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -674,7 +671,7 @@ padding-bottom: 15px;
 $(document).ready(function(){
     var table = $('#example').DataTable({
        orderCellsTop: true,
-       fixedHeader: true; 
+       fixedHeader: true 
     });  
 });
 </script>
