@@ -148,17 +148,6 @@ color: white;
 }
 </style>
 </head>
-<div class="wrapper">
-        <div class="collapsible">
-            <input type="checkbox" id="collapsible-head">
-            <label for="collapsible-head">ZONAS</label>
-            <div class="collapsible-text">
-                <p>Acá podrán visualizar información 
-                    de los asesor x zona (tienda)
-                </p>
-            </div>
-        </div>
-    </div>
     <header>
         <div class="contenedor">
             <a href="sucursales.html" class="logo"><img src="img/logofalabella.png" width="290" height="100"></a>
