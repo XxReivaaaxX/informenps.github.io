@@ -7,12 +7,356 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="inicio.css">
 	<link rel="icon" type="img" href="img/banco-falabella.svg" />
 	<title>Informe NPS BFCO</title>
 </head>
 
 <body>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background: #E9ECF4;
+			color: #000;
+			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+		}
+
+		body::-webkit-scrollbar-track {
+			background: #008f39
+		}
+
+		.wrapper {
+			display: flex;
+			padding-top: 0px;
+			justify-content: center;
+			background-color: #008f39;
+		}
+
+		.collapsible {
+			max-width: 450px;
+			overflow: hidden;
+			font-weight: 500;
+		}
+
+		.collapsible input {
+			display: none;
+		}
+
+		.collapsible label {
+			position: relative;
+			font-weight: 600;
+			/*background: white ; */
+			box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.895) 0 4px 11px 0 rgba(0, 0, 0, 0.8);
+			color: #BDECB6;
+			display: block;
+			margin-bottom: 10px;
+			cursor: pointer;
+			padding: 15px;
+			border-radius: 4px;
+			z-index: 1;
+			font-size: 18px;
+			padding-left: 130px;
+		}
+
+		.collapsible label:after {
+			content: "";
+			position: absolute;
+			right: 179px;
+			width: 29px;
+			height: 25px;
+			background: url(img/icon12.png) no-repeat 0 0;
+			transition: all 0.3s ease;
+		}
+
+		.collapsible input:checked+label::after {
+			transform: rotate(90deg);
+		}
+
+		.collapsible-text {
+			max-height: 1px;
+			overflow: hidden;
+			border-radius: 4px;
+			line-height: 1.4;
+			position: relative;
+			top: -100%;
+			opacity: 0.5;
+			transition: all 0.3s ease;
+			color: white;
+		}
+
+		.collapsible input:checked~.collapsible-text {
+			max-height: 300px;
+			padding-bottom: 25px;
+			/*background: green; */
+			box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.895) 0 4px 11px 0 rgba(0, 0, 0, 0.8);
+			opacity: 1;
+			top: 0;
+		}
+
+
+		.collapsible-text p {
+			padding-left: 15px;
+			padding-right: 15px;
+			font-size: 15px;
+
+		}
+
+		.contenedor {
+			width: 90%;
+			max-width: 1000px;
+			margin: 20px auto;
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(4, auto);
+			grid-template-areas: "header 	header 		header"
+				"sidebar	contenido contenido"
+				"sidebar	widget-1 	widget-2"
+				"footer 	footer 		footer";
+		}
+
+		.contenedor>div,
+		.contenedor .header,
+		.contenedor .contenido,
+		.contenedor .sidebar,
+		.contenedor .footer {
+			background: #fff;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		.contenedor .header {
+			background: black;
+			color: #fff;
+			grid-area: header;
+		}
+
+		.contenedor .header img {
+			width: 100%;
+		}
+
+		.contenedor .contenido {
+			grid-area: contenido;
+		}
+
+		.contenedor .sidebar {
+			background: #008f39;
+			text-align: left;
+			align-items: center;
+			justify-content: center;
+			min-height: 100px;
+			grid-area: sidebar;
+		}
+
+		#myImg {
+			border-radius: 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		#myImg:hover {
+			opacity: 0.7;
+		}
+
+		#myImg2 {
+			border-radius: 5px;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		#myImg2:hover {
+			opacity: 0.7;
+		}
+
+		.modal {
+			display: none;
+			position: fixed;
+
+			z-index: 1;
+			padding-top: 100px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgb(0, 0, 0);
+			background-color: rgba(0, 0, 0, 0.9);
+		}
+
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+		}
+
+		#caption {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+			text-align: center;
+			color: #ccc;
+			padding: 10px 0;
+			height: 150px;
+		}
+
+		.modal-content,
+		#caption {
+			-webkit-animation-name: zoom;
+			-webkit-animation-duration: 0.6s;
+			animation-name: zoom;
+			animation-duration: 0.6s;
+		}
+
+		@-webkit-keyframes zoom {
+			from {
+				-webkit-transform: scale(0)
+			}
+
+			to {
+				-webkit-transform: scale(1)
+			}
+		}
+
+		@keyframes zoom {
+			from {
+				transform: scale(0)
+			}
+
+			to {
+				transform: scale(1)
+			}
+		}
+
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition: 0.3s;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		@media only screen and (max-width: 700px) {
+			.modal-content {
+				width: 100%;
+			}
+		}
+
+		.contenedor .widget-1 {
+			grid-area: widget-1;
+		}
+
+		.contenedor .widget-1 img {
+			width: 100%;
+		}
+
+		.contenedor .widget-2 {
+			grid-area: widget-2;
+		}
+
+		.contenedor .widget-2 img {
+			width: 100%;
+		}
+
+		.contenedor .footer {
+			background: #008f39;
+			color: #BDECB6;
+			text-align: center;
+			grid-area: footer;
+		}
+
+		.sidebar h3 {
+			text-align: center;
+		}
+
+		/* Menu vertical*/
+
+		.vertical-menu {
+			width: 100%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		.vertical-menu a {
+			background-color: #D2F4E4;
+			color: black;
+			display: block;
+			padding: 12px;
+			text-decoration: none;
+		}
+
+		.vertical-menu a:hover {
+			background-color: #ccc;
+		}
+
+		.vertical-menu a.active {
+			background-color: #20603D;
+			color: white;
+		}
+
+		/* Menu horizontal*/
+		.horizontal-menu ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+		}
+
+		.horizontal-menu ul li {
+			float: left;
+		}
+
+		.horizontal-menu ul li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		.horizontal-menu ul li a:hover:not(.activa) {
+			background-color: #008f39;
+		}
+
+		.horizontal-menu .activa {
+			background-color: #20603D;
+
+		}
+
+		/*Responsiv*/
+		@media screen and (max-width: 768px) {
+			.contenedor {
+				grid-template-areas: "header 	header 		header"
+					"contenido 	contenido 	contenido"
+					"sidebar 	sidebar 	sidebar"
+					"widget-1 	widget-1 	widget-1"
+					"widget-2 	widget-2 	widget-2"
+					"footer 	footer 		footer";
+			}
+
+			.contenedor .widget-1 img {
+				width: 65%;
+			}
+
+			.contenedor .widget-2 img {
+				width: 65%;
+			}
+		}
+	</style>
 	<div class="wrapper">
 		<div class="collapsible">
 			<input type="checkbox" id="collapsible-head">
@@ -59,7 +403,7 @@
 		<aside class="sidebar">
 			<h4>Canales</h4>
 			<style>
-				h4{
+				h4 {
 					text-align: center;
 					color: #BDECB6;
 				}
@@ -69,8 +413,7 @@
 				<a href="canalesdig.php"><i class="fa fa-whatsapp" aria-hidden="true"></i> Canales Digitales</a>
 				<a href="#"><i class="fa fa-users" aria-hidden="true"></i> Cartera</a>
 			</nav>
-			<video width="400" height="200" controls
-			src="videos/videoinicial.mp4"></video>
+			<video width="400" height="200" controls src="videos/videoinicial.mp4"></video>
 		</aside>
 		<div class="widget-1">
 			<img id="myImg2" src="img_panel/imagen.png">

@@ -5,13 +5,349 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="npsventa.css">
   <link rel="stylesheet" href="lineatiempo.css">
   <link rel="icon" type="img" href="img/banco-falabella.svg" />
   <title>NPS App</title>
 </head>
 
 <body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      /*box-sizing: border-box;*/
+    }
+
+    body {
+      background: #E9ECF4;
+      color: #000;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+
+    .contenedor {
+      width: 97%;
+      margin: auto;
+    }
+
+    header {
+      padding: 12px 0;
+    }
+
+    .wrapper {
+      display: flex;
+      padding-top: 0px;
+      justify-content: center;
+      background-color: #008f39;
+    }
+
+    .collapsible {
+      max-width: 450px;
+      overflow: hidden;
+      font-weight: 500;
+    }
+
+    .collapsible input {
+      display: none;
+    }
+
+    .collapsible label {
+      position: relative;
+      font-weight: 600;
+      /*background: white ; */
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.895) 0 4px 11px 0 rgba(0, 0, 0, 0.8);
+      color: #BDECB6;
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+      z-index: 1;
+      font-size: 18px;
+      padding-left: 130px;
+    }
+
+    .collapsible label:after {
+      content: "";
+      position: absolute;
+      right: 115px;
+      width: 29px;
+      height: 25px;
+      background: url(img/icon12.png) no-repeat 0 0;
+      transition: all 0.3s ease;
+    }
+
+    .collapsible input:checked+label::after {
+      transform: rotate(90deg);
+    }
+
+    .collapsible-text {
+      max-height: 1px;
+      overflow: hidden;
+      border-radius: 4px;
+      line-height: 1.4;
+      position: relative;
+      top: -100%;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+
+    .collapsible-text p {
+      color: #FFFFFF;
+    }
+
+    .collapsible input:checked~.collapsible-text {
+      max-height: 300px;
+      padding-bottom: 25px;
+      /*background: green; */
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.895) 0 4px 11px 0 rgba(0, 0, 0, 0.8);
+      opacity: 1;
+      top: 0;
+    }
+
+
+    .collapsible-text p {
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 15px;
+
+    }
+
+    header .contenedor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 125px;
+
+    }
+
+    header .logo {
+      height: 130px;
+      width: 10px;
+      margin-left: 50px;
+      padding-left: 0px;
+      padding-top: 10px;
+
+    }
+
+    header nav a {
+      color: #AAA;
+      text-decoration: none;
+      margin-right: 9px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 26px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0%;
+      width: 100px;
+      height: 100px;
+
+    }
+
+    .imagen-principal {
+      font-size: 16px;
+      min-height: 18.10em;
+      color: white;
+      background: url(img/fondo1fal.jpeg);
+      border-radius: 80px;
+      background-position: center center;
+      background-size: cover;
+      display: flex;
+      padding: 5px;
+    }
+
+    .contenidoLinea {
+      background-color: #BDECB6;
+      border-radius: 25px;
+    }
+
+    .contenidoCaja h2,
+    p {
+      color: #000;
+    }
+
+    .contenidoHeader {
+      display: flex;
+      margin-left: 50px;
+      margin-right: 50px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+
+    }
+
+    .contenidoHeader img {
+      max-width: 150px;
+    }
+
+    .contenidoMenu {
+      display: flex;
+      margin-left: 100px;
+      margin-right: 100px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+    }
+
+    .contenidoMenu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+
+    }
+
+    .contenidoMenu li {
+      float: left;
+    }
+
+    .contenidoMenu li a {
+      display: block;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.indicador) {
+      background-color: rgb(236, 236, 236);
+      transform: scale(0.9);
+    }
+
+    .indicador {
+      background-color: #176FB4;
+      border-radius: 10px 10px 0 0;
+      color: white;
+
+    }
+
+    .contenidoDerecha a {
+      text-decoration: none;
+    }
+
+    .contenidoDerecha {
+      padding-top: 10px;
+
+    }
+
+
+
+
+    .linea {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .linea::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #FFFFFF;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+
+    }
+
+    .caja {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    .caja::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: #FFFFFF;
+      border: 2px solid #1F2447;
+      top: 15px;
+      border-radius: 90% 10% 90% 10%;
+      z-index: 1;
+    }
+
+    .Izq {
+      left: -8%;
+    }
+
+    .Der {
+      left: 50%;
+    }
+
+    .Izq::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid #FFFFFF;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent #FFFFFF;
+    }
+
+    .Der::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid #FFFFFF;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #FFFFFF transparent transparent;
+    }
+
+    .Der::after {
+      left: -16px;
+    }
+
+
+    .contenidoCaja {
+      padding: 20px 30px;
+      background-color: #FFFFFF;
+      position: relative;
+      border-radius: 6px;
+    }
+
+    @media screen and (max-width: 600px) {
+
+      .linea::after {
+        left: 31px;
+      }
+
+
+      .caja {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+
+      .caja::before {
+        left: 60px;
+        border: medium solid #1F2447;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+
+      .Izq::after,
+      .Der::after {
+        left: 15px;
+      }
+
+
+      .Der {
+        left: 0%;
+      }
+    }
+  </style>
   <div class="wrapper">
     <div class="collapsible">
       <input type="checkbox" id="collapsible-head">
@@ -42,7 +378,7 @@
   <br>
   <h2 class="titulo">NPS App</h2>
   <style>
-    .titulo{
+    .titulo {
       text-align: center;
       color: #000;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -159,19 +495,20 @@
   </section>
   <br><br>
   <footer class="footer">
-		<h3>Experiencia del Cliente Banco Falabella Colombia</h3>
-	</footer>
-	<style>
-		.footer {
-			background: #008f39;
-			text-align: center;
-			border-radius: 25px;
-			padding: 15px;
-		}
+    <h3>Experiencia del Cliente Banco Falabella Colombia</h3>
+  </footer>
+  <style>
+    .footer {
+      background: #008f39;
+      text-align: center;
+      border-radius: 25px;
+      padding: 15px;
+    }
 
-		.footer h3 {
-			color: #BDECB6;
-		}
-	</style>
+    .footer h3 {
+      color: #BDECB6;
+    }
+  </style>
 </body>
+
 </html>
