@@ -1,5 +1,5 @@
 <?php
-include_once('conexion_bd.php');
+include_once 'consultphp/conexion_bd.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
