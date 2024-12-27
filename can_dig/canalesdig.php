@@ -1,5 +1,5 @@
 <?php
-include_once 'consultphp/conexion_bd.php';
+include_once '../consultphp/conexion_bd.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@ include_once 'consultphp/conexion_bd.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
-    <link rel="icon" type="img" href="img/banco-falabella.svg" />
+    <link rel="icon" type="img" href="../img/banco-falabella.svg" />
     <title>Canales Digitales</title>
 </head>
 <body>
@@ -79,7 +79,7 @@ include_once 'consultphp/conexion_bd.php';
             right: 128px;
             width: 29px;
             height: 25px;
-            background: url(img/icon12.png) no-repeat 0 0;
+            background: url(../img/icon12.png) no-repeat 0 0;
             transition: all 0.3s ease;
         }
 
@@ -150,7 +150,7 @@ include_once 'consultphp/conexion_bd.php';
             font-size: 16px;
             min-height: 18.10em;
             color: white;
-            background: url(img/banapp.png);
+            background: url(../img/fondo1fal.jpeg);
             border-radius: 40px;
             background-position: center center;
             background-size: cover;
@@ -784,10 +784,10 @@ include_once 'consultphp/conexion_bd.php';
     </div>
     <header>
         <div class="contenedor">
-            <a href="inicio.html" class="logo"><img src="img/logofalabella.png" width="290" height="100"></a>
+            <a href="../pag_fd/inicio.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
             <nav>
-                <a href="inicio.html"><img src="img/nps,log.png" height="150" width="220">
-                    <a href="inicio.html"><img src="img/banderacol.png" height="150" width="">
+                <a href="../pag_fd/inicio.html"><img src="../img/nps,log.png" height="150" width="220">
+                    <a href="../pag_fd/inicio.html"><img src="../img/banderacol.png" height="150" width="">
                     </a>
                 </a>
             </nav>
@@ -808,24 +808,24 @@ include_once 'consultphp/conexion_bd.php';
                 <input type="radio" id="3" name="imagen-slide" hidden>
                 <div class="slider">
                     <div class="item-slider">
-                        <img src="img/app_3.jpg" height="550">
+                        <img src="../img/app_3.jpg" height="550">
                     </div>
                     <div class="item-slider">
-                        <img src="img/web-linea.jpg" height="550">
+                        <img src="../img/web-linea.jpg" height="550">
                     </div>
                     <div class="item-slider">
-                        <img src="img/wp.jpg" height="550">
+                        <img src="../img/wp.jpg" height="550">
                     </div>
                 </div>
                 <div class="paginacion-hover">
                     <label class="item-paginacion" for="1">
-                        <img src="img/app.png">
+                        <img src="../img/app.png">
                     </label>
                     <label class="item-paginacion" for="2">
-                        <img src="img/web-linea.jpg">
+                        <img src="../img/web-linea.jpg">
                     </label>
                     <label class="item-paginacion" for="3">
-                        <img src="img/wp.jpg">
+                        <img src="../img/wp.jpg">
                     </label>
                 </div>
             </div>
@@ -834,7 +834,7 @@ include_once 'consultphp/conexion_bd.php';
     <h1 class="titulo-des">Información general</h1>
     <div class="contenedor-des">
         <!--<h1 class="titulo-des">Banco Falabella</h1>-->
-        <video class="video" width="600" height="400" controls src="videos/videoapp.mp4">
+        <video class="video" width="600" height="400" controls src="../videos/videoapp.mp4">
             <style>
                 .video {
                     padding-top: 0%;
@@ -861,17 +861,17 @@ include_once 'consultphp/conexion_bd.php';
             <br>
             <div class="servicio-cont">
                 <div class="servicio-individual">
-                    <a href="npsapp.html"><img src="img/APPBFCO.png">
+                    <a href="../pag_nps/npsapp.html"><img src="../img/APPBFCO.png">
                         <h3>App</h3>
                     </a>
                 </div>
                 <div class="servicio-individual">
-                    <a href="npsweb.html"><img src="img/canaldig.png">
+                    <a href="../pag_nps/npsweb.html"><img src="../img/canaldig.png">
                         <h3>Web</h3>
                     </a>
                 </div>
                 <div class="servicio-individual">
-                    <a href="npswhatsapp.html"><img src="img/whatsapp.jpg">
+                    <a href="../pag_nps/npswhatsapp.html"><img src="../img/whatsapp.jpg">
                         <h3>WhatsApp</h3>
                     </a>
                 </div>
@@ -898,7 +898,7 @@ include_once 'consultphp/conexion_bd.php';
                 <!-- <button class="button">Download Application</button> -->
             </div>
             <div class="column-33">
-                <img class="img1" src="img/app2.gif" width="335" height="471">
+                <img class="img1" src="../img/app2.gif" width="335" height="471">
             </div>
         </div>
     </div>
@@ -907,7 +907,7 @@ include_once 'consultphp/conexion_bd.php';
     margin: 10px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
         <div class="row">
             <div class="column-33">
-                <img class="img1" src="img/app.gif" alt="App" width="335" height="471">
+                <img class="img1" src="../img/app.gif" alt="App" width="335" height="471">
             </div>
             <div class="column-66"><br><br><br>
                 <!--<h1 class="xlarge-font"><b>Manejo de sus tarjetas</b></h1><br>-->
@@ -931,7 +931,7 @@ include_once 'consultphp/conexion_bd.php';
                 <!-- <button class="button">Download Application</button> -->
             </div>
             <div class="column-33">
-                <img class="img1" src="img/app_tarj_act.gif" width="335" height="471">
+                <img class="img1" src="../img/app_tarj_act.gif" width="335" height="471">
             </div>
         </div>
     </div>
@@ -940,7 +940,7 @@ include_once 'consultphp/conexion_bd.php';
     <div class="containers">
         <div class="card">
             <div class="card-header">
-                <img src="img/icontriste.jpg" alt="rover" />
+                <img src="../img/icontriste.jpg" alt="rover" />
             </div>
             <div class="card-body">
                 <span class="tag tag-red">Detractor</span><br>
@@ -979,7 +979,7 @@ include_once 'consultphp/conexion_bd.php';
                     ?>
                 </p>
                 <div class="user">
-                    <img src="img/users.png" alt="user" />
+                    <img src="../img/users.png" alt="user" />
                     <div class="user-info">
                         <p>Clientes<br>
                             BFCO</p>
@@ -1003,7 +1003,7 @@ include_once 'consultphp/conexion_bd.php';
         </div>
         <div class="card">
             <div class="card-header">
-                <img src="img/iconneutral.png" alt="ballons" />
+                <img src="../img/iconneutral.png" alt="ballons" />
             </div>
             <div class="card-body">
                 <span class="tag tag-yellow">Neutro</span><br>
@@ -1041,7 +1041,7 @@ include_once 'consultphp/conexion_bd.php';
                     }
                     ?>
                 <div class="user">
-                    <img src="img/users.png" alt="user" />
+                    <img src="../img/users.png" alt="user" />
                     <div class="user-info">
                         <p>Clientes <br>
                             BFCO</p>
@@ -1065,7 +1065,7 @@ include_once 'consultphp/conexion_bd.php';
         </div>
         <div class="card">
             <div class="card-header">
-                <img src="img/iconfeliz.png" alt="city" />
+                <img src="../img/iconfeliz.png" alt="city" />
             </div>
             <div class="card-body">
                 <span class="tag tag-green">Promotor</span><br>
@@ -1103,7 +1103,7 @@ include_once 'consultphp/conexion_bd.php';
                     }
                     ?>
                 <div class="user">
-                    <img src="img/users.png" alt="user" />
+                    <img src="../img/users.png" alt="user" />
                     <div class="user-info">
                         <p>Clientes <br>
                             BFCO</p>

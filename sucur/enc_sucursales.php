@@ -10,7 +10,7 @@ include_once 'consultphp/conexion_bd.php';
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
-	<link rel="icon" type="img" href="img/banco-falabella.svg" />
+	<link rel="icon" type="img" href="../img/banco-falabella.svg" />
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
 	<title>Encuestas Sucursales</title>
@@ -84,7 +84,7 @@ include_once 'consultphp/conexion_bd.php';
 			right: 75px;
 			width: 29px;
 			height: 25px;
-			background: url(img/icon12.png) no-repeat 0 0;
+			background: url(../img/icon12.png) no-repeat 0 0;
 			transition: all 0.3s ease;
 		}
 
@@ -156,7 +156,7 @@ include_once 'consultphp/conexion_bd.php';
 			font-size: 16px;
 			min-height: 18.10em;
 			color: white;
-			background: url(img/fondo1fal.jpeg);
+			background: url(../img/fondo1fal.jpeg);
 			border-radius: 80px;
 			background-position: center center;
 			background-size: cover;
@@ -203,7 +203,7 @@ include_once 'consultphp/conexion_bd.php';
 			right: 53px;
 			width: 29px;
 			height: 25px;
-			background: url(img/icon12.png) no-repeat 0 0;
+			background: url(../img/icon12.png) no-repeat 0 0;
 			transition: all 0.3s ease;
 		}
 
@@ -249,10 +249,10 @@ include_once 'consultphp/conexion_bd.php';
 	</head>
 	<header>
 		<div class="contenedor">
-			<a href="sucursales.html" class="logo"><img src="img/logofalabella.png" width="290" height="100"></a>
+			<a href="../sucur/sucursales.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
 			<nav>
-				<a href="sucursales.html"><img src="img/nps,log.png" height="150" width="220">
-					<a href="sucursales.html"><img src="img/banderacol.png" height="150" width="">
+				<a href="../sucur/sucursales.html"><img src="../img/nps,log.png" height="150" width="220">
+					<a href="../sucur/sucursales.html"><img src="../img/banderacol.png" height="150" width="">
 					</a>
 				</a>
 			</nav>
