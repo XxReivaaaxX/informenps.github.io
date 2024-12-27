@@ -161,10 +161,10 @@ color: white;
     </div>
     <header>
         <div class="contenedor">
-            <a href="../sucur/sucursales.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
+            <a href="../sucur/oficinasgen.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
             <nav>
-                <a href="../sucur/sucursales.html"><img src="../img/nps,log.png" height="150" width="220">
-                    <a href="../sucur/sucursales.html"><img src="../img/banderacol.png" height="150" width="">
+                <a href="../sucur/oficinasgen.html"><img src="../img/nps,log.png" height="150" width="220">
+                    <a href="../sucur/oficinasgen.html"><img src="../img/banderacol.png" height="150" width="">
                     </a>
                 </a>
             </nav>
