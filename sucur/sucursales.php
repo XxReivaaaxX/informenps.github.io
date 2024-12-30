@@ -1,3 +1,6 @@
+<?php
+include_once '../consultphp/conexion_bd.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -781,10 +784,38 @@
             <div class="card-body">
                 <span class="tag tag-red">Detractor</span><br>
                 <p>
-                    Venta: Verbatim vacío
+                <?php 
+                    $def_1 = "Venta: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     AND Tipo_Respuesta = 'DETRACTOR'  AND COMENTARIO_CLIENTE != ''
+                     OR NIVEL_1 = 'VENTA'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
                 </p>
                 <p>
-                    Atención: Buena atención
+                <?php 
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     AND Tipo_Respuesta = 'DETRACTOR'  AND COMENTARIO_CLIENTE != '' 
+                     OR NIVEL_1 = 'ATENCION' ";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
                 </p>
                 <div class="user">
                     <img src="../img/users.png" alt="user" />
@@ -803,10 +834,38 @@
             <div class="card-body">
                 <span class="tag tag-yellow">Neutro</span><br>
                 <p>
-                    Venta: Verbatim vacío
+                <?php 
+                    $def_1 = "Venta: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     AND Tipo_Respuesta = 'NEUTRO'  AND COMENTARIO_CLIENTE != ''
+                     OR NIVEL_1 = 'VENTA'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
                 </p>
                 <p>
-                    Atención: Buena atención
+                <?php 
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     AND Tipo_Respuesta = 'NEUTRO'  AND COMENTARIO_CLIENTE != '' 
+                     OR NIVEL_1 = 'ATENCION'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
                 </p>
                 <div class="user">
                     <img src="../img/users.png" alt="user" />
@@ -825,10 +884,38 @@
             <div class="card-body">
                 <span class="tag tag-green">Promotor</span><br>
                 <p>
-                    Venta: Verbatim vacío
+                <?php 
+                    $def_1 = "Venta: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     AND Tipo_Respuesta = 'PROMOTOR'  AND COMENTARIO_CLIENTE != ''
+                     OR NIVEL_1 = 'VENTA'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
                 </p>
                 <p>
-                    Atención: Buena atención
+                <?php 
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     AND Tipo_Respuesta = 'PROMOTOR' AND COMENTARIO_CLIENTE != '' 
+                     OR NIVEL_1 = 'ATENCION'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
                 </p>
                 <div class="user">
                     <img src="../img/users.png" alt="user" />
