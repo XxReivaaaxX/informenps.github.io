@@ -21,7 +21,7 @@
       <div class="login-content">
          <form method="POST" action="">
             <img src="../img/iconlog.png">
-            <h2 class="title">BIENVENIDOS</h2>
+            <h2 class="title" style="font-size:25px">BIENVENIDOS</h2>
             <?php 
             include("../consultphp/conexion_bd.php");
             include("../consultphp/controlador.php");
