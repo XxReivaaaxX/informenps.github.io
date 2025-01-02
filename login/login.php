@@ -10,7 +10,7 @@
    <!-- <link rel="stylesheet" href="css/all.min.css"> -->
    <!-- <link rel="stylesheet" href="css/fontawesome.min.css"> -->
    <link rel="icon" type="img" href="../img/banco-falabella.svg" />
-   <title>Inicio de sesión</title>
+   <title>Informe NPS BFCO</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                </div>
                <div class="div">
                   <h5>Usuario</h5>
-                  <input id="usuario" type="text" class="input" name="usuario">
+                  <input id="usuario" type="text" class="input" name="usuario" required>
                </div>
             </div>
             <div class="input-div pass">
@@ -41,7 +41,7 @@
                </div>
                <div class="div">
                   <h5>Contraseña</h5>
-                  <input type="password" id="input" class="input" name="password">
+                  <input type="password" id="input" class="input" name="password" required>
                </div>
             </div>
             <div class="view">
