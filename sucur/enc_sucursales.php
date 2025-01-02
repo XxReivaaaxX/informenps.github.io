@@ -1,5 +1,5 @@
 <?php
-include_once 'consultphp/conexion_bd.php';
+include_once '../consultphp/conexion_bd.php';
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ include_once 'consultphp/conexion_bd.php';
 		body {
 			background: #fff;
 			color: #000;
-			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 		}
 
 		body::-webkit-scrollbar-track {
@@ -249,10 +249,10 @@ include_once 'consultphp/conexion_bd.php';
 	</head>
 	<header>
 		<div class="contenedor">
-			<a href="../sucur/sucursales.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
+			<a href="../pag_fd/inicio.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
 			<nav>
-				<a href="../sucur/sucursales.html"><img src="../img/nps,log.png" height="150" width="220">
-					<a href="../sucur/sucursales.html"><img src="../img/banderacol.png" height="150" width="">
+				<a href="../pag_fd/inicio.html"><img src="../img/nps,log.png" height="150" width="220">
+					<a href="../pag_fd/inicio.html"><img src="../img/banderacol.png" height="150" width="">
 					</a>
 				</a>
 			</nav>
@@ -263,38 +263,34 @@ include_once 'consultphp/conexion_bd.php';
 			</div>
 		</div>
 	</header>
-	<br>
+	<br><br>
 	<body>
-		<table class="table">
-			<thead class="thead-dark">
+	<table id="example" class="display" style="width:100%">
 			<tr>
-				<th>Canal</th>
-				<th>Registros Enviados</th>
-				<th>Envio Abierto</th>
+				<th>Tienda</th>
 				<th>Encuesta Completada</th>
 				<th>Mes</th>
 				<th>Año</th>
 			</tr>
 		</thead>
-		<tbody id="datos">
+		<tbody>
 		<?php 
-			$sql = "SELECT Canal, registro_enviado_por_loyalink, envio_abierto,
-			encuesta_completada, mes, año, FROM ENVIOS_SUCURSALES_GEN";
-			$stmt = sqlsrv_query( $conn, $sql );
+			$sql = "SELECT tienda, count(encuesta_completada) as encuesta_completada, mes, año,
+			sum(cast((encuesta_completada) as varchar(50))) as Total FROM canales.dbo.ENVIOS_SUCURSALES_GEN 
+			group by tienda, mes, año";
+			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
 			}
-			while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC, SQLSRV_FETCH_NUMERIC)) { ?>
+			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
-				<td><?php echo $row['Canal']; ?></td>
-				<td><?php echo $row['registro_enviado_por_loyalink']; ?></td>
-				<td><?php echo $row['envio_abierto']; ?></td>
-				<td><?php echo $row['encuesta_completada']; ?></td>
-				<td><?php echo $row['mes']; ?></td>
-				<td><?php echo $row['año']; ?></td>
+				<td style="text-align: center;"><?php echo $row['tienda']; ?></td>
+				<td style="text-align: center;"><?php echo $row['encuesta_completada']; ?></td>
+				<td style="text-align: center;"><?php echo $row['mes']; ?></td>
+				<td style="text-align: center;"><?php echo $row['año']; ?></td>
+				<td style="text-align: center;">Total<?php echo $row['Total']; ?></td>
 			</tr>
 			<?php
-				sqlsrv_free_stmt( $stmt);
 			}
 			?>
 		</tbody>
@@ -314,7 +310,6 @@ include_once 'consultphp/conexion_bd.php';
 				}
 			</style>
 		</footer>
-
 		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 		<script src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>

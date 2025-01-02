@@ -22,7 +22,6 @@ include_once '../consultphp/conexion_bd.php';
             margin: 0;
             padding: 0;
             color: white;
-            box-sizing: border-box;
         }
 
         body {
@@ -460,13 +459,13 @@ include_once '../consultphp/conexion_bd.php';
         .column-66 {
             float: left;
             width: 66.66%;
-            padding: 20px;
+            padding: 0px;
         }
 
         .column-33 {
             float: left;
             width: 33.33%;
-            padding: 20px;
+            padding: 0px;
         }
 
         .large-font {
@@ -890,7 +889,7 @@ include_once '../consultphp/conexion_bd.php';
         <div class="row">
             <div class="column-66"> <br><br><br>
                 <!--<h1 class="xlarge-font" style="color:#BDECB6;"><b>Ingreso a la App</b></h1><br><br>-->
-                <p1 style="font-size: 25px;color: #BDECB6;">En la App de Banco Falabella
+                <p1 style="font-size: 22px;color: #BDECB6;">En la App de Banco Falabella
                     encontrarán una interfaz muy intuitiva, desde la parte principal del ingreso, con diferentes
                     opciones en la parte de abajo. Como: <span>Clave Dinámica, Oportunidades Unicas, Asesoría por
                         WhatsApp
@@ -909,9 +908,9 @@ include_once '../consultphp/conexion_bd.php';
             <div class="column-33">
                 <img class="img1" src="../img/app.gif" alt="App" width="335" height="471">
             </div>
-            <div class="column-66"><br><br><br>
+            <div class="column-66"><br><br><br><br>
                 <!--<h1 class="xlarge-font"><b>Manejo de sus tarjetas</b></h1><br>-->
-                <p1 style="font-size: 25px; color: #BDECB6;">Manejar los productos que tenga en el Banco, ya sea
+                <p1 style="font-size: 22px; color: #BDECB6; padding-right: 20px;">Manejar los productos que tenga en el Banco, ya sea
                     <span>Tarjetas de Crédito, Débito, PAC, CDT, CDAT, etc.</span> En la que puede realizar sus pagos,
                     transferencia,
                     etc.
@@ -926,7 +925,7 @@ include_once '../consultphp/conexion_bd.php';
         <div class="row">
             <div class="column-66"><br><br><br><br><br>
                 <!--<h1 class="xlarge-font"><b>Activar sus productos</b></h1><br><br>-->
-                <p1 style="font-size: 25px;color: #BDECB6;">Podrán activar y desactivar sus tarjetas, ya sea por posible
+                <p1 style="font-size: 22px;color: #BDECB6;">Podrán activar y desactivar sus tarjetas, ya sea por posible
                     fraude o situación externa.</p1>
                 <!-- <button class="button">Download Application</button> -->
             </div>
@@ -940,21 +939,22 @@ include_once '../consultphp/conexion_bd.php';
     <div class="containers">
         <div class="card">
             <div class="card-header">
-                <img src="../img/icontriste.jpg" alt="rover" />
+                <img src="../img/icontriste.png" alt="rover" />
             </div>
             <div class="card-body">
                 <span class="tag tag-red">Detractor</span><br>
                 <p>
-                    <?php 
-                    $def_1 = "Atención: ";
+                <?php
+                $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
-					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
-                     AND Tipo_Respuesta = 'DETRACTOR'  OR NIVEL_1 = 'ATENCION'";
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'CANALES DIGITALES'
+                     AND Tipo_Respuesta = 'DETRACTOR'  AND COMENTARIO_CLIENTE != ''
+                     --OR NIVEL_1 = 'VENTA'--
+                     ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                         echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
@@ -962,35 +962,33 @@ include_once '../consultphp/conexion_bd.php';
                     ?>
                 </p>
                 <p>
-                    <?php 
-                    $def_2 = "Venta: ";
-                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
-					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
-                     AND Tipo_Respuesta = 'DETRACTOR'  OR NIVEL_1 = 'VENTA'";
+                <?php 
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'CANALES DIGITALES'
+                     AND Tipo_Respuesta = 'DETRACTOR'  AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                        echo $def_2, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
                     }
                     ?>
-                </p>
                 <div class="user">
                     <img src="../img/users.png" alt="user" />
                     <div class="user-info">
                         <p>Clientes<br>
                             BFCO</p>
                         <small>
-                            <?php 
-                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-					 where PERIODO_EXPERIENCIA = '202412'";
+                        <?php
+                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                         echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
@@ -1008,16 +1006,17 @@ include_once '../consultphp/conexion_bd.php';
             <div class="card-body">
                 <span class="tag tag-yellow">Neutro</span><br>
                 <p>
-                    <?php 
-                    $def_1 = "Atención: ";
+                <?php
+                $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
-					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
-                     AND Tipo_Respuesta = 'NEUTRO'  OR NIVEL_1 = 'ATENCION'";
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'CANALES DIGITALES'
+                     AND Tipo_Respuesta = 'NEUTRO'  AND COMENTARIO_CLIENTE != ''
+                     --OR NIVEL_1 = 'VENTA'--
+                     ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                         echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
@@ -1025,34 +1024,33 @@ include_once '../consultphp/conexion_bd.php';
                     ?>
                 </p>
                 <p>
-                    <?php 
-                    $def_2 = "Venta: ";
-                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
-					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
-                     AND Tipo_Respuesta = 'NEUTRO'  OR NIVEL_1 = 'VENTA'";
+                <?php 
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'CANALES DIGITALES'
+                     AND Tipo_Respuesta = 'NEUTRO'  AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                        echo $def_2, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
                     }
                     ?>
                 <div class="user">
                     <img src="../img/users.png" alt="user" />
                     <div class="user-info">
-                        <p>Clientes <br>
+                        <p>Clientes<br>
                             BFCO</p>
                         <small>
-                            <?php 
-                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-					 where PERIODO_EXPERIENCIA = '202412'";
+                        <?php
+                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                         echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
@@ -1070,16 +1068,17 @@ include_once '../consultphp/conexion_bd.php';
             <div class="card-body">
                 <span class="tag tag-green">Promotor</span><br>
                 <p>
-                    <?php 
-                    $def_1 = "Atención: ";
+                <?php
+                $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
-					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
-                     AND Tipo_Respuesta = 'PROMOTOR'  OR NIVEL_1 = 'ATENCION'";
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'CANALES DIGITALES'
+                     AND Tipo_Respuesta = 'PROMOTOR'  AND COMENTARIO_CLIENTE != ''
+                     --OR NIVEL_1 = 'VENTA'--
+                     ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                         echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
@@ -1087,34 +1086,33 @@ include_once '../consultphp/conexion_bd.php';
                     ?>
                 </p>
                 <p>
-                    <?php 
-                    $def_2 = "Venta: ";
-                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'
-					 AND Comentario_Cliente != '' OR Comentario_Cliente IS NOT NULL
-                     AND Tipo_Respuesta = 'PROMOTOR'  OR NIVEL_1 = 'VENTA'";
+                <?php 
+                    $def_1 = "Atención: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'CANALES DIGITALES'
+                     AND Tipo_Respuesta = 'PROMOTOR'  AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                        echo $def_2, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
                     }
                     ?>
                 <div class="user">
                     <img src="../img/users.png" alt="user" />
                     <div class="user-info">
-                        <p>Clientes <br>
+                        <p>Clientes<br>
                             BFCO</p>
                         <small>
-                            <?php 
-                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA 
-                     FROM REPORTING_NPS_DETALLE tablesample ('1')
-					 where PERIODO_EXPERIENCIA = '202412'";
+                        <?php
+                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202412'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
-                        echo 'Error';
+                        die( print_r( sqlsrv_errors(), true) );
                     }
                     while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
                         echo $obj['PERIODO_EXPERIENCIA'] .'</br>';

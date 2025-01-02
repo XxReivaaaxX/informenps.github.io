@@ -1,3 +1,7 @@
+<?php
+include_once '../consultphp/conexion_bd.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,7 +197,20 @@ padding-bottom: 15px;
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Tiger Nixon</td>
+                        <td>
+                <?php
+                $tsql = "SELECT TOP 100 PERCENT ID FROM 
+                     FROM REPORTING_NPS_DETALLE 
+                     WHERE PERIODO_EXPERIENCIA = '202412' OR TIPO = 'RED OFICINAS'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        echo 'Error';
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC)) {
+                        echo $obj['ID'] .'</br>';
+                    }
+                ?>
+                </td>
                         <td>System Architect</td>
                         <td>Edinburgh</td>
                         <td>61</td>
