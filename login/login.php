@@ -14,14 +14,13 @@
 </head>
 
 <body>
-   <img class="wave" src="../img/wave.png">
    <div class="container">
       <div class="img">
          <img src="../img/gennial.png">
       </div>
       <div class="login-content">
          <form method="POST" action="">
-            <img src="../img/avatar.svg">
+            <img src="../img/iconlog.png">
             <h2 class="title">BIENVENIDOS</h2>
             <?php 
             include("../consultphp/conexion_bd.php");
