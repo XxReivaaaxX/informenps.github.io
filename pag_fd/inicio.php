@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="icon" type="img" href="../img/banco-falabella.svg">
 	<title>Informe NPS BFCO</title>
 </head>
@@ -381,17 +382,17 @@
 						</style>
 					</li>
 					<li><a href="../sucur/enc_sucursales.php">Encuestas Sucursales</a></li>
-					<li><a href="../can_dig/enc_canalesdig.html">Encuestas Canales Digitales</a></li>
+					<li><a href="../can_dig/enc_canalesdig.php">Encuestas Canales Digitales</a></li>
 					<li><a href="callcenter.html">Call Center</a></li>
 				</ul>
 			</nav>
 		</header>
 		<main class="contenido">
-			<h1>Corte 30 de Noviembre 2024</h1>
+			<h1>Corte 20 de Enero 2025</h1>
 			<br>
 			<p>
-				Informe de NPS actualizado al día 30 de noviembre del 2024
-				con atenciones actualizado al día 22 de noviembre del 2024.
+				Informe de NPS actualizado al día 20 de enero del 2025
+				con atenciones actualizado al día 22 de enero del 2025.
 				<br><br>
 
 				Enlace Excel <a
@@ -413,7 +414,8 @@
 				<a href="../can_dig/canalesdig.php"><i class="fa fa-whatsapp" aria-hidden="true"></i> Canales Digitales</a>
 				<a href="#"><i class="fa fa-users" aria-hidden="true"></i> Cartera</a>
 			</nav>
-			<video width="400" height="200" controls src="../videos/videoinicial.mp4"></video>
+			<video width="400" height="200" controls src="../videos/videoinicial.mp4">
+			</video>
 		</aside>
 		<div class="widget-1">
 			<img id="myImg2" src="../img_panel/imagen.png">
@@ -462,6 +464,26 @@
 			<h3>Experiencia del Cliente Banco Falabella Colombia</h3>
 		</footer>
 	</div>
+	<p id="number" style="font-size:8px;"></p>
+
+<script type="text/javascript">
+    n = 50
+    var l = document.getElementById("number");
+    var id = window.setInterval(function(){
+        document.onmousemove = function(){
+            n = 50
+        };
+        
+        l.innerText = n;
+        n--;
+
+        if(n <= -1){
+            swal("La sesión ha expirado");
+            location.href="../login/login.php";
+    }
+    }, 1200);
+    
+    </script>
 </body>
 
 </html>

@@ -13,6 +13,7 @@ include_once '../consultphp/conexion_bd.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="icon" type="img" href="../img/banco-falabella.svg" />
     <title>Sucursales</title>
 </head>
@@ -641,10 +642,10 @@ include_once '../consultphp/conexion_bd.php';
     </div>
     <header>
         <div class="contenedor">
-            <a href="../pag_fd/inicio.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
+            <a href="../pag_fd/inicio.php" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
             <nav>
-                <a href="../pag_fd/inicio.html"><img src="../img/nps,log.png" height="150" width="220">
-                    <a href="../pag_fd/inicio.html"><img src="../img/banderacol.png" height="150" width="">
+                <a href="../pag_fd/inicio.php"><img src="../img/nps,log.png" height="150" width="220">
+                    <a href="../pag_fd/inicio.php"><img src="../img/banderacol.png" height="150" width="">
                     </a>
                 </a>
             </nav>
@@ -1011,6 +1012,26 @@ include_once '../consultphp/conexion_bd.php';
             color: #BDECB6;
         }
     </style>
+    	<p id="number" class="text-success" style="font-size:8px;"></p>
+
+<script type="text/javascript">
+    n = 50
+    var l = document.getElementById("number");
+    var id = window.setInterval(function(){
+        document.onmousemove = function(){
+            n = 50
+        };
+        
+        l.innerText = n;
+        n--;
+
+        if(n <= -1){
+            swal("La sesión ha expirado");
+            location.href="../login/login.php";
+    }
+    }, 1200);
+    
+    </script>
 </body>
 
 </html>

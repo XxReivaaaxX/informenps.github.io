@@ -13,7 +13,7 @@ if(!empty($_POST["btningresar"])){
            echo '';
         }
         if ($row = sqlsrv_fetch_array($sql)) {
-            header("location:../pag_fd/inicio.html");
+            header("location:../pag_fd/inicio.php");
         }else{
             echo '<div class="alert alert-danger">Acceso Denegado</div>';
         }

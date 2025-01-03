@@ -3,28 +3,29 @@ include_once '../consultphp/conexion_bd.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
-	<link rel="icon" type="img" href="../img/banco-falabella.svg" />
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<title>Encuestas Sucursales</title>
+    <link rel="icon" type="img" href="../img/banco-falabella.svg" />
+    <title>Encuestas Canales Digitales</title>
 </head>
 
 <body>
-	<div class="wrapper">
+<div class="wrapper">
 		<div class="collapsible">
 			<input type="checkbox" id="collapsible-head">
-			<label for="collapsible-head">ENCUESTAS SUCURSALES</label>
+			<label for="collapsible-head">ENCUESTAS CANALES DIGITALES</label>
 			<div class="collapsible-text">
 				<p>Acá podrán visualizar las encuestas que se han tenido en el mes en
-					Oficinas.
+					los Canales Digitales.
 				</p>
 			</div>
 		</div>
@@ -82,7 +83,7 @@ include_once '../consultphp/conexion_bd.php';
 		.collapsible label:after {
 			content: "";
 			position: absolute;
-			right: 75px;
+			right: 1200px;
 			width: 29px;
 			height: 25px;
 			background: url(../img/icon12.png) no-repeat 0 0;
@@ -201,7 +202,7 @@ include_once '../consultphp/conexion_bd.php';
 		.collapsible label:after {
 			content: "";
 			position: absolute;
-			right: 53px;
+			right: 0.01px;
 			width: 29px;
 			height: 25px;
 			background: url(../img/icon12.png) no-repeat 0 0;
@@ -245,7 +246,7 @@ include_once '../consultphp/conexion_bd.php';
 		table th {
 			background-color: #008f39;
 			color: white;
-			border-radius: 18px;
+            border-radius: 18px;
 		}
 	</style>
 	</head>
@@ -266,28 +267,29 @@ include_once '../consultphp/conexion_bd.php';
 		</div>
 	</header>
 	<br>
-	<table id="eje" class="display" style="width:100%">
-	<h1 class="titulo-des" style="padding-left:30px">Encuestas Sucursales</h1><br>
+	<body>
+    <table id="eje" class="display" style="width:100%">
+    <h1 class="titulo-des" style="padding-left:30px">Encuestas App</h1><br>
 	<thead>
 			<tr>
-				<th>Tienda</th>
+				<th>Canal</th>
 				<th>Encuesta Completada</th>
 				<th>Mes</th>
 				<th>Año</th>
 			</tr>
-	</thead>
+		</thead>
 		<tbody>
 		<?php 
-			$sql = "SELECT tienda, count(encuesta_completada) as encuesta_completada, mes, año
-			FROM canales.dbo.ENVIOS_SUCURSALES_GEN 
-			group by tienda, mes, año";
-			$stmt = sqlsrv_query($conn, $sql );
+			$sql = "SELECT Canal, count(encuesta_completada) as encuesta_completada, mes, año
+			FROM canales.dbo.ENVIOS_APP_GEN
+			group by Canal, mes, año order by mes asc";
+			$stmt = sqlsrv_query($conn, $sql);
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
 			}
 			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
-				<td style="text-align: center;"><?php echo $row['tienda']; ?></td>
+				<td style="text-align: center;"><?php echo $row['Canal']; ?></td>
 				<td style="text-align: center;"><?php echo $row['encuesta_completada']; ?></td>
 				<td style="text-align: center;"><?php echo $row['mes']; ?></td>
 				<td style="text-align: center;"><?php echo $row['año']; ?></td>
@@ -297,6 +299,40 @@ include_once '../consultphp/conexion_bd.php';
 			?>
 		</tbody>
 			</table>
+            <table id="eje-2" class="display" style="width:100% border-radius:30px">
+			<thead>
+			<tr>
+				<th>Canal</th>
+				<th>Encuesta Completada</th>
+				<th>Mes</th>
+				<th>Año</th>
+			</tr>
+		</thead>
+        <br>
+        <h1 class="titulo-des" style="padding-left:30px">Encuestas Web</h1>
+        <br>
+		<tbody>
+		<?php 
+			$sql = "SELECT Canal, count(encuesta_completada) as encuesta_completada, mes, año
+			FROM canales.dbo.ENVIOS_WEB_GEN
+			group by Canal, mes, año order by mes asc" ;
+			$stmt = sqlsrv_query($conn, $sql);
+			if( $stmt === false) {
+				die(print_r( sqlsrv_errors(), true));
+			}
+			while($row = sqlsrv_fetch_array($stmt)) { ?>
+			<tr>
+				<td style="text-align: center;"><?php echo $row['Canal']; ?></td>
+				<td style="text-align: center;"><?php echo $row['encuesta_completada']; ?></td>
+				<td style="text-align: center;"><?php echo $row['mes']; ?></td>
+				<td style="text-align: center;"><?php echo $row['año']; ?></td>
+			</tr>
+			<?php
+			}
+			?>
+		</tbody>
+			</table>
+            <br>
 		<footer class="footer">
 			<h3>Experiencia del Cliente Banco Falabella Colombia</h3>
 			<style>
@@ -341,7 +377,30 @@ include_once '../consultphp/conexion_bd.php';
     },
 })
 			});
-			
+			$(document).ready(function () {
+				var table = $('#eje-2').DataTable({
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Datos",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Datos",
+        "infoFiltered": "(Filtrado de _MAX_ total datos)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Datos",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+})
+			});
 		</script>
 			<p id="number" class="text-success" style="font-size:8px;"></p>
 
@@ -363,6 +422,6 @@ include_once '../consultphp/conexion_bd.php';
     }, 1200);
     
     </script>
-	</body>
 
+</body>
 </html>

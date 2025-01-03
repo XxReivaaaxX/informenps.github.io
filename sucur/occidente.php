@@ -7,6 +7,7 @@
     <link rel="icon" type="img" href="../img/banco-falabella.svg" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <style>
     * {
@@ -207,5 +208,25 @@ $(document).ready(function(){
     });  
 });
 </script>
+<p id="number" class="text-success" style="font-size:8px;"></p>
+
+<script type="text/javascript">
+    n = 50
+    var l = document.getElementById("number");
+    var id = window.setInterval(function(){
+        document.onmousemove = function(){
+            n = 50
+        };
+        
+        l.innerText = n;
+        n--;
+
+        if(n <= -1){
+            swal("La sesión ha expirado");
+            location.href="../login/login.php";
+    }
+    }, 1200);
+    
+    </script>
 </body>
 </html>
