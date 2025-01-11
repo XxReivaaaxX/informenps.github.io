@@ -1,8 +1,3 @@
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES  */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 CREATE TABLE IF NOT EXISTS "ENVIOS_WEB_GEN" (
 	"Canal" VARCHAR(50) NULL DEFAULT NULL COLLATE 'SQL_Latin1_General_CP1_CI_AS',
@@ -16,7 +11,6 @@ CREATE TABLE IF NOT EXISTS "ENVIOS_WEB_GEN" (
 	"año" VARCHAR(50) NOT NULL COLLATE 'SQL_Latin1_General_CP1_CI_AS'
 );
 
-/*!40000 ALTER TABLE "ENVIOS_WEB_GEN" DISABLE KEYS */;
 INSERT INTO "ENVIOS_WEB_GEN" ("Canal", "archivo", "id_cliente", "registro_enviado_por_loyalink", "envio_abierto", "encuesta_completada", "date_exp", "mes", "año") VALUES
 	('Web', '20240702_bancofalabellacolombia_7.csv', '39193362', '1', '1', '1', '2/07/2024 10:05', 'julio', '2024');
 INSERT INTO "ENVIOS_WEB_GEN" ("Canal", "archivo", "id_cliente", "registro_enviado_por_loyalink", "envio_abierto", "encuesta_completada", "date_exp", "mes", "año") VALUES
@@ -5419,9 +5413,3 @@ INSERT INTO "ENVIOS_WEB_GEN" ("Canal", "archivo", "id_cliente", "registro_enviad
 	('Web', '20241020_bancofalabellacolombia_7.csv', '20843671', '1', '1', '1', '18/10/2024 15:52', 'octubre', '2024');
 INSERT INTO "ENVIOS_WEB_GEN" ("Canal", "archivo", "id_cliente", "registro_enviado_por_loyalink", "envio_abierto", "encuesta_completada", "date_exp", "mes", "año") VALUES
 	('Web', '20241020_bancofalabellacolombia_7.csv', '21932790', '1', '1', '1', '18/10/2024 12:35', 'octubre', '2024');
-/*!40000 ALTER TABLE "ENVIOS_WEB_GEN" ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
