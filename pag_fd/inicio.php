@@ -478,11 +478,12 @@
         l.innerText = n;
         n--;
 
-        if(n <= -1){
+        
+		if(n <= -1){
             swal("La sesión ha expirado");
             location.href="../login/login.php";
     }
-    }, 1200);
+    }, 2000);
     
     </script>
 </body>

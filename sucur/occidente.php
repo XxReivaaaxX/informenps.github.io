@@ -225,7 +225,7 @@ $(document).ready(function(){
             swal("La sesión ha expirado");
             location.href="../login/login.php";
     }
-    }, 1200);
+    }, 2000);
     
     </script>
 </body>

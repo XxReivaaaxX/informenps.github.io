@@ -11,20 +11,19 @@ include_once '../consultphp/conexion_bd.php';
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
 	<link rel="icon" type="img" href="../img/banco-falabella.svg" />
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
-	<title>Bogotá</title>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<title>Encuestas Sucursales</title>
 </head>
 
 <body>
 	<div class="wrapper">
 		<div class="collapsible">
 			<input type="checkbox" id="collapsible-head">
-			<label for="collapsible-head">ZONA BOGOTA</label>
+			<label for="collapsible-head">DIGITURNO</label>
 			<div class="collapsible-text">
-				<p>Acá podrán visualizar la información de la zona 
-					Bogotá.
+				<p>Acá podrán visualizar el digiturno del mes
 				</p>
 			</div>
 		</div>
@@ -82,7 +81,7 @@ include_once '../consultphp/conexion_bd.php';
 		.collapsible label:after {
 			content: "";
 			position: absolute;
-			right: 5px;
+			right: 75px;
 			width: 29px;
 			height: 25px;
 			background: url(../img/icon12.png) no-repeat 0 0;
@@ -245,16 +244,16 @@ include_once '../consultphp/conexion_bd.php';
 		table th {
 			background-color: #008f39;
 			color: white;
-			border-radius: 15px;
+			border-radius: 18px;
 		}
 	</style>
 	</head>
 	<header>
 		<div class="contenedor">
-			<a href="../sucur/oficinasgen.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
+			<a href="../pag_fd/inicio.php" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
 			<nav>
-				<a href="../sucur/oficinasgen.html"><img src="../img/nps,log.png" height="150" width="220">
-					<a href="../sucur/oficinasgen.html"><img src="../img/banderacol.png" height="150" width="">
+				<a href="../pag_fd/inicio.php"><img src="../img/nps,log.png" height="150" width="220">
+					<a href="../pag_fd/inicio.php"><img src="../img/banderacol.png" height="150" width="">
 					</a>
 				</a>
 			</nav>
@@ -266,51 +265,37 @@ include_once '../consultphp/conexion_bd.php';
 		</div>
 	</header>
 	<br>
-	<table id="eje-1" class="display" style="width:100%">
-	<h1 class="titulo-des" style="padding-left:30px">Zona Bogotá</h1><br><br>
-    <thead>
-    <tr>
-                        <th>ID</th>
-                        <th>ID CLIENTE</th>
-                        <th>NOMBRE CLIENTE</th>
-                        <th>PERIODO_EXPERIENCIA</th>
-                        <th>AÑO EXPERIENCIA</th>
-                        <th>SEMANA LIQUIDACION</th>
-                        <th>TIENDA</th>
-                        <th>NOMBRE EJECUTIVO</th>
-                        <th>N° RESPUESTAS</th>
-                    </tr>
-    </thead>
-                <tbody>
-                <?php 
-			$sql = "SELECT ID,ID_CLIENTE,NOMBRE_CLIENTE,PERIODO_EXPERIENCIA,
-             AÑO_EXPERIENCIA,SEMANA_LIQUIDACION, count(respuesta)as respuesta, 
-            NOMBRE_EJECUTIVO, TIENDA
-            FROM canales.dbo.REPORTING_NPS_DETALLE WHERE ZONA = 'BOGOTA'
-            AND PERIODO_EXPERIENCIA >= '202412'
-			group by ID,ID_CLIENTE,NOMBRE_CLIENTE,PERIODO_EXPERIENCIA,AÑO_EXPERIENCIA,
-            SEMANA_LIQUIDACION,NOMBRE_EJECUTIVO, TIENDA";
+	<table id="eje" class="display" style="width:100%">
+	<h1 class="titulo-des" style="padding-left:30px">Digiturno</h1><br>
+	<thead>
+			<tr>
+				<th>Tienda</th>
+				<th>Encuesta Completada</th>
+				<th>Mes</th>
+				<th>Año</th>
+			</tr>
+	</thead>
+		<tbody>
+		<?php 
+			$sql = "SELECT tienda, count(encuesta_completada) as encuesta_completada, mes, año
+			FROM canales.dbo.ENVIOS_SUCURSALES_GEN 
+			group by tienda, mes, año";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
 			}
 			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
-				<td style="text-align: center;"><?php echo $row['ID']; ?></td>
-				<td style="text-align: center;"><?php echo $row['ID_CLIENTE']; ?></td>
-				<td style="text-align: center;"><?php echo $row['NOMBRE_CLIENTE']; ?></td>
-				<td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['AÑO_EXPERIENCIA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['SEMANA_LIQUIDACION']; ?></td>
-                <td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['NOMBRE_EJECUTIVO']; ?></td>
-                <td style="text-align: center;"><?php echo $row['respuesta']; ?></td>
+				<td style="text-align: center;"><?php echo $row['tienda']; ?></td>
+				<td style="text-align: center;"><?php echo $row['encuesta_completada']; ?></td>
+				<td style="text-align: center;"><?php echo $row['mes']; ?></td>
+				<td style="text-align: center;"><?php echo $row['año']; ?></td>
 			</tr>
 			<?php
 			}
-            ?>
+			?>
 		</tbody>
-			</table><br>
+			</table>
 		<footer class="footer">
 			<h3>Experiencia del Cliente Banco Falabella Colombia</h3>
 			<style>
@@ -332,7 +317,7 @@ include_once '../consultphp/conexion_bd.php';
 
 		<script>
 			$(document).ready(function () {
-				var table = $('#eje-1').DataTable({
+				var table = $('#eje').DataTable({
     language: {
         "decimal": "",
         "emptyTable": "No hay información",

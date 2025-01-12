@@ -1029,7 +1029,7 @@ include_once '../consultphp/conexion_bd.php';
             swal("La sesión ha expirado");
             location.href="../login/login.php";
     }
-    }, 1200);
+    }, 2000);
     
     </script>
 </body>
