@@ -269,27 +269,37 @@ include_once '../consultphp/conexion_bd.php';
 	<h1 class="titulo-des" style="padding-left:30px">Digiturno</h1><br>
 	<thead>
 			<tr>
-				<th>Tienda</th>
-				<th>Encuesta Completada</th>
-				<th>Mes</th>
-				<th>Año</th>
+				<th>Oficina</th>
+				<th>Fecha</th>
+				<th>Hora Emi</th>
+				<th>Hora Ate Ini</th>
+				<th>Hora Ate Fin</th>
+				<th>ID Ejecutivo</th>
+				<th>Ejecutivo</th>
+				<th>Rut</th>
+				<th>Motivo 1</th>
 			</tr>
 	</thead>
 		<tbody>
 		<?php 
-			$sql = "SELECT tienda, count(encuesta_completada) as encuesta_completada, mes, año
-			FROM canales.dbo.ENVIOS_SUCURSALES_GEN 
-			group by tienda, mes, año";
+			$sql = "SELECT oficina, fecha, hora emi, hora ate ini, hora ate fin, id ejecutivo, rut, motivo 1
+			FROM canales.dbo.BDD_DIGUTURNO_BASE 
+			WHERE fecha between '2025-01-01 00:00:00.000' and '2025-01-31 00:00:00.000'
+			group by oficina, fecha, hora emi, hora ate ini, hora ate fin, id ejecutivo, rut, motivo 1";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
 			}
 			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
-				<td style="text-align: center;"><?php echo $row['tienda']; ?></td>
-				<td style="text-align: center;"><?php echo $row['encuesta_completada']; ?></td>
-				<td style="text-align: center;"><?php echo $row['mes']; ?></td>
-				<td style="text-align: center;"><?php echo $row['año']; ?></td>
+				<td style="text-align: center;"><?php echo $row['oficina']; ?></td>
+				<td style="text-align: center;"><?php echo $row['fecha']; ?></td>
+				<td style="text-align: center;"><?php echo $row['hora emi']; ?></td>
+				<td style="text-align: center;"><?php echo $row['hora ate ini']; ?></td>
+				<td style="text-align: center;"><?php echo $row['hora ate fin']; ?></td>
+				<td style="text-align: center;"><?php echo $row['id ejecutivo']; ?></td>
+				<td style="text-align: center;"><?php echo $row['rut']; ?></td>
+				<td style="text-align: center;"><?php echo $row['motivo 1']; ?></td>
 			</tr>
 			<?php
 			}
