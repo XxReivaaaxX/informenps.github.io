@@ -282,10 +282,10 @@ include_once '../consultphp/conexion_bd.php';
 	</thead>
 		<tbody>
 		<?php 
-			$sql = "SELECT oficina, fecha, hora emi, hora ate ini, hora ate fin, id ejecutivo, rut, motivo 1
-			FROM canales.dbo.BDD_DIGUTURNO_BASE 
-			WHERE fecha between '2025-01-01 00:00:00.000' and '2025-01-31 00:00:00.000'
-			group by oficina, fecha, hora emi, hora ate ini, hora ate fin, id ejecutivo, rut, motivo 1";
+			$sql = "SELECT oficina, fecha, [hora emi], [hora ate ini], [hora ate fin], [id ejecutivo], rut, [motivo 1]
+			FROM canales.dbo.BDD_DIGITURNO_BASE 
+			where cast(fecha as datetime) between '2024-12-01 00:00:00.000' and '2024-12-31 00:00:00.000' 
+			group by oficina, fecha , [hora emi], [hora ate ini], [hora ate fin], [id ejecutivo], rut, [motivo 1]";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
