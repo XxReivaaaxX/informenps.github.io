@@ -784,10 +784,10 @@ include_once '../consultphp/conexion_bd.php';
     </div>
     <header>
         <div class="contenedor">
-            <a href="../pag_fd/inicio.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
+            <a href="../pag_fd/inicio.php" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
             <nav>
-                <a href="../pag_fd/inicio.html"><img src="../img/nps,log.png" height="150" width="220">
-                    <a href="../pag_fd/inicio.html"><img src="../img/banderacol.png" height="150" width="">
+                <a href="../pag_fd/inicio.php"><img src="../img/nps,log.png" height="150" width="220">
+                    <a href="../pag_fd/inicio.php"><img src="../img/banderacol.png" height="150" width="">
                     </a>
                 </a>
             </nav>

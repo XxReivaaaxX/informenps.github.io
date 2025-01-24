@@ -3,20 +3,20 @@ let seleccion = document.getElementById("seleccion");
 let imgSeleccionada = document.getElementById("img");
 let modeloSeleccionado = document.getElementById("modelo");
 let descripSeleccionada = document.getElementById("descripcion");
-let precioSeleccionado = document.getElementById("precio");
+let precioSeleccionado = document.getElementById("def");
 
 function cargar(item){
     quitarBordes();
     mostrador.style.width = "60%";
     seleccion.style.width = "40%";
     seleccion.style.opacity = "1";
-    item.style.border = "2px solid red";
+    item.style.border = "2px solid #BDECB6";
 
     imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
 
     modeloSeleccionado.innerHTML =  item.getElementsByTagName("p")[0].innerHTML;
 
-    descripSeleccionada.innerHTML = "Descripción del modelo ";
+    descripSeleccionada.innerHTML = "A detalle ";
 
     precioSeleccionado.innerHTML =  item.getElementsByTagName("span")[0].innerHTML;
 

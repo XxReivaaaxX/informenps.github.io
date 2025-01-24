@@ -14,7 +14,7 @@ include_once '../consultphp/conexion_bd.php';
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<title>Encuestas Sucursales</title>
+	<title>Digiturno</title>
 </head>
 
 <body>
@@ -265,7 +265,7 @@ include_once '../consultphp/conexion_bd.php';
 		</div>
 	</header>
 	<br>
-	<table id="eje" class="display" style="width:100%">
+	<table id="eje-2" class="display" style="width:100%">
 	<h1 class="titulo-des" style="padding-left:30px">Digiturno</h1><br>
 	<thead>
 			<tr>
@@ -282,10 +282,10 @@ include_once '../consultphp/conexion_bd.php';
 	</thead>
 		<tbody>
 		<?php 
-			$sql = "SELECT oficina, fecha, [hora emi], [hora ate ini], [hora ate fin], [id ejecutivo], rut, [motivo 1]
+			$sql = "SELECT oficina, fecha , [hora emi], [hora ate ini], [hora ate fin], [id ejecutivo], ejecutivo, rut, [motivo 1]
 			FROM canales.dbo.BDD_DIGITURNO_BASE 
-			where cast(fecha as datetime) between '2024-12-01 00:00:00.000' and '2024-12-31 00:00:00.000' 
-			group by oficina, fecha , [hora emi], [hora ate ini], [hora ate fin], [id ejecutivo], rut, [motivo 1]";
+			where fecha  between '2025-01-01 00:00:00.000' and '2025-01-31 00:00:00.000' 
+			group by oficina, fecha , [hora emi], [hora ate ini], [hora ate fin], [id ejecutivo], ejecutivo, rut, [motivo 1]";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
@@ -293,11 +293,12 @@ include_once '../consultphp/conexion_bd.php';
 			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
 				<td style="text-align: center;"><?php echo $row['oficina']; ?></td>
-				<td style="text-align: center;"><?php echo $row['fecha']; ?></td>
+				<td style="text-align: center;"><?php echo $row['fecha']->format('d/m/Y');?></td>
 				<td style="text-align: center;"><?php echo $row['hora emi']; ?></td>
 				<td style="text-align: center;"><?php echo $row['hora ate ini']; ?></td>
 				<td style="text-align: center;"><?php echo $row['hora ate fin']; ?></td>
 				<td style="text-align: center;"><?php echo $row['id ejecutivo']; ?></td>
+				<td style="text-align: center;"><?php echo $row['ejecutivo']; ?></td>
 				<td style="text-align: center;"><?php echo $row['rut']; ?></td>
 				<td style="text-align: center;"><?php echo $row['motivo 1']; ?></td>
 			</tr>
@@ -327,7 +328,7 @@ include_once '../consultphp/conexion_bd.php';
 
 		<script>
 			$(document).ready(function () {
-				var table = $('#eje').DataTable({
+				var table = $('#eje-2').DataTable({
     language: {
         "decimal": "",
         "emptyTable": "No hay información",

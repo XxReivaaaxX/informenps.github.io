@@ -287,7 +287,7 @@ include_once '../consultphp/conexion_bd.php';
              AÑO_EXPERIENCIA,SEMANA_LIQUIDACION, count(respuesta)as respuesta, 
             NOMBRE_EJECUTIVO, TIENDA
             FROM canales.dbo.REPORTING_NPS_DETALLE WHERE ZONA = 'BOGOTA'
-            AND PERIODO_EXPERIENCIA >= '202412'
+            AND PERIODO_EXPERIENCIA >= '202501'
 			group by ID,ID_CLIENTE,NOMBRE_CLIENTE,PERIODO_EXPERIENCIA,AÑO_EXPERIENCIA,
             SEMANA_LIQUIDACION,NOMBRE_EJECUTIVO, TIENDA";
 			$stmt = sqlsrv_query($conn, $sql );
