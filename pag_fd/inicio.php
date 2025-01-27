@@ -374,7 +374,7 @@
 			<img src="../img/fondo1fal.jpeg" alt="banner">
 			<nav class="horizontal-menu">
 				<ul>
-					<li class="activa"><a href="inicio.html">Inicio</a>
+					<li class="activa"><a href="../pag_fd/inicio.php">Inicio</a>
 						<style>
 							.activa {
 								cursor: pointer;
@@ -383,7 +383,7 @@
 					</li>
 					<li><a href="../sucur/enc_sucursales.php">Encuestas Sucursales</a></li>
 					<li><a href="../can_dig/enc_canalesdig.php">Encuestas Canales Digitales</a></li>
-					<li><a href="callcenter.html">Call Center</a></li>
+					<li><a href="../panel_dash/callcenter/panel_call.html">Call Center</a></li>
 					<li><a href="../dgtu/dgtu.php">Digiturno</a></li>
 				</ul>
 			</nav>
@@ -412,7 +412,7 @@
 			<nav class="vertical-menu">
 				<a href="../sucur/sucursales.php"><i class="fa fa-building" aria-hidden="true"></i> Sucursales</a>
 				<a href="../can_dig/canalesdig.php"><i class="fa fa-whatsapp" aria-hidden="true"></i> Canales Digitales</a>
-				<a href="../cartera/cartera.html"><i class="fa fa-users" aria-hidden="true"></i> Cartera</a>
+				<a href="../panel_dash/cart/panel_cart.html"><i class="fa fa-users" aria-hidden="true"></i> Cartera</a>
 			</nav>
 			<video width="400" height="200" controls src="../videos/videoinicial.mp4">
 			</video>
