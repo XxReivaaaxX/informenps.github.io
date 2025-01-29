@@ -282,7 +282,7 @@ include_once '../consultphp/conexion_bd.php';
 		<?php 
 			$sql = "SELECT Canal, count(encuesta_completada) as encuesta_completada, mes, año
 			FROM canales.dbo.ENVIOS_APP_GEN
-			group by Canal, mes, año order by mes asc";
+			group by Canal, mes, año order by año desc";
 			$stmt = sqlsrv_query($conn, $sql);
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
@@ -315,7 +315,7 @@ include_once '../consultphp/conexion_bd.php';
 		<?php 
 			$sql = "SELECT Canal, count(encuesta_completada) as encuesta_completada, mes, año
 			FROM canales.dbo.ENVIOS_WEB_GEN
-			group by Canal, mes, año order by mes asc" ;
+			group by Canal, mes, año order by año desc" ;
 			$stmt = sqlsrv_query($conn, $sql);
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));

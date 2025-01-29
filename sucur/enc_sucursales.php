@@ -274,13 +274,14 @@ include_once '../consultphp/conexion_bd.php';
 				<th>Encuesta Completada</th>
 				<th>Mes</th>
 				<th>Año</th>
+				<th>Zona</th>
 			</tr>
 	</thead>
 		<tbody>
 		<?php 
-			$sql = "SELECT tienda, count(encuesta_completada) as encuesta_completada, mes, año
-			FROM canales.dbo.ENVIOS_SUCURSALES_GEN 
-			group by tienda, mes, año";
+			$sql = "SELECT tienda, count(encuesta_completada) as encuesta_completada, mes, año, zona
+			FROM canales.dbo.ENVIOS_SUCURSALES_GEN where año = '2025'
+			group by tienda, mes, año, zona";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
@@ -291,6 +292,7 @@ include_once '../consultphp/conexion_bd.php';
 				<td style="text-align: center;"><?php echo $row['encuesta_completada']; ?></td>
 				<td style="text-align: center;"><?php echo $row['mes']; ?></td>
 				<td style="text-align: center;"><?php echo $row['año']; ?></td>
+				<td style="text-align: center;"><?php echo $row['zona']; ?></td>
 			</tr>
 			<?php
 			}

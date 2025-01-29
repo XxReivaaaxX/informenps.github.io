@@ -827,7 +827,7 @@ include_once '../consultphp/conexion_bd.php';
                             <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412'";
+                     WHERE PERIODO_EXPERIENCIA = '202501'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -888,7 +888,7 @@ include_once '../consultphp/conexion_bd.php';
                         <small>        <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412'";
+                     WHERE PERIODO_EXPERIENCIA = '202501'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -949,7 +949,7 @@ include_once '../consultphp/conexion_bd.php';
                         <small>        <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412'";
+                     WHERE PERIODO_EXPERIENCIA = '202501'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
