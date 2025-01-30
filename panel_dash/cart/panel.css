@@ -20,7 +20,7 @@ li {
 
 	--light: #F9F9F9;
 	--blue: #008f39;
-	--light-blue: #CFE8FF;
+	--light-blue: #1d2228;
 	--grey: #eee;
 	--dark-grey: #008f39;
 	--dark: #342E37;
@@ -161,7 +161,10 @@ body {
 /* SIDEBAR */
 
 
-
+.collapse__menu{
+	display: none;
+	padding: .75rem 2.25rem;
+  }
 
 
 /* CONTENT */

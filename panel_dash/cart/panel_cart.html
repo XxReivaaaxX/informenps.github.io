@@ -18,15 +18,17 @@
 			</span>
 		</a>
 		<ul class="side-menu top">
-			<li>
-				<a href="../sucur/panel_suc.html">
-					<i class='bx bx-buildings'></i>
-					<span class="text">Sucursales</span>
-					<!--<ul>
-						<li>Atención</li>
-					</ul>--->
-				</a>
-			</li>
+			<div  class="nav__link collapse">
+				<ion-icon name="folder-outline" class="nav__icon"></ion-icon>
+				<span class="nav__name">Sucursales</span>
+
+				<ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+				<ul class="collapse__menu">
+					<a href="#" class="collapse__sublink">Data</a>
+					<a href="#" class="collapse__sublink">Group</a>
+				</ul>
+			</div>
 			<li>
 				<a href="../app/panel_app.html">
 					<i class='bx bxs-bank'></i>
