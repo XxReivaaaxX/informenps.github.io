@@ -12,7 +12,7 @@
 	
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="../../pag_fd/inicio.php" class="brand"><img src="../../../img/banco-falabella.svg" alt="" height="55px" width="55px"> Panel Informe NPS | Canales</a>
+		<a href="../../../pag_fd/inicio.php" class="brand"><img src="../../../img/banco-falabella.svg" alt="" height="55px" width="55px"> Panel Informe NPS | Canales</a>
 		<ul class="side-menu">
 			<li>
 				<a href="#"><i class='bx bx-buildings icon'></i> Sucursales <i class='bx bx-chevron-right icon-right' ></i></a>

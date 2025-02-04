@@ -719,12 +719,12 @@ include_once '../consultphp/conexion_bd.php';
             <br>
             <div class="servicio-cont">
                 <div class="servicio-individual">
-                    <a href="../panel_dash/sucur/panel_suc.html"><img src="../img/oficina_1.jpg">
+                    <a href="../panel_dash/sucur/sucur_atencion/panel_suc_venta.php"><img src="../img/oficina_1.jpg">
                         <h3>Venta</h3>
                     </a>
                 </div>
                 <div class="servicio-individual">
-                    <a href="../pag_nps/npsatencion.html"><img src="../img/oficina_3.png">
+                    <a href="../panel_dash/sucur/sucur_atencion/panel_suc_atencion.php"><img src="../img/oficina_3.png">
                         <h3>Atención</h3>
                     </a>
                 </div>
@@ -789,7 +789,7 @@ include_once '../consultphp/conexion_bd.php';
                     $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'DETRACTOR'  AND COMENTARIO_CLIENTE != ''
                      --OR NIVEL_1 = 'VENTA'--
                      ";
@@ -807,7 +807,7 @@ include_once '../consultphp/conexion_bd.php';
                     $def_1 = "Atención: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'DETRACTOR'  AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
@@ -851,7 +851,7 @@ include_once '../consultphp/conexion_bd.php';
                     $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'NEUTRO'  AND COMENTARIO_CLIENTE != ''
                      --AND NIVEL_1 = 'VENTA'
                      ";
@@ -869,7 +869,7 @@ include_once '../consultphp/conexion_bd.php';
                     $def_1 = "Atención: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'NEUTRO'  AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
@@ -912,7 +912,7 @@ include_once '../consultphp/conexion_bd.php';
                     $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'PROMOTOR'  AND COMENTARIO_CLIENTE != ''
                      --AND NIVEL_1 = 'VENTA'
                      ";
@@ -930,7 +930,7 @@ include_once '../consultphp/conexion_bd.php';
                     $def_1 = "Atención: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'PROMOTOR' AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
