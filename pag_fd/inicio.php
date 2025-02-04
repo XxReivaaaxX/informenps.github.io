@@ -412,7 +412,8 @@
 			<nav class="vertical-menu">
 				<a href="../sucur/sucursales.php"><i class="fa fa-building" aria-hidden="true"></i> Sucursales</a>
 				<a href="../can_dig/canalesdig.php"><i class="fa fa-whatsapp" aria-hidden="true"></i> Canales Digitales</a>
-				<a href="../panel_dash/cart/panel_cart.html"><i class="fa fa-users" aria-hidden="true"></i> Cartera</a>
+				<a href="../panel_dash/cart/panel_cart.php"><i class="fa fa-users" aria-hidden="true"></i> Cartera</a>
+				<a href="../../panel_dash/sucur/sucur_atencion/panel_suc_atencion.php"><i class="fa fa-users" aria-hidden="true"></i> Panel - Dash</a>
 			</nav>
 			<video width="400" height="200" controls src="../videos/videoinicial.mp4">
 			</video>

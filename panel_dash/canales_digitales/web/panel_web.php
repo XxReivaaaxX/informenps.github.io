@@ -4,32 +4,32 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="../calif_app/panel.css">
-	<link rel="icon" type="img" href="../../img/banco-falabella.svg">
+	<link rel="stylesheet" href="../web/panel.css">
+	<link rel="icon" type="img" href="../../../img/banco-falabella.svg">
 	<title>Panel NPS Canales | 	Informe NPS </title>
 </head>
 <body>
 	
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="../../pag_fd/inicio.php" class="brand"><img src="../../img/banco-falabella.svg" alt="" height="55px" width="55px"> Panel Informe NPS | Canales</a>
+		<a href="../../../pag_fd/inicio.php" class="brand"><img src="../../../img/banco-falabella.svg" alt="" height="55px" width="55px"> Panel Informe NPS | Canales</a>
 		<ul class="side-menu">
 			<li>
 				<a href="#"><i class='bx bx-buildings icon'></i> Sucursales <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="../sucur/sucur_venta/">Venta</a></li>
-					<li><a href="../sucur/sucur_atencion/">Atención</a></li>
+					<li><a href="../../sucur/sucur_venta/panel_suc_venta.php">Venta</a></li>
+					<li><a href="../../sucur/sucur_atencion/panel_suc_atencion.php">Atención</a></li>
 				</ul>
 			</li>
-			<li><a href="../cart/panel_cart.html"><i class='bx bxs-group icon'></i> Cartera</a></li>
-			<li><a href="../calif_app/panel_calif_app.html"><i class='bx bx-star icon'></i> Calificación App</a></li>
-			<li><a href="../callcenter/panel_call.html"><i class='bx bx-phone icon'></i> Call Center</a></li>
+			<li><a href="../../cart/panel_cart.php"><i class='bx bxs-group icon'></i> Cartera</a></li>
+			<li><a href="../../calif_app/panel_calif_app.php"><i class='bx bx-star icon'></i> Calificación App</a></li>
+			<li><a href="../../callcenter/panel_call.php"><i class='bx bx-phone icon'></i> Call Center</a></li>
 			<li>
-				<a href="#"><i class='bx bxl-whatsapp icon'></i> Canales Digitales <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#?"><i class='bx bxl-whatsapp icon'></i> Canales Digitales <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="../canales_digitales/app/panel_app.html">App</a></li>
-					<li><a href="../canales_digitales/web/panel_web.html">Web</a></li>
-					<li><a href="../canales_digitales/wp/panel_wp.html">Whatsapp</a></li>
+					<li><a href="../app/panel_app.php">App</a></li>
+					<li><a href="../web/panel_web.php">Web</a></li>
+					<li><a href="../wp/panel_wp.php">Whatsapp</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -64,7 +64,7 @@
 			</a>
 			<span class="divider"></span>-->
 			<div class="profile">
-				<img src="../../img/banderacol.png" alt="">
+				<img src="../../../img/banderacol.png" alt="">
 				<!--Perfil-->
 				<!--<ul class="profile-link">
 					<li><a href="#"><i class='bx bxs-user-circle icon' ></i> Perfil</a></li>
@@ -125,7 +125,7 @@
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div><br>
-					<img src="../../img/app.gif" alt="" height="150px" width="220px">
+					<img src="../../../img/app.gif" alt="" height="150px" width="220px">
 				</div>
 				<div class="card">
 					<div class="head">
@@ -135,21 +135,21 @@
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div><br>
-					<img src="../../img/app.gif" alt="" height="150px" width="220px">
+					<img src="../../../img/app.gif" alt="" height="150px" width="220px">
 				</div>
 			</div>
 			<div class="data">
 				<div class="content-data">
 					<div class="head">
 						<h3>Gráfica</h3>
-						<div class="menu">
+						<!--<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
-								<li><a href="#">Edit</a></li>
+								<li><a href="#"></a></li>
 								<li><a href="#">Save</a></li>
 								<li><a href="#">Remove</a></li>
 							</ul>
-						</div>
+						</div>-->
 					</div>
 					<div class="chart">
 						<div id="chart"></div>
@@ -157,60 +157,31 @@
 				</div>
 				<div class="content-data">
 					<div class="head">
-						<h3>Chatbot - Próximamente</h3>
-						<!--SIN USO POR AHORA-->
-						<!--<div class="menu">
+						<h3>Chatbot Calificación App</h3>
+						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
-								<li><a href="#">Edit</a></li>
-								<li><a href="#">Save</a></li>
-								<li><a href="#">Remove</a></li>
+								<li><a href="../canales_digitales/web/panel_web.php" class="btn-delete">Nuevo Chat</a></li>
 							</ul>
-						</div>-->
+						</div>
 					</div>
 					<div class="chat-box">
 						<p class="day"><span>Hoy</span></p>
 						<div class="msg">
-							<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-							<div class="chat">
-								<div class="profile">
-									<span class="username">Bot CX</span>
-									<span class="time">12:00</span>
-								</div>
-								<p>Hola, esto es una prueba</p>
+								<p class="cx">Hola Gennial, en que te puedo ayudar?</p>
+								<div class="scroller"></div><br><br><br><br><br><br><br><br><br><br>
 							</div>
 						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">12:00</span>
-								</div>
-								<p>Prueba</p>
+						<form class="chat" method="post" autocomplete="off">
+							<div><br><br><br>
+								<input type="text" name="chat" id="chat" placeholder="Alguna duda?">
+							</div><br>
+							<div>
+								<input type="submit" value="Enviar" id="btn">
 							</div>
+				</form>
 						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">12:00</span>
-								</div>
-								<p>Prueba</p>
-							</div>
-						</div>
-						<div class="msg me">
-							<div class="chat">
-								<div class="profile">
-									<span class="time">12:00</span>
-								</div>
-								<p>Prueba</p>
-							</div>
-						</div>
-					</div><br><br><br>
-					<form action="#">
-						<div class="form-group">
-							<input type="text" placeholder="Mensaje">
-							<button type="submit" class="btn-send"><i class='bx bxs-send' ></i></button>
-						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -219,6 +190,7 @@
 	<!-- NAVBAR -->
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-	<script src="../calif_app/panel.js"></script>
+	<script src="../web/panel.js"></script>
+	<script src="../../botcx/bot.js"></script>
 </body>
 </html>
