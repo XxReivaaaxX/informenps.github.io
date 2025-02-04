@@ -161,7 +161,7 @@
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
-								<li><a href="../canales_digitales/web/panel_web.php" class="btn-delete">Nuevo Chat</a></li>
+								<li><a href="../web/panel_web.php" class="btn-delete">Nuevo Chat</a></li>
 							</ul>
 						</div>
 					</div>

@@ -161,7 +161,7 @@
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
-								<li><a href="../../panel_dash/calif_app/panel_calif_app.php" class="btn-delete">Nuevo Chat</a></li>
+								<li><a href="../wp/panel_wp.php" class="btn-delete">Nuevo Chat</a></li>
 							</ul>
 						</div>
 					</div>

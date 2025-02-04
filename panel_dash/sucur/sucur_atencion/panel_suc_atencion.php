@@ -161,7 +161,7 @@
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
-								<li><a href="../../panel_dash/sucur_atencion/panel_suc_atencion.php" class="btn-delete">Nuevo Chat</a></li>
+								<li><a href="../sucur_atencion/panel_suc_atencion.php" class="btn-delete">Nuevo Chat</a></li>
 							</ul>
 						</div>
 					</div>
@@ -192,6 +192,6 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	<script src="../sucur_atencion/panel.js"></script>
-	<script src="../../../botcx/bot.js"></script>
+	<script src="../../../../botcx/bot.js"></script>
 </body>
 </html>	

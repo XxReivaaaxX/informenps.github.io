@@ -21,7 +21,7 @@ const getMessage = (msg) => {
       //   console.log(divCpu);
     }
   };
-  xhr.open("GET", "../../botcx/chat.php?msg=" + msg, true);
+  xhr.open("GET", "../botcx/chat.php?msg=" + msg, true);
   xhr.send();
 };
 

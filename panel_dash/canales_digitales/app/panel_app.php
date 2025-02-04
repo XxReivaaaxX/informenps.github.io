@@ -17,9 +17,9 @@
 			<li>
 				<a href="#"><i class='bx bx-buildings icon'></i> Sucursales <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="../sucur_venta/panel_suc_venta.php">Venta</a></li>
-					<li><a href="../sucur_atencion/panel_suc_atencion.php">Atención</a></li>
-				</ul>
+					<li><a href="../../sucur/sucur_venta/panel_suc_venta.php">Venta</a></li>
+					<li><a href="../../sucur/sucur_atencion/panel_suc_atencion.php">Atención</a></li>
+				</ul>	
 			</li>
 			<li><a href="../../cart/panel_cart.php"><i class='bx bxs-group icon'></i> Cartera</a></li>
 			<li><a href="../../calif_app/panel_calif_app.php"><i class='bx bx-star icon'></i> Calificación App</a></li>
@@ -161,7 +161,7 @@
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
-								<li><a href="../panel_dash/canales_digitales/app/panel_app.php" class="btn-delete">Nuevo Chat</a></li>
+								<li><a href="../app/panel_app.php" class="btn-delete">Nuevo Chat</a></li>
 							</ul>
 						</div>
 					</div>
