@@ -389,13 +389,13 @@
 			</nav>
 		</header>
 		<main class="contenido">
-			<h1>Corte 20 de Enero 2025</h1>
+			<h1>Corte 04 de Febrero 2025</h1>
 			<br>
 			<p>
-				Informe de NPS actualizado al día 20 de enero del 2025
-				con atenciones actualizado al día 22 de enero del 2025.
+				Informe de NPS actualizado al día 04 de febrero del 2025
+				con atenciones actualizado al día 31 de enero del 2025.
 				<br><br>
-				Enlace Excel <a
+				Enlace Excel <acc
 					href="https://falabella.sharepoint.com/sites/InformeNPS/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FInformeNPS%2FDocumentos%20compartidos%2FInforme%20NPS&p=true&ga=1">
 					Informe NPS</a> la contraseña del archivo es 1.
 				<br><br>
