@@ -87,7 +87,7 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>30/01/2025</h2>
+							<h2>04/02/2025</h2>
 							<p>Fecha de actualización</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>

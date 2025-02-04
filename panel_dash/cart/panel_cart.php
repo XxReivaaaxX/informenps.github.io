@@ -77,7 +77,7 @@
 
 		<!-- MAIN -->
 		<main>
-			<h1 class="title">Calificación App</h1>
+			<h1 class="title">NPS Cartera & Rolling</h1>
 			<ul class="breadcrumbs">
 				<li><a href="#">Panel</a></li>
 				<li class="divider">/</li>
@@ -87,7 +87,7 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>30/01/2025</h2>
+							<h2>04/02/2025</h2>
 							<p>Fecha de actualización</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
@@ -98,8 +98,8 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>3.7</h2>
-							<p>Calificación App IOS</p>
+							<h2>45.01%</h2>
+							<p>NPS Cartera</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
@@ -109,8 +109,8 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>4.8</h2>
-							<p>Calificación App Android</p>
+							<h2>42,03%</h2>
+							<p>NPS Cartera Rolling</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
@@ -120,22 +120,29 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>2.100</h2>
-							<p>Comentarios App IOS</p>
+							<h2>25.000</h2>
+							<p>Encuestas enviadas "Primer envío"</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div><br>
-					<img src="../../img/app.gif" alt="" height="150px" width="220px">
 				</div>
 				<div class="card">
 					<div class="head">
 						<div>
 							<h2>20.875</h2>
-							<p>Comentarios App Android</p>
+							<p>Encuestas enviadas "Segundo envío"</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div><br>
-					<img src="../../img/app.gif" alt="" height="150px" width="220px">
+				</div>
+				<div class="card">
+					<div class="head">
+						<div>
+							<h2>20.875</h2>
+							<p>Encuestas enviadas "Tercer envío"</p>
+						</div>
+						<i class='bx bx-trending-up icon' ></i>
+					</div><br>
 				</div>
 			</div>
 			<div class="data">
@@ -157,7 +164,7 @@
 				</div>
 				<div class="content-data">
 					<div class="head">
-						<h3>Chatbot Calificación App</h3>
+						<h3>Chatbot NPS Cartera</h3>
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">

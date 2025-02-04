@@ -383,7 +383,7 @@
 					</li>
 					<li><a href="../sucur/enc_sucursales.php">Encuestas Sucursales</a></li>
 					<li><a href="../can_dig/enc_canalesdig.php">Encuestas Canales Digitales</a></li>
-					<li><a href="../panel_dash/callcenter/panel_call.html">Call Center</a></li>
+					<li><a href="../../panel_dash/callcenter/panel_call.html">Call Center</a></li>
 					<li><a href="../dgtu/dgtu.php">Digiturno</a></li>
 				</ul>
 			</nav>
@@ -410,12 +410,14 @@
 				}
 			</style>
 			<nav class="vertical-menu">
+			<a href="../../panel_dash/sucur/sucur_atencion/panel_suc_atencion.php"><i class="fa fa-bar-chart" aria-hidden="true"></i> Panel </a>
 				<a href="../sucur/sucursales.php"><i class="fa fa-building" aria-hidden="true"></i> Sucursales</a>
 				<a href="../can_dig/canalesdig.php"><i class="fa fa-whatsapp" aria-hidden="true"></i> Canales Digitales</a>
 				<a href="../panel_dash/cart/panel_cart.php"><i class="fa fa-users" aria-hidden="true"></i> Cartera</a>
-				<a href="../../panel_dash/sucur/sucur_atencion/panel_suc_atencion.php"><i class="fa fa-bar-chart" aria-hidden="true"></i> Panel </a>
 			</nav>
-			<video width="400" height="200" controls src="../videos/videoinicial.mp4">
+			<iframe width="400" height="200" src="https://www.youtube.com/embed/422YCsRM6_s?si=OaSIgHK2-IqEUuuE" title="YouTube video player" frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+				referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</video>
 		</aside>
 		<div class="widget-1">

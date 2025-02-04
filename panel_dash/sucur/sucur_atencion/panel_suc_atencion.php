@@ -77,7 +77,7 @@
 
 		<!-- MAIN -->
 		<main>
-			<h1 class="title">Calificación App</h1>
+			<h1 class="title">NPS Sucursales Atención</h1>
 			<ul class="breadcrumbs">
 				<li><a href="#">Panel</a></li>
 				<li class="divider">/</li>
@@ -87,7 +87,7 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>30/01/2025</h2>
+							<h2>04/02/2025</h2>
 							<p>Fecha de actualización</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
@@ -98,8 +98,8 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>3.7</h2>
-							<p>Calificación App IOS</p>
+							<h2>66,20%</h2>
+							<p>NPS Sucursales Atención</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
@@ -157,7 +157,7 @@
 				</div>
 				<div class="content-data">
 					<div class="head">
-						<h3>Chatbot Calificación App</h3>
+						<h3>Chatbot NPS Sucursales Atención</h3>
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">

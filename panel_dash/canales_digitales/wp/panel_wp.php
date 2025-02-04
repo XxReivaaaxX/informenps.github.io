@@ -77,7 +77,7 @@
 
 		<!-- MAIN -->
 		<main>
-			<h1 class="title">Calificación App</h1>
+			<h1 class="title">NPS WhatsApp</h1>
 			<ul class="breadcrumbs">
 				<li><a href="#">Panel</a></li>
 				<li class="divider">/</li>
@@ -87,7 +87,7 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>30/01/2025</h2>
+							<h2>04/02/2025</h2>
 							<p>Fecha de actualización</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
@@ -98,15 +98,15 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>3.7</h2>
-							<p>Calificación App IOS</p>
+							<h2>89,01%</h2>
+							<p>NPS WhatsApp</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
 					<span class="progress" data-value="60%"></span>
 					<span class="label">60%</span>
 				</div>
-				<div class="card">
+				<!--<div class="card">
 					<div class="head">
 						<div>
 							<h2>4.8</h2>
@@ -136,7 +136,7 @@
 						<i class='bx bx-trending-up icon' ></i>
 					</div><br>
 					<img src="../../../img/app.gif" alt="" height="150px" width="220px">
-				</div>
+				</div>-->
 			</div>
 			<div class="data">
 				<div class="content-data">
@@ -157,7 +157,7 @@
 				</div>
 				<div class="content-data">
 					<div class="head">
-						<h3>Chatbot Calificación App</h3>
+						<h3>Chatbot NPS WhatsApp</h3>
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
