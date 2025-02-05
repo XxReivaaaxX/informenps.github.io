@@ -861,17 +861,17 @@ include_once '../consultphp/conexion_bd.php';
             <br>
             <div class="servicio-cont">
                 <div class="servicio-individual">
-                    <a href="../pag_nps/npsapp.html"><img src="../img/APPBFCO.png">
+                    <a href="../panel_dash/canales_digitales/app/panel_app.php"><img src="../img/APPBFCO.png">
                         <h3>App</h3>
                     </a>
                 </div>
                 <div class="servicio-individual">
-                    <a href="../pag_nps/npsweb.html"><img src="../img/canaldig.png">
+                    <a href="../panel_dash/canales_digitales/web/panel_web.php"><img src="../img/canaldig.png">
                         <h3>Web</h3>
                     </a>
                 </div>
                 <div class="servicio-individual">
-                    <a href="../pag_nps/npswhatsapp.html"><img src="../img/whatsapp.jpg">
+                    <a href="../panel_dash/canales_digitales/wp/panel_wp.php"><img src="../img/whatsapp.jpg">
                         <h3>WhatsApp</h3>
                     </a>
                 </div>

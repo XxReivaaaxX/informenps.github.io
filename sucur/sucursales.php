@@ -719,7 +719,7 @@ include_once '../consultphp/conexion_bd.php';
             <br>
             <div class="servicio-cont">
                 <div class="servicio-individual">
-                    <a href="../panel_dash/sucur/sucur_atencion/panel_suc_venta.php"><img src="../img/oficina_1.jpg">
+                    <a href="../../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><img src="../img/oficina_1.jpg">
                         <h3>Venta</h3>
                     </a>
                 </div>
