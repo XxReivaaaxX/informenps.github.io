@@ -26,7 +26,7 @@ allDropdown.forEach(item=> {
 
 
 // SIDEBAR COLLAPSE
-const toggleSidebar = document.querySelector('nav .toggle-sidebar');
+/* const toggleSidebar = document.querySelector('nav .toggle-sidebar');
 const allSideDivider = document.querySelectorAll('#sidebar .divider');
 
 if(sidebar.classList.contains('hide')) {
@@ -96,8 +96,6 @@ sidebar.addEventListener('mouseenter', function () {
 })
 
 
-
-
 // PROFILE DROPDOWN
 const profile = document.querySelector('nav .profile');
 const imgProfile = profile.querySelector('img');
@@ -108,7 +106,7 @@ imgProfile.addEventListener('click', function () {
 })
 
 
-
+*/
 
 // MENU
 const allMenu = document.querySelectorAll('main .content-data .head .menu');
@@ -160,42 +158,150 @@ allProgress.forEach(item=> {
 
 
 
-
-
-
 // APEXCHART
 var options = {
-  series: [{
-  name: 'series1',
-  data: [31, 40, 28, 51, 42, 109, 100]
-}, {
-  name: 'series2',
-  data: [11, 32, 45, 32, 34, 52, 41]
-}],
-  chart: {
-  height: 350,
-  type: 'area'
-},
-dataLabels: {
-  enabled: false
-},
-stroke: {
-  curve: 'smooth'
-},
-xaxis: {
-  type: 'datetime',
-  categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-},
-tooltip: {
-  x: {
-    format: 'dd/MM/yy HH:mm'
+	series: [
+	{
+	  name: "",
+	  data: [200, 330, 548, 740, 880, 990, 1100, 1380],
+	},
+  ],
+	chart: {
+	type: 'bar',
+	height: 350,
+	dropShadow: {
+	  enabled: true,
+	},
   },
-},
-};
+  plotOptions: {
+	bar: {
+	  borderRadius: 0,
+	  horizontal: true,
+	  distributed: true,
+	  barHeight: '80%',
+	  isFunnel: true,
+	},
+  },
+  colors: [
+	'#008f39',
+	'#BDECB6',
+	'#008f39',
+	'#BDECB6',
+	'#008f39',
+	'#BDECB6',
+	'#008f39',
+	'#BDECB6',
+  ],
+  dataLabels: {
+	enabled: true,
+	formatter: function (val, opt) {
+	  return opt.w.globals.labels[opt.dataPointIndex] 
+	},
+	dropShadow: {
+	  enabled: true,
+	},
+  },
+  title: {
+	text: 'TOP 8',
+	align: 'middle',
+  },
+  xaxis: {
+	categories: ['1', '2', '3', '4', '5', '6', '7', '8'],
+  },
+  legend: {
+	show: false,
+  },
+  };
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  chart.render();
 
+//APEXCHART 2 //
+var options = {
+	series: [{
+	name: 'Enero',
+	data: [73.20, 80.79] 
+  }, {
+	name: 'Febrero',
+	data: [72.60, 0]
+  }, {
+	name: 'Marzo',	
+	data: [76.78, 0]
+  }, {
+	name: 'Abril',
+	data: [74.65, 0]
+  }, {
+	name: 'Mayo',
+	data: [77.07, 0]
+  }, {
+	name: 'Junio',
+	data: [78.96, 0],
+  }, {
+	name: 'Julio',
+	data: [76.45, 0],
+  }, {
+	name: 'Agosto',
+	data: [76.81, 0],
+  }, {
+	name: 'Septiembre',
+	data: [75.13, 0],
+  }, {
+	name: 'Octubre',
+	data: [71.77, 0],
+  }, {
+	name: 'Noviembre',
+	data: [68.48, 0],
+  }, {
+	name: 'Diciembre',
+	data: [71.72, 0],
+  }],
+	chart: {
+	type: 'bar',
+	height: 250,
+	stacked: true,
+	stackType: 'normal',
+	dropShadow: {
+		enabled: true,
+	  },
+  },
+  plotOptions: {
+	bar: {
+	  horizontal: true,
+	  show: false,
+	},
+  },
+  title: {
+	text: 'NPS'
+  },
+  xaxis: {
+	categories: ['2024','2025'],
+  },
+  tooltip: {
+	y: {
+	  formatter: function (val) {
+		return val + "%"
+	  }
+	}
+  },
+  fill: {
+	opacity: 1
+  
+  },
+  legend: {
+	position: 'top',
+	horizontalAlign: 'left',
+	offsetX: 40,
+	show: true,
+	onItemClick: {
+		toggleDataSeries: false,
+	}
+  }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart2"), options);
+  chart.render();
+
+	 
 // CHATBOT //
 const btnSend = document.getElementById("btn");
 const chat = document.getElementById("chat");

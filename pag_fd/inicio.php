@@ -384,7 +384,6 @@
 					<li><a href="../sucur/enc_sucursales.php">Encuestas Sucursales</a></li>
 					<li><a href="../can_dig/enc_canalesdig.php">Encuestas Canales Digitales</a></li>
 					<li><a href="../../panel_dash/callcenter/panel_call.php">Call Center</a></li>
-					<li><a href="../dgtu/dgtu.php">Digiturno</a></li>
 				</ul>
 			</nav>
 		</header>

@@ -270,40 +270,34 @@ include_once '../consultphp/conexion_bd.php';
 	<h1 class="titulo-des" style="padding-left:30px">Zona Bogotá</h1><br><br>
     <thead>
     <tr>
-		                <th>PERIODO</th>
+                        <th>ID</th>
+                        <th>PERIODO_EXPERIENCIA</th>
+                        <th>SEMANA LIQUIDACION</th>
                         <th>TIENDA</th>
-                        <th>ZONA</th>
-                        <th>RESPUESTA TOTAL</th>
-                        <th>PROMOTOR TOTAL</th>
-                        <th>DETRACTOR TOTAL</th>
-                        <th>NEUTRO TOTAL</th>
-						<th>RESPUESTAS DE CAJA</th>
-						<th>RESPUESTAS DE VENTA</th>
-						<th>RESPUESTAS DE MESÓN</th>
+                        <th>NOMBRE EJECUTIVO</th>
+                        <th>N° RESPUESTAS</th>
                     </tr>
     </thead>
                 <tbody>
                 <?php 
-			$sql = "SELECT PERIODO_EXPERIENCIA, TIENDA, ZONA, SUM(RESPUESTA_TOTAL) AS RESPUESTA, SUM(PROMOTOR_TOTAL) AS PROMOTOR, 
-			SUM(Detractor_Total) AS DETRACTOR, SUM(NEUTRO_TOTAL) AS NEUTRO, SUM(RESPUESTA_CAJA) AS RESPUESTA_CAJA,
-			SUM(RESPUESTA_VENTA) AS RESPUESTA_VENTA, SUM(Respuesta_Meson) AS RESPUESTA_MESON FROM CANALES.DBO.REPORTING_NPS_RESUMEN
-			WHERE Periodo_Experiencia >= '202501' AND ZONA = 'OCCIDENTE' GROUP BY TIENDA, ZONA, PERIODO_EXPERIENCIA";
+			$sql = "SELECT ID,PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
+			count(respuesta) as respuesta,  NOMBRE_EJECUTIVO, TIENDA
+            FROM canales.dbo.REPORTING_NPS_DETALLE WHERE ZONA = 'BOGOTA'
+            AND PERIODO_EXPERIENCIA >= '202501'
+			group by ID, PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
+			NOMBRE_EJECUTIVO, TIENDA";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
 			}
 			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
-			    <td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
-				<td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
-				<td style="text-align: center;"><?php echo $row['ZONA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['RESPUESTA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['PROMOTOR']; ?></td>
-                <td style="text-align: center;"><?php echo $row['DETRACTOR']; ?></td>
-                <td style="text-align: center;"><?php echo $row['NEUTRO']; ?></td>
-				<td style="text-align: center;"><?php echo $row['RESPUESTA_CAJA']; ?></td>
-				<td style="text-align: center;"><?php echo $row['RESPUESTA_VENTA']; ?></td>
-				<td style="text-align: center;"><?php echo $row['RESPUESTA_MESON']; ?></td>
+				<td style="text-align: center;"><?php echo $row['ID']; ?></td>
+				<td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['SEMANA_LIQUIDACION']; ?></td>
+                <td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['NOMBRE_EJECUTIVO']; ?></td>
+                <td style="text-align: center;"><?php echo $row['respuesta']; ?></td>
 			</tr>
 			<?php
 			}

@@ -82,7 +82,7 @@ include_once '../consultphp/conexion_bd.php';
 		.collapsible label:after {
 			content: "";
 			position: absolute;
-			right: 5px;
+			right: 400px;
 			width: 29px;
 			height: 25px;
 			background: url(../img/icon12.png) no-repeat 0 0;
@@ -251,10 +251,10 @@ include_once '../consultphp/conexion_bd.php';
 	</head>
 	<header>
 		<div class="contenedor">
-			<a href="../sucur/oficinasgen.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
+			<a href="../../panel_dash/sucur/sucur_venta/panel_suc_venta.php" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
 			<nav>
-				<a href="../sucur/oficinasgen.html"><img src="../img/nps,log.png" height="150" width="220">
-					<a href="../sucur/oficinasgen.html"><img src="../img/banderacol.png" height="150" width="">
+				<a href="../../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><img src="../img/nps,log.png" height="150" width="220">
+					<a href="../../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><img src="../img/banderacol.png" height="150" width="">
 					</a>
 				</a>
 			</nav>
@@ -270,41 +270,42 @@ include_once '../consultphp/conexion_bd.php';
 	<h1 class="titulo-des" style="padding-left:30px">Zona Bogotá</h1><br><br>
     <thead>
     <tr>
-                        <th>ID</th>
-                        <th>ID CLIENTE</th>
-                        <th>NOMBRE CLIENTE</th>
-                        <th>PERIODO_EXPERIENCIA</th>
-                        <th>AÑO EXPERIENCIA</th>
-                        <th>SEMANA LIQUIDACION</th>
+		                <th>PERIODO</th>
                         <th>TIENDA</th>
-                        <th>NOMBRE EJECUTIVO</th>
-                        <th>N° RESPUESTAS</th>
+                        <th>ZONA</th>
+                        <th>RESPUESTA TOTAL</th>
+                        <th>PROMOTOR TOTAL</th>
+                        <th>DETRACTOR TOTAL</th>
+                        <th>NEUTRO TOTAL</th>
+						<th>RESPUESTAS DE ATENCIÓN</th>
+						<th>RESPUESTAS DE CAJA</th>
+						<th>RESPUESTAS DE VENTA</th>
+						<th>RESPUESTAS DE MESÓN</th>
                     </tr>
     </thead>
                 <tbody>
                 <?php 
-			$sql = "SELECT ID,ID_CLIENTE,NOMBRE_CLIENTE,PERIODO_EXPERIENCIA,
-             AÑO_EXPERIENCIA,SEMANA_LIQUIDACION, count(respuesta)as respuesta, 
-            NOMBRE_EJECUTIVO, TIENDA
-            FROM canales.dbo.REPORTING_NPS_DETALLE WHERE ZONA = 'BOGOTA'
-            AND PERIODO_EXPERIENCIA >= '202501'
-			group by ID,ID_CLIENTE,NOMBRE_CLIENTE,PERIODO_EXPERIENCIA,AÑO_EXPERIENCIA,
-            SEMANA_LIQUIDACION,NOMBRE_EJECUTIVO, TIENDA";
+			$sql = "SELECT PERIODO_EXPERIENCIA, TIENDA, ZONA, SUM(RESPUESTA_TOTAL) AS RESPUESTA, SUM(PROMOTOR_TOTAL) AS PROMOTOR, 
+			SUM(Detractor_Total) AS DETRACTOR, SUM(NEUTRO_TOTAL) AS NEUTRO, SUM(RESPUESTA_ATENCION) AS RESPUESTA_ATENCION, SUM(RESPUESTA_CAJA) AS RESPUESTA_CAJA,
+			SUM(RESPUESTA_VENTA) AS RESPUESTA_VENTA, SUM(Respuesta_Meson) AS RESPUESTA_MESON FROM CANALES.DBO.REPORTING_NPS_RESUMEN
+			WHERE Periodo_Experiencia >= '202501' AND ZONA = 'BOGOTA' GROUP BY TIENDA, ZONA, PERIODO_EXPERIENCIA";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
 			}
 			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
-				<td style="text-align: center;"><?php echo $row['ID']; ?></td>
-				<td style="text-align: center;"><?php echo $row['ID_CLIENTE']; ?></td>
-				<td style="text-align: center;"><?php echo $row['NOMBRE_CLIENTE']; ?></td>
-				<td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['AÑO_EXPERIENCIA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['SEMANA_LIQUIDACION']; ?></td>
-                <td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['NOMBRE_EJECUTIVO']; ?></td>
-                <td style="text-align: center;"><?php echo $row['respuesta']; ?></td>
+			    <td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
+				<td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
+				<td style="text-align: center;"><?php echo $row['ZONA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['RESPUESTA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['PROMOTOR']; ?></td>
+                <td style="text-align: center;"><?php echo $row['DETRACTOR']; ?></td>
+                <td style="text-align: center;"><?php echo $row['NEUTRO']; ?></td>
+				<td style="text-align: center;"><?php echo $row['RESPUESTA_ATENCION']; ?></td>
+				<td style="text-align: center;"><?php echo $row['RESPUESTA_CAJA']; ?></td>
+				<td style="text-align: center;"><?php echo $row['RESPUESTA_VENTA']; ?></td>
+				<td style="text-align: center;"><?php echo $row['RESPUESTA_MESON']; ?></td>
 			</tr>
 			<?php
 			}
@@ -359,24 +360,6 @@ include_once '../consultphp/conexion_bd.php';
 		</script>
 			<p id="number" class="text-success" style="font-size:8px;"></p>
 
-<script type="text/javascript">
-    n = 50
-    var l = document.getElementById("number");
-    var id = window.setInterval(function(){
-        document.onmousemove = function(){
-            n = 50
-        };
-        
-        l.innerText = n;
-        n--;
-
-        if(n <= -1){
-            swal("La sesión ha expirado");
-            location.href="../login/login.php";
-    }
-    }, 2000);
-    
-    </script>
 	</body>
 
 </html>

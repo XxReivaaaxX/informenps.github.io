@@ -834,7 +834,7 @@ include_once '../consultphp/conexion_bd.php';
     <h1 class="titulo-des">Información general</h1>
     <div class="contenedor-des">
         <!--<h1 class="titulo-des">Banco Falabella</h1>-->
-        <video class="video" width="600" height="400" controls src="../videos/videoapp.mp4">
+        <iframe width="600" height="400" src="https://www.youtube.com/embed/cHECpdiLQWg?si=82IR43aQqbIjoKd3&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <style>
                 .video {
                     padding-top: 0%;
@@ -845,7 +845,7 @@ include_once '../consultphp/conexion_bd.php';
         </video>
         <p class="descripcion"><span>¡De Gennial a </span><br><span>Gennials!</span>
         </p>
-    </div>
+    </div> <br>
     <section class="servicios">
         <div class="contenedor">
             <h4 class="titulo-suc">A detalle...</h4>
@@ -986,7 +986,7 @@ include_once '../consultphp/conexion_bd.php';
                         <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412'";
+                     WHERE PERIODO_EXPERIENCIA = '202501'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -1048,7 +1048,7 @@ include_once '../consultphp/conexion_bd.php';
                         <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412'";
+                     WHERE PERIODO_EXPERIENCIA = '202501'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -1110,7 +1110,7 @@ include_once '../consultphp/conexion_bd.php';
                         <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202412'";
+                     WHERE PERIODO_EXPERIENCIA = '202501'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );

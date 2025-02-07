@@ -162,6 +162,7 @@
 						<div id="chart"></div>
 					</div>
 				</div>
+				<div class="data">
 				<div class="content-data">
 					<div class="head">
 						<h3>Chatbot NPS Cartera</h3>

@@ -14,17 +14,17 @@ include_once '../consultphp/conexion_bd.php';
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
-	<title>Sur</title>
+	<title>Bogotá</title>
 </head>
 
 <body>
 	<div class="wrapper">
 		<div class="collapsible">
 			<input type="checkbox" id="collapsible-head">
-			<label for="collapsible-head">ZONA SUR</label>
+			<label for="collapsible-head">ZONA BOGOTA</label>
 			<div class="collapsible-text">
 				<p>Acá podrán visualizar la información de la zona 
-					Sur.
+					Bogotá.
 				</p>
 			</div>
 		</div>
@@ -267,44 +267,43 @@ include_once '../consultphp/conexion_bd.php';
 	</header>
 	<br>
 	<table id="eje-1" class="display" style="width:100%">
-	<h1 class="titulo-des" style="padding-left:30px">Zona Sur</h1><br><br>
+	<h1 class="titulo-des" style="padding-left:30px">Zona Bogotá</h1><br><br>
     <thead>
     <tr>
-                        <th>ID</th>
-                        <th>ID CLIENTE</th>
-                        <th>NOMBRE CLIENTE</th>
-                        <th>PERIODO_EXPERIENCIA</th>
-                        <th>AÑO EXPERIENCIA</th>
-                        <th>SEMANA LIQUIDACION</th>
+		                <th>PERIODO</th>
                         <th>TIENDA</th>
-                        <th>NOMBRE EJECUTIVO</th>
-                        <th>N° RESPUESTAS</th>
+                        <th>ZONA</th>
+                        <th>RESPUESTA TOTAL</th>
+                        <th>PROMOTOR TOTAL</th>
+                        <th>DETRACTOR TOTAL</th>
+                        <th>NEUTRO TOTAL</th>
+						<th>RESPUESTAS DE CAJA</th>
+						<th>RESPUESTAS DE VENTA</th>
+						<th>RESPUESTAS DE MESÓN</th>
                     </tr>
     </thead>
                 <tbody>
                 <?php 
-			$sql = "SELECT ID,ID_CLIENTE,NOMBRE_CLIENTE,PERIODO_EXPERIENCIA,
-             AÑO_EXPERIENCIA,SEMANA_LIQUIDACION, SUM(respuesta) as respuesta, 
-            NOMBRE_EJECUTIVO, TIENDA
-            FROM canales.dbo.REPORTING_NPS_DETALLE WHERE ZONA = 'SUR'
-            AND PERIODO_EXPERIENCIA >= '202501'
-			group by ID,ID_CLIENTE,NOMBRE_CLIENTE,PERIODO_EXPERIENCIA,AÑO_EXPERIENCIA,
-            SEMANA_LIQUIDACION,NOMBRE_EJECUTIVO, TIENDA";
+			$sql = "SELECT PERIODO_EXPERIENCIA, TIENDA, ZONA, SUM(RESPUESTA_TOTAL) AS RESPUESTA, SUM(PROMOTOR_TOTAL) AS PROMOTOR, 
+			SUM(Detractor_Total) AS DETRACTOR, SUM(NEUTRO_TOTAL) AS NEUTRO, SUM(RESPUESTA_CAJA) AS RESPUESTA_CAJA,
+			SUM(RESPUESTA_VENTA) AS RESPUESTA_VENTA, SUM(Respuesta_Meson) AS RESPUESTA_MESON FROM CANALES.DBO.REPORTING_NPS_RESUMEN
+			WHERE Periodo_Experiencia >= '202501' AND ZONA = 'SUR' GROUP BY TIENDA, ZONA, PERIODO_EXPERIENCIA";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
 			}
 			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
-				<td style="text-align: center;"><?php echo $row['ID']; ?></td>
-				<td style="text-align: center;"><?php echo $row['ID_CLIENTE']; ?></td>
-				<td style="text-align: center;"><?php echo $row['NOMBRE_CLIENTE']; ?></td>
-				<td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['AÑO_EXPERIENCIA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['SEMANA_LIQUIDACION']; ?></td>
-                <td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
-                <td style="text-align: center;"><?php echo $row['NOMBRE_EJECUTIVO']; ?></td>
-                <td style="text-align: center;"><?php echo $row['respuesta']; ?></td>
+			    <td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
+				<td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
+				<td style="text-align: center;"><?php echo $row['ZONA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['RESPUESTA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['PROMOTOR']; ?></td>
+                <td style="text-align: center;"><?php echo $row['DETRACTOR']; ?></td>
+                <td style="text-align: center;"><?php echo $row['NEUTRO']; ?></td>
+				<td style="text-align: center;"><?php echo $row['RESPUESTA_CAJA']; ?></td>
+				<td style="text-align: center;"><?php echo $row['RESPUESTA_VENTA']; ?></td>
+				<td style="text-align: center;"><?php echo $row['RESPUESTA_MESON']; ?></td>
 			</tr>
 			<?php
 			}
@@ -359,24 +358,6 @@ include_once '../consultphp/conexion_bd.php';
 		</script>
 			<p id="number" class="text-success" style="font-size:8px;"></p>
 
-<script type="text/javascript">
-    n = 50
-    var l = document.getElementById("number");
-    var id = window.setInterval(function(){
-        document.onmousemove = function(){
-            n = 50
-        };
-        
-        l.innerText = n;
-        n--;
-
-        if(n <= -1){
-            swal("La sesión ha expirado");
-            location.href="../login/login.php";
-    }
-    }, 2000);
-    
-    </script>
 	</body>
 
 </html>
