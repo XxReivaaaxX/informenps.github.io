@@ -14,17 +14,16 @@ include_once '../consultphp/conexion_bd.php';
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
-	<title>Bogotá</title>
+	<title>Detalle Asesores Venta - Atención</title>
 </head>
 
 <body>
 	<div class="wrapper">
 		<div class="collapsible">
 			<input type="checkbox" id="collapsible-head">
-			<label for="collapsible-head">ZONA BOGOTA</label>
+			<label for="collapsible-head">DETALLE ASESORES</label>
 			<div class="collapsible-text">
-				<p>Acá podrán visualizar la información de la zona 
-					Bogotá.
+				<p>Acá podrán visualizar la información detallada de los asesores.
 				</p>
 			</div>
 		</div>
@@ -82,7 +81,7 @@ include_once '../consultphp/conexion_bd.php';
 		.collapsible label:after {
 			content: "";
 			position: absolute;
-			right: 5px;
+			right: 120px;
 			width: 29px;
 			height: 25px;
 			background: url(../img/icon12.png) no-repeat 0 0;
@@ -251,10 +250,10 @@ include_once '../consultphp/conexion_bd.php';
 	</head>
 	<header>
 		<div class="contenedor">
-			<a href="../sucur/oficinasgen.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
+			<a href="../../../panel_dash/sucur/sucur_venta/panel_suc_venta.php" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
 			<nav>
-				<a href="../sucur/oficinasgen.html"><img src="../img/nps,log.png" height="150" width="220">
-					<a href="../sucur/oficinasgen.html"><img src="../img/banderacol.png" height="150" width="">
+				<a href="../../../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><img src="../img/nps,log.png" height="150" width="220">
+					<a href="../../../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><img src="../img/banderacol.png" height="150" width="">
 					</a>
 				</a>
 			</nav>
@@ -267,10 +266,11 @@ include_once '../consultphp/conexion_bd.php';
 	</header>
 	<br>
 	<table id="eje-1" class="display" style="width:100%">
-	<h1 class="titulo-des" style="padding-left:30px">Zona Bogotá</h1><br><br>
+	<h1 class="titulo-des" style="padding-left:30px">Detalle Asesores Zona Bogotá</h1><br><br>
     <thead>
     <tr>
                         <th>ID</th>
+						<th>CANAL</th>
                         <th>PERIODO_EXPERIENCIA</th>
                         <th>SEMANA LIQUIDACION</th>
                         <th>TIENDA</th>
@@ -280,12 +280,13 @@ include_once '../consultphp/conexion_bd.php';
     </thead>
                 <tbody>
                 <?php 
-			$sql = "SELECT ID,PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
-			count(respuesta) as respuesta,  NOMBRE_EJECUTIVO, TIENDA
+			$sql = "SELECT ID, CANAL, PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
+			SUM(respuesta) as respuesta,  NOMBRE_EJECUTIVO, TIENDA
             FROM canales.dbo.REPORTING_NPS_DETALLE WHERE ZONA = 'BOGOTA'
             AND PERIODO_EXPERIENCIA >= '202501'
+			AND CANAL IN ('VENTA', 'ATENCIÓN')
 			group by ID, PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
-			NOMBRE_EJECUTIVO, TIENDA";
+			NOMBRE_EJECUTIVO, TIENDA,CANAL";
 			$stmt = sqlsrv_query($conn, $sql );
 			if( $stmt === false) {
 				die(print_r( sqlsrv_errors(), true));
@@ -293,6 +294,89 @@ include_once '../consultphp/conexion_bd.php';
 			while($row = sqlsrv_fetch_array($stmt)) { ?>
 			<tr>
 				<td style="text-align: center;"><?php echo $row['ID']; ?></td>
+				<td style="text-align: center;"><?php echo $row['CANAL']; ?></td>
+				<td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['SEMANA_LIQUIDACION']; ?></td>
+                <td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['NOMBRE_EJECUTIVO']; ?></td>
+                <td style="text-align: center;"><?php echo $row['respuesta']; ?></td>
+			</tr>
+			<?php
+			}
+            ?>
+		</tbody>
+			</table><br>
+			<table id="eje-2" class="display" style="width:100%">
+	<h1 class="titulo-des" style="padding-left:30px">Detalle Asesores Zona Occidente</h1><br><br>
+    <thead>
+    <tr>
+                        <th>ID</th>
+						<th>CANAL</th>
+                        <th>PERIODO_EXPERIENCIA</th>
+                        <th>SEMANA LIQUIDACION</th>
+                        <th>TIENDA</th>
+                        <th>NOMBRE EJECUTIVO</th>
+                        <th>N° RESPUESTAS</th>
+                    </tr>
+    </thead>
+                <tbody>
+                <?php 
+			$sql = "SELECT ID, CANAL, PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
+			SUM(respuesta) as respuesta,  NOMBRE_EJECUTIVO, TIENDA
+            FROM canales.dbo.REPORTING_NPS_DETALLE WHERE ZONA = 'OCCIDENTE'
+            AND PERIODO_EXPERIENCIA >= '202501'
+			AND CANAL IN ('VENTA', 'ATENCIÓN')
+			group by ID, PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
+			NOMBRE_EJECUTIVO, TIENDA, CANAL";
+			$stmt = sqlsrv_query($conn, $sql );
+			if( $stmt === false) {
+				die(print_r( sqlsrv_errors(), true));
+			}
+			while($row = sqlsrv_fetch_array($stmt)) { ?>
+			<tr>
+				<td style="text-align: center;"><?php echo $row['ID']; ?></td>
+				<td style="text-align: center;"><?php echo $row['CANAL']; ?></td>
+				<td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['SEMANA_LIQUIDACION']; ?></td>
+                <td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
+                <td style="text-align: center;"><?php echo $row['NOMBRE_EJECUTIVO']; ?></td>
+                <td style="text-align: center;"><?php echo $row['respuesta']; ?></td>
+			</tr>
+			<?php
+			}
+            ?>
+		</tbody>
+			</table><br>
+			<table id="eje-3" class="display" style="width:100%">
+	<h1 class="titulo-des" style="padding-left:30px">Detalle Asesores Zona Sur</h1><br><br>
+    <thead>
+    <tr>
+                        <th>ID</th>
+						<th>CANAL</th>
+                        <th>PERIODO_EXPERIENCIA</th>
+                        <th>SEMANA LIQUIDACION</th>
+                        <th>TIENDA</th>
+                        <th>NOMBRE EJECUTIVO</th>
+                        <th>N° RESPUESTAS</th>
+                    </tr>
+    </thead>
+                <tbody>
+                <?php 
+			$sql = "SELECT ID, CANAL, PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
+			count(respuesta) as respuesta,  NOMBRE_EJECUTIVO, TIENDA
+            FROM canales.dbo.REPORTING_NPS_DETALLE WHERE ZONA = 'SUR'
+            AND PERIODO_EXPERIENCIA >= '202501'
+			AND CANAL IN ('VENTA', 'ATENCIÓN')
+			group by ID, PERIODO_EXPERIENCIA,SEMANA_LIQUIDACION,
+			NOMBRE_EJECUTIVO, TIENDA, CANAL";
+			$stmt = sqlsrv_query($conn, $sql );
+			if( $stmt === false) {
+				die(print_r( sqlsrv_errors(), true));
+			}
+			while($row = sqlsrv_fetch_array($stmt)) { ?>
+			<tr>
+				<td style="text-align: center;"><?php echo $row['ID']; ?></td>
+				<td style="text-align: center;"><?php echo $row['CANAL']; ?></td>
 				<td style="text-align: center;"><?php echo $row['PERIODO_EXPERIENCIA']; ?></td>
                 <td style="text-align: center;"><?php echo $row['SEMANA_LIQUIDACION']; ?></td>
                 <td style="text-align: center;"><?php echo $row['TIENDA']; ?></td>
@@ -326,6 +410,60 @@ include_once '../consultphp/conexion_bd.php';
 		<script>
 			$(document).ready(function () {
 				var table = $('#eje-1').DataTable({
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Datos",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Datos",
+        "infoFiltered": "(Filtrado de _MAX_ total datos)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Datos",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+})
+			});
+			
+		</script>
+		<script>
+			$(document).ready(function () {
+				var table = $('#eje-2').DataTable({
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Datos",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Datos",
+        "infoFiltered": "(Filtrado de _MAX_ total datos)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Datos",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+})
+			});
+			
+		</script>
+		<script>
+			$(document).ready(function () {
+				var table = $('#eje-3').DataTable({
     language: {
         "decimal": "",
         "emptyTable": "No hay información",

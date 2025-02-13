@@ -54,7 +54,7 @@ include_once '../../../consultphp/conexion_bd.php';
     <section id="content">
         <!-- NAVBAR -->
         <nav>
-            <!--<i class='bx bx-menu toggle-sidebar'></i>-->
+            <i class='bx bx-menu toggle-sidebar'></i>
             <form action="#">
                 <div class="form-group">
                     <input type="text" placeholder="Próximamente...">
@@ -224,6 +224,15 @@ include_once '../../../consultphp/conexion_bd.php';
                             <div id="chart"></div>
                         </div>
                     </div>
+                    </div>
+                <div class="data">
+                    <div class="content-data">
+                        <div class="head">
+                            <h3>Promedio NPS Sucursales Venta 2024 - 2025</h3>
+                        </div>
+                            <div id="chart2"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="data">
                     <div class="content-data">
@@ -242,7 +251,7 @@ include_once '../../../consultphp/conexion_bd.php';
                     $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202502' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'DETRACTOR' AND NIVEL_1 = 'VENTA'
 					AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
@@ -263,7 +272,7 @@ include_once '../../../consultphp/conexion_bd.php';
                                                 <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                     WHERE PERIODO_EXPERIENCIA = '202501'";
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -288,7 +297,7 @@ include_once '../../../consultphp/conexion_bd.php';
                     $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202502' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'NEUTRO' AND NIVEL_1 = 'VENTA'
 					AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
@@ -308,8 +317,8 @@ include_once '../../../consultphp/conexion_bd.php';
                                             <small>
                                                 <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                     WHERE PERIODO_EXPERIENCIA = '202501'";
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -334,7 +343,7 @@ include_once '../../../consultphp/conexion_bd.php';
                     $def_1 = "Venta: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                      FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
+                     WHERE PERIODO_EXPERIENCIA = '202502' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'PROMOTOR' AND NIVEL_1 = 'VENTA'
 					 AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
@@ -355,7 +364,7 @@ include_once '../../../consultphp/conexion_bd.php';
                                                 <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202501'";
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -378,7 +387,7 @@ include_once '../../../consultphp/conexion_bd.php';
                         <div class="head">
                             <h3>NPS 2024 - NPS 2025</h3>
                         </div>
-                            <div id="chart2"></div>
+                            <div id="chart3"></div>
                         </div>
                     </div>
 
@@ -390,7 +399,7 @@ include_once '../../../consultphp/conexion_bd.php';
                     <div class="cards">
                         <div class="card">
                             <div class="contenido-texto-card">
-                                <a href="oficinasgen.html">
+                                <a href="../../../sucur/detalleasesores_suc.php">
                                     <h4 class="titulo-suc">¡Haz clic acá!</h4>
                                 </a>
                             </div>

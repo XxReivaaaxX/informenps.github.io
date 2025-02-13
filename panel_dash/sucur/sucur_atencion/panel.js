@@ -165,37 +165,195 @@ allProgress.forEach(item=> {
 
 // APEXCHART
 var options = {
-  series: [{
-  name: 'series1',
-  data: [31, 40, 28, 51, 42, 109, 100]
-}, {
-  name: 'series2',
-  data: [11, 32, 45, 32, 34, 52, 41]
-}],
-  chart: {
-  height: 350,
-  type: 'area'
-},
-dataLabels: {
-  enabled: false
-},
-stroke: {
-  curve: 'smooth'
-},
-xaxis: {
-  type: 'datetime',
-  categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-},
-tooltip: {
-  x: {
-    format: 'dd/MM/yy HH:mm'
+	series: [
+	{
+	  name: "",
+	  data: [200, 330, 548, 740, 880, 990, 1100, 1380],
+	},
+  ],
+	chart: {
+	type: 'bar',
+	height: 350,
+	dropShadow: {
+	  enabled: false,
+	},
   },
-},
-};
+  plotOptions: {
+	bar: {
+	  borderRadius: 0,
+	  horizontal: true,
+	  distributed: true,
+	  barHeight: '60%',
+	  isFunnel: true,
+	},
+  },
+  colors: [
+	'#008f39',
+	'#BDECB6',
+	'#008f39',
+	'#BDECB6',
+	'#008f39',
+	'#BDECB6',
+	'#008f39',
+	'#BDECB6',
+  ],
+  dataLabels: {
+	enabled: true,
+	formatter: function (val, opt) {
+	  return opt.w.globals.labels[opt.dataPointIndex] 
+	},
+	dropShadow: {
+	  enabled: true,
+	},
+  },
+  title: {
+	text: 'TOP 8',
+	align: 'middle',
+  },
+  xaxis: {
+	categories: ['1', '2', '3', '4', '5', '6', '7', '8'],
+  },
+  legend: {
+	show: false,
+  },
+  };
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  chart.render();
 
+//APEXCHART 2 //
+var options = {
+	series: [{
+	name: 'NPS',
+	data: [{
+	  x: '2024',
+	  y: 79.2,
+	}, {
+	  x: '2025',
+	  y: 81.10,
+	  fillColor: '#EB8C87',
+	  strokeColor: '#C23829'
+	}],
+  }],
+	chart: {
+	height: 350,
+	type: 'bar',
+  },
+  plotOptions: {
+	bar: {
+	  horizontal: false,
+	  columnWidth: '60%'
+	},
+  },
+  stroke: {
+	width: 0,
+  },
+  dataLabels: {
+	enabled: true
+  },
+  yaxis: {
+	labels: {
+	  formatter: function(val) {
+		return val + "%"
+	  }
+	}
+  },
+  fill: {
+	opacity: 1,
+  },
+  xaxis: {
+	categories: ['2024','2025'],
+  },
+  legend: {
+	show: true,
+  },
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart2"), options);
+  chart.render();
+
+// APEXCHART 3 //
+var options = {
+	series: [{
+	name: 'Enero',
+	data: [63.80, 55]
+  }, {
+	name: 'Febrero',
+	data: [63.30, 23]
+  }, {
+	name: 'Marzo',
+	data: [63.53, 0]
+  }, {
+	name: 'Abril',
+	data: [65.03, 0]
+  }, {
+	name: 'Mayo',
+	data: [64.36, 0]
+  }, {
+	name: 'Junio',
+	data: [61.94, 0]
+  }, {
+	name: 'Julio',
+	data: [58.84, 0]
+  }, {
+	name: 'Agosto',
+	data: [59.09, 0]
+  }, {
+	name: 'Septiembre',
+	data: [62.46, 0]
+  }, {
+	name: 'Octubre',
+	data: [59.62, 0]
+  }, {
+	name: 'Noviembre',
+	data: [60.75, 0]
+  }, {
+	name: 'Diciembre',
+	data: [60.73, 0]
+  }],
+	chart: {
+	type: 'bar',
+	height: 350,
+	stacked: true,
+	stackType: 'normal',
+	dropShadow: {
+		enabled: true,
+	  },
+  },
+  responsive: [{
+	breakpoint: 480,
+	options: {
+	  legend: {
+		position: 'top',
+		offsetX: -10,
+		offsetY: 0
+	  }
+	}
+  }],
+  xaxis: {
+	categories: ['2024', '2025'],
+  },
+  yaxis: {
+	labels: {
+	  formatter: function(val) {
+		return val + "%"
+	  }
+	}
+  },
+  fill: {
+	opacity: 1
+  },
+  legend: {
+	position: 'right',
+	offsetX: 0,
+	offsetY: 50
+  },
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart3"), options);
+  chart.render();
+
+  
 // CHATBOT //
 const btnSend = document.getElementById("btn");
 const chat = document.getElementById("chat");

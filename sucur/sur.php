@@ -14,17 +14,17 @@ include_once '../consultphp/conexion_bd.php';
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.dataTables.min.css">
-	<title>Bogotá</title>
+	<title>Sur</title>
 </head>
 
 <body>
 	<div class="wrapper">
 		<div class="collapsible">
 			<input type="checkbox" id="collapsible-head">
-			<label for="collapsible-head">ZONA BOGOTA</label>
+			<label for="collapsible-head">ZONA SUR</label>
 			<div class="collapsible-text">
 				<p>Acá podrán visualizar la información de la zona 
-					Bogotá.
+					Sur.
 				</p>
 			</div>
 		</div>
@@ -251,10 +251,10 @@ include_once '../consultphp/conexion_bd.php';
 	</head>
 	<header>
 		<div class="contenedor">
-			<a href="../sucur/oficinasgen.html" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
+			<a href="../../panel_dash/sucur/sucur_venta/panel_suc_venta.php" class="logo"><img src="../img/logofalabella.png" width="290" height="100"></a>
 			<nav>
-				<a href="../sucur/oficinasgen.html"><img src="../img/nps,log.png" height="150" width="220">
-					<a href="../sucur/oficinasgen.html"><img src="../img/banderacol.png" height="150" width="">
+				<a href="../../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><img src="../img/nps,log.png" height="150" width="220">
+					<a href="../../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><img src="../img/banderacol.png" height="150" width="">
 					</a>
 				</a>
 			</nav>
@@ -267,7 +267,7 @@ include_once '../consultphp/conexion_bd.php';
 	</header>
 	<br>
 	<table id="eje-1" class="display" style="width:100%">
-	<h1 class="titulo-des" style="padding-left:30px">Zona Bogotá</h1><br><br>
+	<h1 class="titulo-des" style="padding-left:30px">Zona Sur</h1><br><br>
     <thead>
     <tr>
 		                <th>PERIODO</th>
@@ -277,6 +277,7 @@ include_once '../consultphp/conexion_bd.php';
                         <th>PROMOTOR TOTAL</th>
                         <th>DETRACTOR TOTAL</th>
                         <th>NEUTRO TOTAL</th>
+						<th>RESPUESTAS DE ATENCIÓN</th>
 						<th>RESPUESTAS DE CAJA</th>
 						<th>RESPUESTAS DE VENTA</th>
 						<th>RESPUESTAS DE MESÓN</th>
@@ -285,7 +286,7 @@ include_once '../consultphp/conexion_bd.php';
                 <tbody>
                 <?php 
 			$sql = "SELECT PERIODO_EXPERIENCIA, TIENDA, ZONA, SUM(RESPUESTA_TOTAL) AS RESPUESTA, SUM(PROMOTOR_TOTAL) AS PROMOTOR, 
-			SUM(Detractor_Total) AS DETRACTOR, SUM(NEUTRO_TOTAL) AS NEUTRO, SUM(RESPUESTA_CAJA) AS RESPUESTA_CAJA,
+			SUM(Detractor_Total) AS DETRACTOR, SUM(NEUTRO_TOTAL) AS NEUTRO, SUM(RESPUESTA_ATENCION) AS RESPUESTA_ATENCION, SUM(RESPUESTA_CAJA) AS RESPUESTA_CAJA,
 			SUM(RESPUESTA_VENTA) AS RESPUESTA_VENTA, SUM(Respuesta_Meson) AS RESPUESTA_MESON FROM CANALES.DBO.REPORTING_NPS_RESUMEN
 			WHERE Periodo_Experiencia >= '202501' AND ZONA = 'SUR' GROUP BY TIENDA, ZONA, PERIODO_EXPERIENCIA";
 			$stmt = sqlsrv_query($conn, $sql );
@@ -301,6 +302,7 @@ include_once '../consultphp/conexion_bd.php';
                 <td style="text-align: center;"><?php echo $row['PROMOTOR']; ?></td>
                 <td style="text-align: center;"><?php echo $row['DETRACTOR']; ?></td>
                 <td style="text-align: center;"><?php echo $row['NEUTRO']; ?></td>
+				<td style="text-align: center;"><?php echo $row['RESPUESTA_ATENCION']; ?></td>
 				<td style="text-align: center;"><?php echo $row['RESPUESTA_CAJA']; ?></td>
 				<td style="text-align: center;"><?php echo $row['RESPUESTA_VENTA']; ?></td>
 				<td style="text-align: center;"><?php echo $row['RESPUESTA_MESON']; ?></td>

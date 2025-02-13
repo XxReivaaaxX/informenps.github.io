@@ -157,8 +157,8 @@ allProgress.forEach(item=> {
 })
 
 
-
-// APEXCHART
+ 
+// APEXCHART 1 //
 var options = {
 	series: [
 	{
@@ -217,6 +217,53 @@ var options = {
   chart.render();
 
 //APEXCHART 2 //
+var options = {
+	series: [25, 15],
+	chart: {
+	width: '100%',
+	height: '100%',
+	type: 'pie',
+  },
+  labels: [
+	'NPS 2024',
+	'NPS 2025',
+  ],
+  theme: {
+	monochrome: {
+	  enabled: false,
+	},
+  },
+  plotOptions: {
+	pie: {
+	  dataLabels: {
+		offset: -5,
+	  },
+	},
+  },
+  grid: {
+	padding: {
+	  top: 0,
+	  bottom: 0,
+	  left: 0,
+	  right: 0,
+	},
+  },
+  dataLabels: {
+	formatter(val, opts) {
+	  const name = opts.w.globals.labels[opts.seriesIndex]
+	  return [name, val.toFixed(1) + '%']
+	},
+  },
+  legend: {
+	show: true,
+  },
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart2"), options);
+  chart.render();
+
+
+//APEXCHART 3 //
 var options = {
 	series: [{
 	name: 'Enero',
@@ -298,7 +345,7 @@ var options = {
   }
   };
 
-  var chart = new ApexCharts(document.querySelector("#chart2"), options);
+  var chart = new ApexCharts(document.querySelector("#chart3"), options);
   chart.render();
 
 	 

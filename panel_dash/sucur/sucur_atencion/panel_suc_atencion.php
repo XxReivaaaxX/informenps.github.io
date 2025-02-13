@@ -212,7 +212,7 @@ include_once '../../../consultphp/conexion_bd.php';
                 <div class="data">
                     <div class="content-data">
                         <div class="head">
-                            <h3>Gráfica</h3>
+                            <h3>Top Oficinas</h3>
                             <!--<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
@@ -224,6 +224,14 @@ include_once '../../../consultphp/conexion_bd.php';
                         </div>
                         <div class="chart">
                             <div id="chart"></div>
+                        </div>
+                    </div>
+                    <div class="data">
+                    <div class="content-data">
+                        <div class="head">
+                            <h3>Promedio NPS <br> Sucursales Atención <br> 2024 - 2025</h3>
+                        </div>
+                            <div id="chart2"></div>
                         </div>
                     </div>
                 </div>
@@ -243,8 +251,8 @@ include_once '../../../consultphp/conexion_bd.php';
                                         <?php 
                     $def_1 = "Atención: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE 
+                     WHERE PERIODO_EXPERIENCIA = '202502' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'DETRACTOR'  AND NIVEL_1 = 'ATENCIÓN'
                      AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
@@ -265,7 +273,7 @@ include_once '../../../consultphp/conexion_bd.php';
                                                 <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202501'";
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -289,8 +297,8 @@ include_once '../../../consultphp/conexion_bd.php';
                                         <?php 
                     $def_1 = "Atención: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE 
+                     WHERE PERIODO_EXPERIENCIA = '202502' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'NEUTRO'  AND NIVEL_1 = 'ATENCIÓN'
                      AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
@@ -311,7 +319,7 @@ include_once '../../../consultphp/conexion_bd.php';
                                                 <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202501'";
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -335,8 +343,8 @@ include_once '../../../consultphp/conexion_bd.php';
                                         <?php 
                     $def_1 = "Atención: ";
                     $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND TIPO = 'RED OFICINAS'
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE 
+                     WHERE PERIODO_EXPERIENCIA = '202502' AND TIPO = 'RED OFICINAS'
                      AND Tipo_Respuesta = 'PROMOTOR' AND NIVEL_1 = 'ATENCIÓN'
                      AND COMENTARIO_CLIENTE != '' ";
                      $stmt = sqlsrv_query($conn, $tsql);
@@ -357,7 +365,7 @@ include_once '../../../consultphp/conexion_bd.php';
                                                 <?php
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202501'";
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
                      $stmt = sqlsrv_query($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
@@ -374,6 +382,13 @@ include_once '../../../consultphp/conexion_bd.php';
                         </div>
                     </div>
                 </div>
+                    <div class="content-data">
+                        <div class="head">
+                            <h3>NPS 2024 - NPS 2025 <br> Mes x Mes</h3>
+                        </div>
+                            <div id="chart3"></div>
+                        </div>
+                    </div>
             </div>
             <div class="data">
                 <div class="content-data">
@@ -383,7 +398,7 @@ include_once '../../../consultphp/conexion_bd.php';
                     <div class="cards">
                         <div class="card">
                             <div class="contenido-texto-card">
-                                <a href="oficinasgen.html">
+                                <a href="../../../sucur/detalleasesores_suc.php">
                                     <h4 class="titulo-suc">¡Haz clic acá!</h4>
                                 </a>
                             </div>
@@ -391,32 +406,32 @@ include_once '../../../consultphp/conexion_bd.php';
                     </div>
                 </div>
                 <div class="content-data">
-                    <div class="head">
-                        <h3>Chatbot NPS Sucursales Atención</h3>
-                        <div class="menu">
-                            <i class='bx bx-dots-horizontal-rounded icon'></i>
-                            <ul class="menu-link">
-                                <li><a href="../sucur_atencion/panel_suc_atencion.php" class="btn-delete">Nuevo Chat</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="chat-box">
-                        <p class="day"><span>Hoy</span></p>
-                        <div class="msg">
-                            <p class="cx">Hola Gennial, en que te puedo ayudar?</p>
-                            <div class="scroller"></div><br><br><br><br><br><br><br><br><br><br>
-                        </div>
-                    </div>
-                    <form class="chat" method="post" autocomplete="off">
-                        <div><br><br><br>
-                            <input type="text" name="chat" id="chat" placeholder="Alguna duda?">
-                        </div><br>
-                        <!--<div>
+					<div class="head">
+						<h3>Chatbot Sucursales Atención</h3>
+						<div class="menu">
+							<i class='bx bx-dots-horizontal-rounded icon'></i>
+							<ul class="menu-link">
+								<li><a href="../../panel_dash/calif_app/panel_calif_app.php" class="btn-delete">Nuevo Chat</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="chat-box">
+						<p class="day"><span>Hoy</span></p>
+						<div class="msg">
+								<p class="cx">Hola Gennial, en que te puedo ayudar?</p>
+								<div class="scroller"></div><br><br><br><br><br><br><br><br><br><br>
+							</div>
+						</div>
+						<form class="chat" method="post" autocomplete="off">
+							<div><br><br><br>
+								<input type="text" name="chat" id="chat" placeholder="Alguna duda?">
+							</div><br>
+							<div>
 								<input type="submit" value="Enviar" id="btn">
-							</div>-->
-                    </form>
-                </div>
+							</div>
+				</form>
+						
+						</div>
                 <div class="data">
                     <div class="content-data">
                         <div class="head">
@@ -465,7 +480,7 @@ include_once '../../../consultphp/conexion_bd.php';
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="../sucur_atencion/panel.js"></script>
-    <script src="../../../../botcx/bot.js"></script>
+    <script src="../../botcx/bot.js"></script>
 </body>
 
 </html>

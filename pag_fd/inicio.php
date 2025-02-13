@@ -383,7 +383,6 @@
 					</li>
 					<li><a href="../sucur/enc_sucursales.php">Encuestas Sucursales</a></li>
 					<li><a href="../can_dig/enc_canalesdig.php">Encuestas Canales Digitales</a></li>
-					<li><a href="../../panel_dash/callcenter/panel_call.php">Call Center</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -409,10 +408,10 @@
 				}
 			</style>
 			<nav class="vertical-menu">
-			<a href="../../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><i class="fa fa-bar-chart" aria-hidden="true"></i> Panel </a>
-				<a href="../sucur/sucursales.php"><i class="fa fa-building" aria-hidden="true"></i> Sucursales</a>
-				<a href="../can_dig/canalesdig.php"><i class="fa fa-whatsapp" aria-hidden="true"></i> Canales Digitales</a>
+				<a href="../panel_dash/sucur/sucur_venta/panel_suc_venta.php"><i class="fa fa-building" aria-hidden="true"></i> Sucursales</a>
+				<a href="../panel_dash/canales_digitales/app/panel_app.php"><i class="fa fa-whatsapp" aria-hidden="true"></i> Canales Digitales</a>
 				<a href="../panel_dash/cart/panel_cart.php"><i class="fa fa-users" aria-hidden="true"></i> Cartera</a>
+				<a href="../../panel_dash/callcenter/panel_call.php"><i class="fa fa-phone" aria-hidden="true"></i> Call Center </a>
 			</nav>
 			<iframe width="400" height="200" src="https://www.youtube.com/embed/422YCsRM6_s?si=OaSIgHK2-IqEUuuE" title="YouTube video player" frameborder="0" 
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 

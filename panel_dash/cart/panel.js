@@ -166,11 +166,11 @@ allProgress.forEach(item=> {
 // APEXCHART
 var options = {
   series: [{
-  name: 'series1',
-  data: [31, 40, 28, 51, 42, 109, 100]
+  name: 'NPS Cartera',
+  data: [31, 40, 28]
 }, {
-  name: 'series2',
-  data: [11, 32, 45, 32, 34, 52, 41]
+  name: 'NPS Rolling',
+  data: [11, 32, 45]
 }],
   chart: {
   height: 350,
@@ -183,18 +183,138 @@ stroke: {
   curve: 'smooth'
 },
 xaxis: {
-  type: 'datetime',
-  categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+  type: 'date',
+  categories: ["11/02/2025", "18/02/2025", "25/02/2025"]
 },
 tooltip: {
   x: {
-    format: 'dd/MM/yy HH:mm'
+    format: 'dd/MM/yy '
   },
 },
 };
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
+
+// APEXCHART 3 //
+var options = {
+	series: [
+	{
+	  name: 'Enero',
+	  data: [
+		{
+		  x: 'Enero',
+		  y: 503,
+		},
+		{
+		  x: 'Febrero',
+		  y: 580,
+		},
+		{
+		  x: 'Marzo',
+		  y: 135,
+		},
+	  ],
+	},
+	{
+	  name: 'Febrero',
+	  data: [
+		{
+		  x: 'Category 1',
+		  y: 733,
+		},
+		{
+		  x: 'Category 2',
+		  y: 385,
+		},
+		{
+		  x: 'Category 3',
+		  y: 715,
+		},
+	  ],
+	},
+	{
+	  name: 'Marzo',
+	  data: [
+		{
+		  x: 'Category 1',
+		  y: 255,
+		},
+		{
+		  x: 'Category 2',
+		  y: 211,
+		},
+		{
+		  x: 'Category 3',
+		  y: 441,
+		},
+	  ],
+	},
+	{
+	  name: 'Abril',
+	  data: [
+		{
+		  x: 'Category 1',
+		  y: 428,
+		},
+		{
+		  x: 'Category 2',
+		  y: 749,
+		},
+		{
+		  x: 'Category 3',
+		  y: 559,
+		},
+	  ],
+	},
+  ],
+	chart: {
+	height: 350,
+	width: 600,
+	type: 'line',
+  },
+  plotOptions: {
+	line: {
+	  isSlopeChart: true,
+	},
+  },
+  tooltip: {
+	followCursor: true,
+	intersect: false,
+	shared: true,
+  },
+  dataLabels: {
+	background: {
+	  enabled: true,
+	},
+	formatter(val, opts) {
+	  const seriesName = opts.w.config.series[opts.seriesIndex].name
+	  return val !== null ? seriesName : ''
+	},
+  },
+  yaxis: {
+	show: true,
+	labels: {
+	  show: true,
+	},
+  },
+  xaxis: {
+	position: 'bottom',
+  },
+  legend: {
+	show: true,
+	position: 'top',
+	horizontalAlign: 'left',
+  },
+  stroke: {
+	width: [2, 3, 4, 2],
+	dashArray: [0, 0, 5, 2],
+	curve: 'smooth',
+  }
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart2"), options);
+  chart.render();
 
 // CHATBOT //
 const btnSend = document.getElementById("btn");

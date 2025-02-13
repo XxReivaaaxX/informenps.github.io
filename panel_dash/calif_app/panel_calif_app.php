@@ -9,7 +9,6 @@
 	<title>Panel NPS Canales | 	Informe NPS </title>
 </head>
 <body>
-	
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="../../pag_fd/inicio.php" class="brand"><img src="../../img/banco-falabella.svg" alt="" height="55px" width="55px"> Panel Informe NPS | Canales</a>
@@ -109,7 +108,7 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>4.8</h2>
+							<h2>4.7</h2>
 							<p>Calificación App Android</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
@@ -120,7 +119,7 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>2.100</h2>
+							<h2>2.700</h2>
 							<p>Comentarios App IOS</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
@@ -130,7 +129,7 @@
 				<div class="card">
 					<div class="head">
 						<div>
-							<h2>20.875</h2>
+							<h2>20.985</h2>
 							<p>Comentarios App Android</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
@@ -141,7 +140,7 @@
 			<div class="data">
 				<div class="content-data">
 					<div class="head">
-						<h3>Gráfica</h3>
+						<h3>Comentarios App IOS y Android</h3>
 						<!--<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
@@ -152,7 +151,7 @@
 						</div>-->
 					</div>
 					<div class="chart">
-						<div id="chart"></div>
+					<div id="chart"></div>
 					</div>
 				</div>
 				<div class="content-data">

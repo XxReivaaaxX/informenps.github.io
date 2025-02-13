@@ -1,3 +1,6 @@
+<?php
+include '../../consultphp/conexion_bd.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,11 +148,13 @@
 					</div><br>
 				</div>
 			</div>
-			<div class="data">
-				<div class="content-data">
-					<div class="head">
-						<h3>Gráfica</h3>
-						<!--<div class="menu">
+
+			<!-- PP -->
+                <div class="data">
+                    <div class="content-data">
+                        <div class="head">
+                            <h3>NPS Cartera Febrero</h3>
+                            <!--<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
 								<li><a href="#"></a></li>
@@ -157,19 +162,199 @@
 								<li><a href="#">Remove</a></li>
 							</ul>
 						</div>-->
-					</div>
-					<div class="chart">
-						<div id="chart"></div>
-					</div>
-				</div>
-				<div class="data">
-				<div class="content-data">
+                        </div>
+                        <div class="chart">
+                            <div id="chart"></div>
+                        </div>
+                    </div>
+                    <!--<div class="data">
+                    <div class="content-data">
+                        <div class="head">
+                            <h3>Promedio NPS <br> Sucursales Atención <br> 2024 - 2025</h3>
+                        </div>
+                            <div id="chart2"></div>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="data">
+                    <div class="content-data">
+                        <div class="head">
+                            <h3>Comentarios de algunos clientes</h3>
+                        </div>
+                        <div class="containers">
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="../../../img/icontriste.png" alt="rover" />
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag tag-red">Detractor</span><br>
+                                    <p>
+                                        <?php 
+                    $def_1 = "Comentario: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE 
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                     AND Tipo_Respuesta = 'DETRACTOR'  AND NIVEL_2 = 'CARTERA'
+                     AND COMENTARIO_CLIENTE != '' ";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
+                                    </p>
+                                    <div class="user">
+                                        <img src="../../../img/users.png" alt="user" />
+                                        <div class="user-info">
+                                            <p>Clientes<br>
+                                                BFCO</p>
+                                            <small>
+                                                <?php
+                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
+                    }
+                    ?>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="../../../img/iconneutral.png" alt="ballons" />
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag tag-yellow">Neutro</span><br>
+                                    <p>
+                                        <?php 
+                    $def_1 = "Comentario: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE 
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                     AND Tipo_Respuesta = 'NEUTRO'  AND NIVEL_2 = 'CARTERA'
+                     AND COMENTARIO_CLIENTE != '' ";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
+                                    </p>
+                                    <div class="user">
+                                        <img src="../../../img/users.png" alt="user" />
+                                        <div class="user-info">
+                                            <p>Clientes <br>
+                                                BFCO</p>
+                                            <small>
+                                                <?php
+                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
+                    }
+                    ?>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <img src="../../../img/iconfeliz.png" alt="city" />
+                                </div>
+                                <div class="card-body">
+                                    <span class="tag tag-green">Promotor</span><br>
+                                    <p>
+                                        <?php 
+                    $def_1 = "Comentario: ";
+                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE
+                     WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                     AND Tipo_Respuesta = 'PROMOTOR'  AND NIVEL_2 = 'CARTERA'
+                     AND COMENTARIO_CLIENTE != '' ";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
+                    }
+                    ?>
+                                    </p>
+                                    <div class="user">
+                                        <img src="../../../img/users.png" alt="user" />
+                                        <div class="user-info">
+                                            <p>Clientes <br>
+                                                BFCO</p>
+                                            <small>
+                                                <?php
+                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
+                     WHERE PERIODO_EXPERIENCIA = '202502'";
+                     $stmt = sqlsrv_query($conn, $tsql);
+                     if ($stmt == false) {
+                        die( print_r( sqlsrv_errors(), true) );
+                    }
+                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
+                    }
+                    ?>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="content-data">
+                        <div class="head">
+                            <h3>NPS 2024 - NPS 2025  Mes x Mes</h3>
+                        </div>
+                        <div id="chart2"></div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="data">
+                <div class="content-data">
+                    <div class="head">
+                        <h3>Detalle Asesores</h3>
+                    </div><br><br>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="contenido-texto-card">
+                                <a href="../../../sucur/detalleasesores_suc.php">
+                                    <h4 class="titulo-suc">¡Haz clic acá!</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-data">
 					<div class="head">
-						<h3>Chatbot NPS Cartera</h3>
+						<h3>Chatbot Cartera</h3>
 						<div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
-								<li><a href="../cart/panel_cart.php" class="btn-delete">Nuevo Chat</a></li>
+								<li><a href="../../panel_dash/calif_app/panel_calif_app.php" class="btn-delete">Nuevo Chat</a></li>
 							</ul>
 						</div>
 					</div>
@@ -188,13 +373,14 @@
 								<input type="submit" value="Enviar" id="btn">
 							</div>
 				</form>
+						
 						</div>
 					</div>
 				</div>
 			</div>
 		</main>
-		<!-- MAIN -->
-	</section>
+        <!-- MAIN -->
+    </section>
 	<!-- NAVBAR -->
 
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
