@@ -1,43 +1,29 @@
 <?php
 include "../botcx/Bot.php";
+include "../consultphp/conexion_bd.php";
+
 $bot = new Bot;
-$questions = [
-    
-    //Preguntas Calificacion App//
-    "cuando es el proximo envio de comunicacion?" => "Cada miércoles",
-    "Planta" => "<a href='../../sucur/sur.php'>Mira</a>",
-    //Nombre
-    "como te llamas?" =>"Soy CX Bot y estoy para servirte",
 
-    //Saludo - inicio
-    "hola" =>"Hola Gennial, un gusto saludarte!!",
-    "un saludo" =>"como te va",
-    "hello" =>"un gusto de verte",
- 
-    //despedida
-    "adios" =>"cuidate",
-    "hasta la proxima" =>"nos vemos pronto",
-    "nos vemos" =>"te estare esperando",
-    "bye" =>"Good bye ♥",
+function getRespuestaDesdeSQL($msg, $conn) {
+    $sql = "SELECT respuesta FROM respuestas_bot WHERE LOWER(pregunta) = ?";
+    $params = [strtolower($msg)];
+    $stmt = sqlsrv_query($conn, $sql, $params);
 
-    //Nombre Bot
-    "tu nombre es?" => "Mi nombre es " . $bot->getName(),
-    "tu eres?" => "Yo soy una " . $bot->getGender()
-    
-];
+    if ($stmt && sqlsrv_fetch($stmt)) {
+        return sqlsrv_get_field($stmt, 0);
+    } else {
+        return null;
+    }
+}
 
 if (isset($_GET['msg'])) {
-   
     $msg = strtolower($_GET['msg']);
-    $bot->hears($msg, function (Bot $botty) {
-        global $msg;
-        global $questions;
-        if ($msg == 'hi' || $msg == "hello") {
-            $botty->reply('Hola');
-        } elseif ($botty->ask($msg, $questions) == "") {
-            $botty->reply("Lo siento, Las preguntas deben estar relacionadas con NPS o Calificacion de la App");
+    $bot->hears($msg, function (Bot $botty) use ($msg, $conn) {
+        $respuesta = getRespuestaDesdeSQL($msg, $conn);
+        if ($respuesta) {
+            $botty->reply($respuesta);
         } else {
-            $botty->reply($botty->ask($msg,$questions));
+            $botty->reply("Lo siento, no encontré una respuesta relacionada. ¿Puedes reformular?");
         }
     });
 }
