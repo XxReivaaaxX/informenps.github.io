@@ -120,33 +120,6 @@ include '../../consultphp/conexion_bd.php';
 					<span class="progress" data-value="97%"></span>
 					<span class="label">97%</span>
 				</div>
-				<div class="card">
-					<div class="head">
-						<div>
-							<h2>25.000</h2>
-							<p>Encuestas enviadas "Primer envío"</p>
-						</div>
-						<i class='bx bx-trending-up icon' ></i>
-					</div><br>
-				</div>
-				<div class="card">
-					<div class="head">
-						<div>
-							<h2>20.875</h2>
-							<p>Encuestas enviadas "Segundo envío"</p>
-						</div>
-						<i class='bx bx-trending-up icon' ></i>
-					</div><br>
-				</div>
-				<div class="card">
-					<div class="head">
-						<div>
-							<h2>20.875</h2>
-							<p>Encuestas enviadas "Tercer envío"</p>
-						</div>
-						<i class='bx bx-trending-up icon' ></i>
-					</div><br>
-				</div>
 			</div>
 
 			<!-- PP -->
@@ -196,7 +169,7 @@ include '../../consultphp/conexion_bd.php';
                      WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
                      AND Tipo_Respuesta = 'DETRACTOR'  AND NIVEL_2 = 'CARTERA'
                      AND COMENTARIO_CLIENTE != '' ";
-                     $stmt = sqlsrv_query($conn, $tsql);
+                     $stmt = odbc_exec($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
                     }
@@ -215,7 +188,7 @@ include '../../consultphp/conexion_bd.php';
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
                      WHERE PERIODO_EXPERIENCIA = '202502'";
-                     $stmt = sqlsrv_query($conn, $tsql);
+                     $stmt = odbc_exec($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
                     }
@@ -242,7 +215,7 @@ include '../../consultphp/conexion_bd.php';
                      WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
                      AND Tipo_Respuesta = 'NEUTRO'  AND NIVEL_2 = 'CARTERA'
                      AND COMENTARIO_CLIENTE != '' ";
-                     $stmt = sqlsrv_query($conn, $tsql);
+                     $stmt = odbc_exec($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
                     }
@@ -261,7 +234,7 @@ include '../../consultphp/conexion_bd.php';
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
                      WHERE PERIODO_EXPERIENCIA = '202502'";
-                     $stmt = sqlsrv_query($conn, $tsql);
+                     $stmt = odbc_exec($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
                     }
@@ -288,7 +261,7 @@ include '../../consultphp/conexion_bd.php';
                      WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
                      AND Tipo_Respuesta = 'PROMOTOR'  AND NIVEL_2 = 'CARTERA'
                      AND COMENTARIO_CLIENTE != '' ";
-                     $stmt = sqlsrv_query($conn, $tsql);
+                     $stmt = odbc_exec($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
                     }
@@ -307,7 +280,7 @@ include '../../consultphp/conexion_bd.php';
                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                      FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
                      WHERE PERIODO_EXPERIENCIA = '202502'";
-                     $stmt = sqlsrv_query($conn, $tsql);
+                     $stmt = odbc_exec($conn, $tsql);
                      if ($stmt == false) {
                         die( print_r( sqlsrv_errors(), true) );
                     }

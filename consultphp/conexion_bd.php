@@ -1,6 +1,6 @@
 <?php
-$dsn = "SQL_PHP"; // El nombre que diste al DSN
-$conn = odbc_connect($dsn, "", ""); // No necesitas usuario ni contraseña
+$dsn = "SQL_PHP"; // DSN
+$conn = odbc_connect($dsn, "", ""); // No usuario ni contraseña
 
 
 $debug = false;
