@@ -1,11 +1,19 @@
 <?php
-$dsn = "SQL_PHP"; // El nombre que diste al DSN
-$conn = odbc_connect($dsn, "", ""); // No necesitas usuario ni contraseña
+$serverName = "CO1P84S\\REP04";
+$connectionInfo = array(
+    "Database" => "Canales",
+    "CharacterSet" => "UTF-8",
+    "Encrypt" => false,
+    "TrustServerCertificate" => true
+);
 
-if (!$conn) {
-    echo "❌ Error de conexión.<br>";
-    echo odbc_errormsg();
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
+if ($conn) {
+    echo "✅ Conexión exitosa.";
 } else {
-    echo "✅ Conexión exitosa usando DSN.";
+    echo "❌ Conexión no se pudo establecer.<br>";
+    die(print_r(sqlsrv_errors(), true));
 }
 ?>
+
