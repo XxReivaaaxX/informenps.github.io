@@ -1,39 +1,11 @@
 <?php
-$serverName = "CO1P84S\REP04"; // Doble backslash para escapar la instancia
-$connectionOptions = array(
-    "Database" => "Canales",
-    "CharacterSet" => "UTF-8",
-    "Encrypt" => false,
-    "TrustServerCertificate" => true
-);
+$dsn = "SQL_PHP"; // El nombre que diste al DSN
+$conn = odbc_connect($dsn, "", ""); // No necesitas usuario ni contraseña
 
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-
-if ($conn === false) {
-    echo "❌ Conexión no se pudo establecer.<br>";
-    die(print_r(sqlsrv_errors(), true));
+if (!$conn) {
+    echo "❌ Error de conexión.<br>";
+    echo odbc_errormsg();
 } else {
-    echo "✅ Conexión exitosa con autenticación integrada.";
+    echo "✅ Conexión exitosa usando DSN.";
 }
 ?>
-
-<?php
-$serverName = "CO1P84S\REP04"; // Doble backslash para escapar la instancia
-$connectionOptions = array(
-    "Database" => "Informes_Comerciales",
-    "CharacterSet" => "UTF-8",
-    "Encrypt" => false,
-    "TrustServerCertificate" => true
-);
-
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-
-if ($conn === false) {
-    echo "❌ Conexión no se pudo establecer.<br>";
-    die(print_r(sqlsrv_errors(), true));
-} else {
-    echo "✅ Conexión exitosa con autenticación integrada.";
-}
-?>
-
-<?php
