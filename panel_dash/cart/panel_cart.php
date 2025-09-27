@@ -166,9 +166,9 @@ include '../../consultphp/conexion_bd.php';
                                         $def_1 = "Comentario: ";
                                         $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE
                                         FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                                        WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                                        WHERE PERIODO_EXPERIENCIA = '202509' AND CANAL = 'OTROS CANALES'
                                         AND Tipo_Respuesta = 'DETRACTOR' AND NIVEL_2 = 'CARTERA'
-                                        AND COMENTARIO_CLIENTE != '' ";
+                                        AND COMENTARIO_CLIENTE != '' ORDER BY NEWID()";
                                         $stmt = odbc_exec($conn, $tsql);
                                         if (!$stmt) {
                                             echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
@@ -188,7 +188,7 @@ include '../../consultphp/conexion_bd.php';
                                                     <?php
                                                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                                                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample(1)
-                                                    WHERE PERIODO_EXPERIENCIA = '202502'";
+                                                    WHERE PERIODO_EXPERIENCIA = '202509'";
                                                     $stmt = odbc_exec($conn, $tsql);
                                                     if (!$stmt) {
                                                         echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
@@ -214,9 +214,9 @@ include '../../consultphp/conexion_bd.php';
                                         $def_1 = "Comentario: ";
                                         $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                                         FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                                        WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                                        WHERE PERIODO_EXPERIENCIA = '202509' AND CANAL = 'OTROS CANALES'
                                         AND Tipo_Respuesta = 'NEUTRO' AND NIVEL_2 = 'CARTERA'
-                                        AND COMENTARIO_CLIENTE != '' ";
+                                        AND COMENTARIO_CLIENTE != ''ORDER BY NEWID()";
                                         $stmt = odbc_exec($conn, $tsql);
                                         if (!$stmt) {
                                             echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
@@ -236,7 +236,7 @@ include '../../consultphp/conexion_bd.php';
                                                     <?php
                                                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                                                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample(1)
-                                                    WHERE PERIODO_EXPERIENCIA = '202502'";
+                                                    WHERE PERIODO_EXPERIENCIA = '202509'";
                                                     $stmt = odbc_exec($conn, $tsql);
                                                     if (!$stmt) {
                                                         echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
@@ -263,9 +263,9 @@ include '../../consultphp/conexion_bd.php';
                                         $def_1 = "Comentario: ";
                                         $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
                                         FROM Canales.dbo.REPORTING_NPS_DETALLE
-                                         WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                                         WHERE PERIODO_EXPERIENCIA = '202509' AND CANAL = 'OTROS CANALES'
                                          AND Tipo_Respuesta = 'PROMOTOR' AND NIVEL_2 = 'CARTERA'
-                                         AND COMENTARIO_CLIENTE != '' ";
+                                         AND COMENTARIO_CLIENTE != '' ORDER BY NEWID()";
                                          $stmt = odbc_exec($conn, $tsql);
                                          if (!$stmt) {
                                             echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
@@ -285,7 +285,7 @@ include '../../consultphp/conexion_bd.php';
                                                     <?php
                                                     $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
                                                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample(1)
-                                                    WHERE PERIODO_EXPERIENCIA = '202502'";
+                                                    WHERE PERIODO_EXPERIENCIA = '202509'";
                                                     $stmt = odbc_exec($conn, $tsql);
                                                     if (!$stmt) {
                                                         echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
