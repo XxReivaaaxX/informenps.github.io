@@ -174,7 +174,7 @@ include '../../consultphp/conexion_bd.php';
                                             echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
                                         } else {
                                             while (odbc_fetch_row($stmt)) {
-                                                $comentario = odbc_result($stmt, "COMENTARIO_CLIENTE");
+                                               $comentario = utf8_encode(odbc_result($stmt, "COMENTARIO_CLIENTE"));
                                                 echo $def_1 . $comentario . '<br>';
                                             }
                                         }
@@ -222,7 +222,7 @@ include '../../consultphp/conexion_bd.php';
                                             echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
                                         } else {
                                             while (odbc_fetch_row($stmt)) {
-                                                $comentario = odbc_result($stmt, "COMENTARIO_CLIENTE");
+                                                $comentario = utf8_encode(odbc_result($stmt, "COMENTARIO_CLIENTE"));
                                                 echo $def_1 . $comentario . '<br>';
                                             }
                                         }
@@ -271,7 +271,7 @@ include '../../consultphp/conexion_bd.php';
                                             echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
                                         } else {
                                             while (odbc_fetch_row($stmt)) {
-                                                $comentario = odbc_result($stmt, "COMENTARIO_CLIENTE");
+                                                $comentario = utf8_encode(odbc_result($stmt, "COMENTARIO_CLIENTE"));
                                                 echo $def_1 . $comentario . '<br>';
                                             }
                                         }
