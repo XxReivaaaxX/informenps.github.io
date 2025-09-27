@@ -1,23 +1,17 @@
 <?php
-    $serverName = "CO1P84S\REP04";
-    $connectionInfo = array("Database"=>"Canales", "UID"=>"", "PWD"=>"", "CharacterSet" =>"UTF-8");
-    $conn = sqlsrv_connect($serverName, $connectionInfo);
-    if($conn) {
-        echo "";
-   }else{
-        echo "Conexión no se pudo establecer.<br />";
-        die( print_r(sqlsrv_errors(), true));
-   }
-    ?>
+$dsn = "SQL_PHP"; // DSN
+$conn = odbc_connect($dsn, "", ""); // No usuario ni contraseña
 
-<?php
-   $serverName = "CO1P84S\REP04";
-   $connectionInfo = array("Database"=>"Informes_Comerciales", "UID"=>"", "PWD"=>"","CharacterSet" =>"UTF-8");
-   $conn = sqlsrv_connect($serverName, $connectionInfo);
-   if($conn) {
-       echo "";
-  }else{
-       echo "Conexión no se pudo establecer.<br />";
-       die(print_r(sqlsrv_errors(), true));
-  }
-   ?>
+
+$debug = false;
+
+if (!$conn) {
+    echo "❌ Error de conexión.<br>";
+    echo odbc_errormsg();
+} else {
+    if ($debug) {
+        echo "✅ Conexión exitosa usando DSN.";
+    }
+}
+
+?>
