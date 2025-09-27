@@ -163,39 +163,41 @@ include '../../consultphp/conexion_bd.php';
                                     <span class="tag tag-red">Detractor</span><br>
                                     <p>
                                         <?php 
-                    $def_1 = "Comentario: ";
-                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
-                     AND Tipo_Respuesta = 'DETRACTOR'  AND NIVEL_2 = 'CARTERA'
-                     AND COMENTARIO_CLIENTE != '' ";
-                     $stmt = odbc_exec($conn, $tsql);
-                     if ($stmt == false) {
-                        die( print_r( sqlsrv_errors(), true) );
-                    }
-                    while ($obj = odbc_fetch_ro($stmt)) {
-                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
-                    }
-                    ?>
-                                    </p>
-                                    <div class="user">
-                                        <img src="../../../img/users.png" alt="user" />
-                                        <div class="user-info">
-                                            <p>Clientes<br>
-                                                BFCO</p>
-                                            <small>
-                                                <?php
-                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202502'";
-                     $stmt = odbc_exec($conn, $tsql);
-                     if ($stmt == false) {
-                        die( print_r( sqlsrv_errors(), true) );
-                    }
-                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
-                    }
-                    ?>
+                                        $def_1 = "Comentario: ";
+                                        $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE
+                                        FROM Canales.dbo.REPORTING_NPS_DETALLE 
+                                        WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                                        AND Tipo_Respuesta = 'DETRACTOR' AND NIVEL_2 = 'CARTERA'
+                                        AND COMENTARIO_CLIENTE != '' ";
+                                        $stmt = odbc_exec($conn, $tsql);
+                                        if (!$stmt) {
+                                            echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
+                                        } else {
+                                            while (odbc_fetch_row($stmt)) {
+                                                $comentario = odbc_result($stmt, "COMENTARIO_CLIENTE");
+                                                echo $def_1 . $comentario . '<br>';
+                                            }
+                                        }
+                                        ?>
+                                        </p>
+                                        <div class="user">
+                                            <img src="../../../img/users.png" alt="user">
+                                            <div class="user-info">
+                                                <p>Clientes<br>BFCO</p>
+                                                <small>
+                                                    <?php
+                                                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                                                    FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample(1)
+                                                    WHERE PERIODO_EXPERIENCIA = '202502'";
+                                                    $stmt = odbc_exec($conn, $tsql);
+                                                    if (!$stmt) {
+                                                        echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
+                                                    } else {
+                                                        while (odbc_fetch_row($stmt)) {
+                                                            $periodo = odbc_result($stmt, "PERIODO_EXPERIENCIA");
+                                                            echo $periodo . '<br>';
+                                                        }
+                                                    }?>
                                             </small>
                                         </div>
                                     </div>
@@ -207,41 +209,44 @@ include '../../consultphp/conexion_bd.php';
                                 </div>
                                 <div class="card-body">
                                     <span class="tag tag-yellow">Neutro</span><br>
-                                <p>
-                                    <?php 
-                    $def_1 = "Comentario: ";
-                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE 
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
-                     AND Tipo_Respuesta = 'NEUTRO'  AND NIVEL_2 = 'CARTERA'
-                     AND COMENTARIO_CLIENTE != '' ";
-                     $stmt = odbc_exec($conn, $tsql);
-                     if ($stmt == false) {
-                        die( print_r( sqlsrv_errors(), true) );
-                    }
-                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
-                    }
-                    ?>
-                                </p>
-                                <div class="user">
-                                    <img src="../../../img/users.png" alt="user" />
-                                    <div class="user-info">
-                                        <p>Clientes <br>
-                                            BFCO</p>
-                                        <small>
-                                            <?php
-                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202502'";
-                     $stmt = odbc_exec($conn, $tsql);
-                     if ($stmt == false) {
-                        die( print_r( sqlsrv_errors(), true) );
-                    }
-                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
-                    }
-                    ?>
+                                    <p>
+                                        <?php 
+                                        $def_1 = "Comentario: ";
+                                        $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                                        FROM Canales.dbo.REPORTING_NPS_DETALLE 
+                                        WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                                        AND Tipo_Respuesta = 'NEUTRO' AND NIVEL_2 = 'CARTERA'
+                                        AND COMENTARIO_CLIENTE != '' ";
+                                        $stmt = odbc_exec($conn, $tsql);
+                                        if (!$stmt) {
+                                            echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
+                                        } else {
+                                            while (odbc_fetch_row($stmt)) {
+                                                $comentario = odbc_result($stmt, "COMENTARIO_CLIENTE");
+                                                echo $def_1 . $comentario . '<br>';
+                                            }
+                                        }
+                                        ?>
+                                        </p>
+                                        <div class="user">
+                                            <img src="../../../img/users.png" alt="user">
+                                            <div class="user-info">
+                                                <p>Clientes<br>BFCO</p>
+                                                <small>
+                                                    <?php
+                                                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                                                    FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample(1)
+                                                    WHERE PERIODO_EXPERIENCIA = '202502'";
+                                                    $stmt = odbc_exec($conn, $tsql);
+                                                    if (!$stmt) {
+                                                        echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
+                                                    } else {
+                                                        while (odbc_fetch_row($stmt)) {
+                                                            $periodo = odbc_result($stmt, "PERIODO_EXPERIENCIA");
+                                                            echo $periodo . '<br>';
+                                                        }
+                                                    }
+                                                    ?>
                                             </small>
                                         </div>
                                     </div>
@@ -253,41 +258,44 @@ include '../../consultphp/conexion_bd.php';
                                 </div>
                                 <div class="card-body">
                                     <span class="tag tag-green">Promotor</span><br>
-                                <p>
-                                    <?php 
-                    $def_1 = "Comentario: ";
-                    $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE
-                     WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
-                     AND Tipo_Respuesta = 'PROMOTOR'  AND NIVEL_2 = 'CARTERA'
-                     AND COMENTARIO_CLIENTE != '' ";
-                     $stmt = odbc_exec($conn, $tsql);
-                     if ($stmt == false) {
-                        die( print_r( sqlsrv_errors(), true) );
-                    }
-                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                        echo $def_1, $obj['COMENTARIO_CLIENTE'] .'</br>';
-                    }
-                    ?>
-                                </p>
-                                <div class="user">
-                                    <img src="../../../img/users.png" alt="user" />
-                                    <div class="user-info">
-                                        <p>Clientes <br>
-                                            BFCO</p>
-                                        <small>
-                                            <?php
-                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
-                     FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample('1')
-                     WHERE PERIODO_EXPERIENCIA = '202502'";
-                     $stmt = odbc_exec($conn, $tsql);
-                     if ($stmt == false) {
-                        die( print_r( sqlsrv_errors(), true) );
-                    }
-                    while ($obj = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-                        echo $obj['PERIODO_EXPERIENCIA'] .'</br>';
-                    }
-                    ?>
+                                    <p>
+                                        <?php 
+                                        $def_1 = "Comentario: ";
+                                        $tsql = "SELECT TOP 1 COMENTARIO_CLIENTE 
+                                        FROM Canales.dbo.REPORTING_NPS_DETALLE
+                                         WHERE PERIODO_EXPERIENCIA = '202501' AND CANAL = 'OTROS CANALES'
+                                         AND Tipo_Respuesta = 'PROMOTOR' AND NIVEL_2 = 'CARTERA'
+                                         AND COMENTARIO_CLIENTE != '' ";
+                                         $stmt = odbc_exec($conn, $tsql);
+                                         if (!$stmt) {
+                                            echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
+                                        } else {
+                                            while (odbc_fetch_row($stmt)) {
+                                                $comentario = odbc_result($stmt, "COMENTARIO_CLIENTE");
+                                                echo $def_1 . $comentario . '<br>';
+                                            }
+                                        }
+                                        ?>
+                                        </p>
+                                        <div class="user">
+                                            <img src="../../../img/users.png" alt="user">
+                                            <div class="user-info">
+                                                <p>Clientes<br>BFCO</p>
+                                                <small>
+                                                    <?php
+                                                    $tsql = "SELECT TOP 1 PERIODO_EXPERIENCIA
+                                                    FROM Canales.dbo.REPORTING_NPS_DETALLE tablesample(1)
+                                                    WHERE PERIODO_EXPERIENCIA = '202502'";
+                                                    $stmt = odbc_exec($conn, $tsql);
+                                                    if (!$stmt) {
+                                                        echo '<div class="alert alert-danger">Error en la consulta: ' . odbc_errormsg() . '</div>';
+                                                    } else {
+                                                        while (odbc_fetch_row($stmt)) {
+                                                            $periodo = odbc_result($stmt, "PERIODO_EXPERIENCIA");
+                                                            echo $periodo . '<br>';
+                                                        }
+                                                    }
+                                                    ?>
                                             </small>
                                         </div>
                                     </div>
